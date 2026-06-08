@@ -1,0 +1,5415 @@
+{
+  "title": "출판용 AI 원고 윤문·교정·교열 체크리스트 600",
+  "source": "resources/checklist/윤문교정_체크리스트_600.md",
+  "version": "1.0",
+  "total": 600,
+  "policy": "MANDATORY",
+  "routing_summary": {
+    "human_review": 352,
+    "rules": 114,
+    "llm_review": 82,
+    "policy": 52
+  },
+  "items": [
+    {
+      "id": "chk_001",
+      "number": 1,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "책의 핵심 주제가 한 문장으로 설명되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_002",
+      "number": 2,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "독자가 왜 읽어야 하는지 분명한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_003",
+      "number": 3,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "장별 흐름이 자연스러운가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_004",
+      "number": 4,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "앞 장과 뒤 장의 연결이 끊기지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_005",
+      "number": 5,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "중복 장이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_006",
+      "number": 6,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "빠진 장이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_007",
+      "number": 7,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "서론이 과장되지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_008",
+      "number": 8,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "결론이 본문과 어긋나지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_009",
+      "number": 9,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "제목과 실제 내용이 일치하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_010",
+      "number": 10,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "부제의 약속을 본문이 충족하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_011",
+      "number": 11,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "목차가 독자의 기대를 만드는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_012",
+      "number": 12,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "목차 순서가 논리적인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_013",
+      "number": 13,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "각 장의 시작이 명확한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_014",
+      "number": 14,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "각 장의 끝이 정리되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_015",
+      "number": 15,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "장 제목이 너무 추상적이지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_016",
+      "number": 16,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "소제목이 내용의 기능을 드러내는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_017",
+      "number": 17,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "도입부가 불필요하게 길지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_018",
+      "number": 18,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "핵심 논지가 뒤늦게 나오지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_019",
+      "number": 19,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "예시와 설명의 비율이 적절한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_020",
+      "number": 20,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "반복되는 메시지가 지루하지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_021",
+      "number": 21,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "독자가 길을 잃는 구간이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_022",
+      "number": 22,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "전문 독자와 일반 독자의 균형이 맞는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_023",
+      "number": 23,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "원고의 난이도가 일정한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_024",
+      "number": 24,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "장마다 밀도가 지나치게 차이 나지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_025",
+      "number": 25,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "갑작스러운 주제 전환이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_026",
+      "number": 26,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "본문과 부록의 경계가 적절한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_027",
+      "number": 27,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "핵심 개념이 처음 나올 때 설명되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_028",
+      "number": 28,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "전체 분량이 주제에 비해 과하거나 부족하지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_029",
+      "number": 29,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "읽고 난 뒤 남는 메시지가 뚜렷한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_030",
+      "number": 30,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "원고 전체 구조",
+      "text": "책 전체가 하나의 완성된 경험처럼 느껴지는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_031",
+      "number": 31,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "문장이 지나치게 길지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_032",
+      "number": 32,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "한 문장에 너무 많은 생각이 들어 있지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_033",
+      "number": 33,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "주어와 서술어가 호응하는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_034",
+      "number": 34,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "목적어와 서술어가 맞는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_035",
+      "number": 35,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "수식어가 엉뚱한 대상을 꾸미지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_036",
+      "number": 36,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "접속어가 과도하지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_037",
+      "number": 37,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "문장 끝 표현이 반복되지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_038",
+      "number": 38,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "것이다 표현이 남용되지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_039",
+      "number": 39,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "할 수 있다 표현이 불필요하게 반복되지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_040",
+      "number": 40,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "번역투 문장이 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_041",
+      "number": 41,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "영어식 어순이 남아 있지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_042",
+      "number": 42,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "AI 특유의 평면적 문장이 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_043",
+      "number": 43,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "같은 의미를 다른 말로 반복하지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_044",
+      "number": 44,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "불필요한 부사가 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_045",
+      "number": 45,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "형용사가 과장되지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_046",
+      "number": 46,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "추상어가 너무 많지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_047",
+      "number": 47,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "구체적 동사가 쓰였는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_048",
+      "number": 48,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "수동태가 과도하지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_049",
+      "number": 49,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "피동 사동 표현이 어색하지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_050",
+      "number": 50,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "문장 리듬이 단조롭지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_051",
+      "number": 51,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "짧은 문장과 긴 문장이 균형을 이루는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_052",
+      "number": 52,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "의미 없는 완곡어법이 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_053",
+      "number": 53,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "핵심 문장이 묻히지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_054",
+      "number": 54,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "문단 첫 문장이 기능을 하는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_055",
+      "number": 55,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "문단 마지막 문장이 여운이나 정리를 주는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_056",
+      "number": 56,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "구어체와 문어체가 목적에 맞게 쓰였는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_057",
+      "number": 57,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "높임말 수준이 일관되는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_058",
+      "number": 58,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "독자가 한 번에 이해할 수 있는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_059",
+      "number": 59,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "낭독했을 때 자연스러운가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_060",
+      "number": 60,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "문장 윤문",
+      "text": "사람의 사고 흐름처럼 느껴지는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_061",
+      "number": 61,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "중요합니다 식의 일반론이 남발되지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_062",
+      "number": 62,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "근거 없는 균형론이 반복되지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_063",
+      "number": 63,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "결론 없이 안전한 말만 늘어놓지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_064",
+      "number": 64,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "모든 문단이 비슷한 구조로 시작하지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_065",
+      "number": 65,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "요약하면 표현이 과도하지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_066",
+      "number": 66,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "다양한 관점에서 같은 빈말이 없는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_067",
+      "number": 67,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "실제 경험 없는 척도 문장이 없는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_068",
+      "number": 68,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "인간적 망설임과 판단이 필요한 곳에 반영되었는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_069",
+      "number": 69,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "감정 표현이 기계적으로 균일하지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_070",
+      "number": 70,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "사례가 너무 일반적이지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_071",
+      "number": 71,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "독자에게 말 거는 방식이 자연스러운가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_072",
+      "number": 72,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "단정해야 할 곳에서 회피하지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_073",
+      "number": 73,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "조심해야 할 곳에서 과장하지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_074",
+      "number": 74,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "전문용어를 설명 없이 나열하지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_075",
+      "number": 75,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "AI가 지어낸 출처나 인물이 없는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_076",
+      "number": 76,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "실제 존재하지 않는 책 논문 사건이 없는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_077",
+      "number": 77,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "통계 수치가 검증되었는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_078",
+      "number": 78,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "인용문이 실제 원문과 일치하는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_079",
+      "number": 79,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "같은 문단 패턴이 반복되지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_080",
+      "number": 80,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "결론이 본문을 기계적으로 반복하지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_081",
+      "number": 81,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "질문형 문장이 남용되지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_082",
+      "number": 82,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "독자의 고통과 궁금증을 실제로 이해하는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_083",
+      "number": 83,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "지나치게 매끈해서 무미건조하지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_084",
+      "number": 84,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "개인적 관찰이나 구체성이 필요한 곳에 들어갔는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_085",
+      "number": 85,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "인간적인 척하는 문장이 어색하지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_086",
+      "number": 86,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "상투적인 격려문이 제거되었는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_087",
+      "number": 87,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "문체가 장르에 맞게 개성화되었는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_088",
+      "number": 88,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "논리적 빈칸을 미사여구로 덮지 않았는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_089",
+      "number": 89,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "AI식 항목 나열을 서사나 논증으로 바꿀 곳은 없는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_090",
+      "number": 90,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "AI 생성문 점검",
+      "text": "최종 원고가 생성문이 아니라 저자의 글처럼 읽히는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_091",
+      "number": 91,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "주장과 근거가 분명히 연결되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_092",
+      "number": 92,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "전제가 숨겨져 있지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_093",
+      "number": 93,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "결론이 근거보다 과하지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_094",
+      "number": 94,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "반례를 고려했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_095",
+      "number": 95,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "용어 정의가 일관되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_096",
+      "number": 96,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "같은 단어를 다른 뜻으로 쓰지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_097",
+      "number": 97,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "원인과 결과를 혼동하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_098",
+      "number": 98,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "상관관계를 인과관계로 착각하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_099",
+      "number": 99,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "비유가 논증을 대신하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_100",
+      "number": 100,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "예외를 일반 원칙처럼 말하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_101",
+      "number": 101,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "독자가 반박할 지점에 답했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_102",
+      "number": 102,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "논증 순서가 자연스러운가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_103",
+      "number": 103,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "핵심 개념이 단계적으로 전개되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_104",
+      "number": 104,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "주장 사이에 비약이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_105",
+      "number": 105,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "결론부가 새로운 주장을 갑자기 꺼내지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_106",
+      "number": 106,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "모호한 표현이 논리적 책임을 피하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_107",
+      "number": 107,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "당연하다는 말로 증명을 생략하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_108",
+      "number": 108,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "전문 분야의 합의와 충돌하는 부분을 표시했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_109",
+      "number": 109,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "가설과 사실을 구분했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_110",
+      "number": 110,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "해석과 자료를 구분했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_111",
+      "number": 111,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "독자의 예상 질문을 반영했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_112",
+      "number": 112,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "논지의 우선순위가 분명한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_113",
+      "number": 113,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "부수적 설명이 핵심을 흐리지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_114",
+      "number": 114,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "정의 명제 증명 예시가 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_115",
+      "number": 115,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "문제 제기와 해결이 대응하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_116",
+      "number": 116,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "비판 대상이 정확히 설정되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_117",
+      "number": 117,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "허수아비 반박이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_118",
+      "number": 118,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "권위에 기대는 주장이 과하지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_119",
+      "number": 119,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "결론의 적용 범위가 명시되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_120",
+      "number": 120,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "논리와 주장",
+      "text": "독자가 납득할 만큼 충분히 설명되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_121",
+      "number": 121,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "수식 기호가 일관되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_122",
+      "number": 122,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "변수 정의가 빠지지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_123",
+      "number": 123,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "단위가 정확한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_124",
+      "number": 124,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "차원이 맞는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_125",
+      "number": 125,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "정리 보조정리 정의가 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_126",
+      "number": 126,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "증명 단계가 생략되지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_127",
+      "number": 127,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "직관 설명과 엄밀 증명이 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_128",
+      "number": 128,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "근사와 등식이 혼동되지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_129",
+      "number": 129,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "경계조건이 명시되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_130",
+      "number": 130,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "적용 가능한 조건이 적혀 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_131",
+      "number": 131,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "그림과 수식 번호가 대응하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_132",
+      "number": 132,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "표기법이 표준 관례와 충돌하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_133",
+      "number": 133,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "기존 문헌의 결과와 새 결과가 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_134",
+      "number": 134,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "자명하다 표현이 남용되지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_135",
+      "number": 135,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "계산 과정에 부호 오류가 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_136",
+      "number": 136,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "첨자와 위첨자가 정확한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_137",
+      "number": 137,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "벡터와 스칼라 표기가 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_138",
+      "number": 138,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "확률 통계 기호가 일관되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_139",
+      "number": 139,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "좌표계가 명시되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_140",
+      "number": 140,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "초기조건이 빠지지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_141",
+      "number": 141,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "물리적 해석이 수학 결과와 맞는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_142",
+      "number": 142,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "특수한 경우와 일반 경우가 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_143",
+      "number": 143,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "반례 가능성이 검토되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_144",
+      "number": 144,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "그래프 축과 단위가 명확한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_145",
+      "number": 145,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "실험값과 이론값이 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_146",
+      "number": 146,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "참고문헌이 실제로 해당 주장을 뒷받침하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_147",
+      "number": 147,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "독자가 재현할 수 있을 만큼 절차가 충분한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_148",
+      "number": 148,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "고급 독자를 위한 엄밀성과 입문 독자를 위한 안내가 균형을 이루는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_149",
+      "number": 149,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "용어 번역이 학계 관례와 맞는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_150",
+      "number": 150,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "수학·물리학·전문 이론서",
+      "text": "수식 편집 오류가 최종 조판에서 깨지지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_151",
+      "number": 151,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "첫 문장이 독자를 붙드는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_152",
+      "number": 152,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "화자의 목소리가 일관되는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_153",
+      "number": 153,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "시점이 흔들리지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_154",
+      "number": 154,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "인물의 욕망이 분명한가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_155",
+      "number": 155,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "갈등이 실제로 작동하는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_156",
+      "number": 156,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "장면마다 목적이 있는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_157",
+      "number": 157,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "설명이 장면을 압도하지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_158",
+      "number": 158,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "대사가 인물별로 구분되는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_159",
+      "number": 159,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "대사가 정보 전달용으로만 쓰이지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_160",
+      "number": 160,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "감정 변화가 설득력 있는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_161",
+      "number": 161,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "장면 전환이 자연스러운가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_162",
+      "number": 162,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "시간 순서가 혼란스럽지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_163",
+      "number": 163,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "회상 장면이 과도하지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_164",
+      "number": 164,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "배경 묘사가 분위기에 기여하는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_165",
+      "number": 165,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "인물 행동이 성격과 맞는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_166",
+      "number": 166,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "클리셰 표현이 제거되었는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_167",
+      "number": 167,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "감정을 직접 설명하기보다 보여주는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_168",
+      "number": 168,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "여백과 암시가 살아 있는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_169",
+      "number": 169,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "결말이 주제와 연결되는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_170",
+      "number": 170,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "독자가 인물에게 감정적으로 접근할 수 있는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_171",
+      "number": 171,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "에세이의 사적 경험이 보편적 의미로 확장되는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_172",
+      "number": 172,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "자기연민이 과하지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_173",
+      "number": 173,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "교훈이 노골적이지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_174",
+      "number": 174,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "문학적 표현이 과장되지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_175",
+      "number": 175,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "리듬과 호흡이 장르에 맞는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_176",
+      "number": 176,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "반복 이미지가 의미 있게 쓰이는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_177",
+      "number": 177,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "상징이 지나치게 설명되지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_178",
+      "number": 178,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "독자의 상상 여지가 남아 있는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_179",
+      "number": 179,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "문체가 작가 고유의 결을 갖는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_180",
+      "number": 180,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "소설·에세이·서사문",
+      "text": "마지막 문장이 여운 없이 급히 끝나지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_181",
+      "number": 181,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "독자의 문제 상황이 구체적인가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_182",
+      "number": 182,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "해결책이 실행 가능한가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_183",
+      "number": 183,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "조언이 너무 일반적이지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_184",
+      "number": 184,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "단계별 행동 지침이 명확한가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_185",
+      "number": 185,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "사례가 현실적인가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_186",
+      "number": 186,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "독자를 탓하는 문장이 없는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_187",
+      "number": 187,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "성공담이 과장되지 않았는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_188",
+      "number": 188,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "실패 가능성을 정직하게 말하는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_189",
+      "number": 189,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "체크리스트와 본문이 중복되지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_190",
+      "number": 190,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "개념 설명 후 적용 예시가 있는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_191",
+      "number": 191,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "장 끝 요약이 유용한가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_192",
+      "number": 192,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "독자의 수준을 얕보지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_193",
+      "number": 193,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "근거 없는 동기부여 문장이 없는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_194",
+      "number": 194,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "심리학 의학 주장에 출처가 있는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_195",
+      "number": 195,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "법률 금융 조언이 과도하게 단정적이지 않은가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_196",
+      "number": 196,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "개인 경험과 보편 법칙을 혼동하지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_197",
+      "number": 197,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "독자가 바로 적용할 수 있는 문장이 있는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_198",
+      "number": 198,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "실천 과제가 모호하지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_199",
+      "number": 199,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "누구나 가능하다 식의 과장이 없는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_200",
+      "number": 200,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "독자에게 불필요한 죄책감을 주지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_201",
+      "number": 201,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "전문 개념을 쉬운 말로 풀었는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_202",
+      "number": 202,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "표와 도식이 이해를 돕는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_203",
+      "number": 203,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "사례의 문화적 편향이 없는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_204",
+      "number": 204,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "지나치게 유명한 사례만 반복하지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_205",
+      "number": 205,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "현실의 제약 조건을 고려했는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_206",
+      "number": 206,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "독자의 시간 돈 환경 차이를 존중하는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_207",
+      "number": 207,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "말투가 강압적이지 않은가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_208",
+      "number": 208,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "실행 순서가 합리적인가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_209",
+      "number": 209,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "독자가 읽은 뒤 무엇을 해야 할지 아는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_210",
+      "number": 210,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "자기개발·실용서·대중서",
+      "text": "책이 광고문처럼 느껴지지 않는가?",
+      "suggested_method": "llm_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_211",
+      "number": 211,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "인명 철자가 정확한가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_212",
+      "number": 212,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "지명과 기관명이 정확한가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_213",
+      "number": 213,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "연도와 날짜가 맞는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_214",
+      "number": 214,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "사건 순서가 맞는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_215",
+      "number": 215,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "통계 출처가 명확한가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_216",
+      "number": 216,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "원자료와 2차 해석이 구분되는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_217",
+      "number": 217,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "인용 부호 안 문장이 원문과 일치하는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_218",
+      "number": 218,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "번역 인용의 원문 의미가 왜곡되지 않았는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_219",
+      "number": 219,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "참고문헌 형식이 일관되는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_220",
+      "number": 220,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "각주 번호가 본문과 맞는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_221",
+      "number": 221,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "미주와 본문 참조가 연결되는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_222",
+      "number": 222,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "저작권 문제가 있는 긴 인용이 없는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_223",
+      "number": 223,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "이미지 사용 권리가 확인되었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_224",
+      "number": 224,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "표절 의심 문장이 없는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_225",
+      "number": 225,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "AI 생성 내용의 허위 출처가 제거되었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_226",
+      "number": 226,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "민감한 개인정보가 노출되지 않았는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_227",
+      "number": 227,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "특정 집단에 대한 편견 표현이 없는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_228",
+      "number": 228,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "명예훼손 가능성이 있는 문장이 검토되었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_229",
+      "number": 229,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "의학 법률 투자 조언에 면책과 한계가 있는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_230",
+      "number": 230,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "연구윤리상 부적절한 표현이 없는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_231",
+      "number": 231,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "타인의 고통을 소비하는 서술이 아닌가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_232",
+      "number": 232,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "논쟁적 사안에서 근거가 충분한가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_233",
+      "number": 233,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "출처 없는 단정문이 없는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_234",
+      "number": 234,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "인터넷 밈이나 비공식 자료를 사실처럼 쓰지 않았는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_235",
+      "number": 235,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "도표 데이터가 본문 주장과 맞는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_236",
+      "number": 236,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "번역서라면 원저자 의도가 보존되었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_237",
+      "number": 237,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "인터뷰 내용이 정확히 반영되었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_238",
+      "number": 238,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "실존 인물 묘사가 공정한가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_239",
+      "number": 239,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "독자가 오해할 수 있는 생략이 없는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_240",
+      "number": 240,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "사실 검증·출처·윤리",
+      "text": "출판 후 법적 윤리적 문제가 될 문장이 없는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_241",
+      "number": 241,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "맞춤법 오류가 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_242",
+      "number": 242,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "띄어쓰기 오류가 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_243",
+      "number": 243,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "문장부호 사용이 일관되는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_244",
+      "number": 244,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "따옴표 종류가 통일되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_245",
+      "number": 245,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "괄호 열고 닫기가 맞는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_246",
+      "number": 246,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "쉼표가 과하거나 부족하지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_247",
+      "number": 247,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "마침표 누락이 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_248",
+      "number": 248,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "중복 공백이 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_249",
+      "number": 249,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "줄바꿈이 어색하지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_250",
+      "number": 250,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "문단 들여쓰기가 일관되는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_251",
+      "number": 251,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "페이지 구분 표시가 본문에 남아 있지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_252",
+      "number": 252,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "편집 메모가 삭제되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_253",
+      "number": 253,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "수정 필요 같은 표시가 남아 있지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_254",
+      "number": 254,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "임시 파일명이나 주석이 본문에 섞이지 않았는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_255",
+      "number": 255,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "하이픈 대시 사용이 일관되는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_256",
+      "number": 256,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "숫자 표기 방식이 통일되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_257",
+      "number": 257,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "한자 영문 병기가 일관되는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_258",
+      "number": 258,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "외래어 표기가 통일되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_259",
+      "number": 259,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "목차 페이지 번호가 정확한가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_260",
+      "number": 260,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "장 제목과 본문 제목이 일치하는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_261",
+      "number": 261,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "그림 번호가 빠지지 않았는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_262",
+      "number": 262,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "표 번호가 빠지지 않았는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_263",
+      "number": 263,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "캡션이 실제 그림과 맞는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_264",
+      "number": 264,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "머리말 꼬리말이 정확한가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_265",
+      "number": 265,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "쪽번호가 누락되지 않았는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_266",
+      "number": 266,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "홀수 짝수 페이지 배치가 자연스러운가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_267",
+      "number": 267,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "장 시작 위치가 출판 형식에 맞는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_268",
+      "number": 268,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "고아줄 과부줄이 심하지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_269",
+      "number": 269,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "글꼴 깨짐이 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_270",
+      "number": 270,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "교정·조판·출판 품질",
+      "text": "PDF 변환 후 수식 기호 한글이 깨지지 않았는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_271",
+      "number": 271,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "첫 10쪽이 계속 읽고 싶게 만드는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_272",
+      "number": 272,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "독자가 책의 목적을 바로 이해하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_273",
+      "number": 273,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "어려운 부분에서 안내 문장이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_274",
+      "number": 274,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "지루한 구간이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_275",
+      "number": 275,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "감정적으로 과잉된 부분이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_276",
+      "number": 276,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "설명 부족으로 답답한 부분이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_277",
+      "number": 277,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "독자가 저자를 신뢰할 수 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_278",
+      "number": 278,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "문체가 독자를 밀어내지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_279",
+      "number": 279,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "전문성은 있으나 거만하지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_280",
+      "number": 280,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "친절하지만 얕지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_281",
+      "number": 281,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "독자의 반응을 예상해 문장이 조정되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_282",
+      "number": 282,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "독자가 오해할 표현이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_283",
+      "number": 283,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "독자가 밑줄 긋고 싶은 문장이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_284",
+      "number": 284,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "독자가 건너뛰고 싶은 반복이 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_285",
+      "number": 285,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "장마다 읽는 보상이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_286",
+      "number": 286,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "제목 표지 본문의 톤이 맞는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_287",
+      "number": 287,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "뒷표지 문구와 본문 내용이 일치하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_288",
+      "number": 288,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "서문이 책 전체의 품격을 세우는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_289",
+      "number": 289,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "결말이 독자의 시간을 존중하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_290",
+      "number": 290,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "책을 덮은 뒤 핵심 메시지가 남는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_291",
+      "number": 291,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "독자가 추천하고 싶은 책인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_292",
+      "number": 292,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "전문가가 읽어도 허술하지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_293",
+      "number": 293,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "일반 독자가 읽어도 배제되지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_294",
+      "number": 294,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "재독할 가치가 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_295",
+      "number": 295,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "출판사 편집자가 문제 삼을 요소가 제거되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_296",
+      "number": 296,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "서점 진열 기준에서도 완성도가 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_297",
+      "number": 297,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "전자책과 종이책 모두에서 읽기 좋은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_298",
+      "number": 298,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "낭독 오디오북으로 들어도 어색하지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_299",
+      "number": 299,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "마지막으로 원고를 처음 보는 독자의 눈으로 읽었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_300",
+      "number": 300,
+      "part": "1부. 기본 윤문·교정·교열 체크리스트 300",
+      "category": "최종 독자 검수",
+      "text": "출판해도 부끄럽지 않은 완성본인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_301",
+      "number": 301,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "AI로 생성된 초고를 상업 출판이 가능한 수준의 완벽한 원고로 탈바꿈시키기 위해서는 기계적인 패턴을 지우고 사람의 온기와 전문성을 불어넣는 치열한 윤문 과정이 필요합니다.요청하신 대로 최고급 편집자의 엄밀한 기준과 독자의 몰입을 돕는 가독성 관점을 통합하여, 분야별(수학/물리학, 소설/에세이, 자기계발서) 특성과 조판상의 오류 점검까지 총망라한 300개의 윤문 및 교정·교열 체크리스트를 제공해 드립니다.1부: AI 생성 원고의 '인간화' (기계적 패턴 및 번역투 제거)1. AI 특유의 어휘 및 문장 구조 탈피기계적 접속사 남용: '결론적으로', '요약하자면', '중요한 것은' 등의 접속사가 문단마다 반복되지 않는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_302",
+      "number": 302,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "동일한 문장 구조: '~합니다. ~입니다. ~할 수 있습니다' 식의 평이하고 균일한 종결어미가 연속되는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_303",
+      "number": 303,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "영문 번역투 1 (무생물 주어): '이 연구는 우리에게 ~을 보여준다'를 '이 연구를 통해 ~을 알 수 있다'로 수정했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_304",
+      "number": 304,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "영문 번역투 2 (피동형): '~되어진다', '~로 보여진다' 등 이중 피동이나 불필요한 수동태를 능동태로 바꾸었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_305",
+      "number": 305,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "영문 번역투 3 (소유격): '나의 책', '그의 생각' 등 불필요한 '~의'를 삭제하여 문장을 매끄럽게 했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_306",
+      "number": 306,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "AI 상투어 제거: '혁신적인', '심도 있는', '다각적인', '마법 같은' 등 AI가 즐겨 쓰는 과장된 수식어를 덜어냈는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_307",
+      "number": 307,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "문장 길이의 리듬감: 모든 문장의 길이가 비슷하지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_308",
+      "number": 308,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(장문과 단문이 교차하며 호흡의 리듬을 만드는지 확인)대화체 형용사: 독자에게 말을 건넬 때, 너무 작위적이거나 과하게 친절한 톤(마치 챗봇 같은 톤)은 아닌가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_309",
+      "number": 309,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "중언부언 요약: 문단의 마지막 문장이 앞의 내용을 불필요하게 다시 요약하고 있지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_310",
+      "number": 310,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "지나친 양비/양시론: 'A도 중요하지만 B도 중요합니다' 식의 기계적 중립을 취해 글의 주장이 흐려지지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_311",
+      "number": 311,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "2. 논리와 맥락의 인간적 깊이환각(Hallucination) 검증: AI가 그럴듯하게 지어낸 가상의 인물, 연도, 사건, 통계가 포함되어 있지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_312",
+      "number": 312,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "경험의 구체성: '많은 사람이 고통을 겪습니다' 대신, 실제 사람이 겪을 법한 구체적인 감각과 상황으로 묘사되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_313",
+      "number": 313,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "감정의 진실성: 슬픔이나 기쁨을 묘사할 때 사전적 정의처럼 메마르지 않고, 이면에 담긴 복합적인 감정이 드러나는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_314",
+      "number": 314,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "비유의 적절성: AI가 만든 비유가 한국 정서나 일상적인 공감대와 동떨어진 엉뚱한 비유는 아닌가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_315",
+      "number": 315,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "문화적 맥락: 서구권 데이터에 치중된 예시를 한국 독자에게 와닿는 국내 사례나 보편적 사례로 각색했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_316",
+      "number": 316,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "단락 간의 비약: A에서 B로 넘어갈 때 논리적 연결 고리가 누락되어 갑작스럽게 화제가 전환되지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_317",
+      "number": 317,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "맥락 없는 명언 남용: 챕터 시작이나 끝에 맥락과 완벽히 맞아떨어지지 않는 유명인 명언이 삽입되지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_318",
+      "number": 318,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "과도한 긍정주의: 현실적인 어려움을 무시하고 '노력하면 모든 것이 해결된다'는 식의 얄팍한 결론으로 끝나지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_319",
+      "number": 319,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "독자의 사전 지식: 독자가 당연히 안다고 가정하고 넘어간 전문 용어나 배경지식은 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_320",
+      "number": 320,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "글쓴이의 철학: 텍스트 전체를 관통하는 저자(인간)만의 뚜렷한 주관이나 독창적인 인사이트가 존재하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_321",
+      "number": 321,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "2부: 출판 조판 및 시각적 편집 (편집 기호 및 레이아웃 점검)3. 편집 마크다운 및 잔여 기호 제거볼드체 기호: AI가 강조를 위해 사용한 별표 기호(단어)가 텍스트에 그대로 남아있지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_322",
+      "number": 322,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "제목 기호: 헤딩을 나타내는 해시태그(#, ##)가 삭제되고 실제 글꼴 크기나 스타일로 변환되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_323",
+      "number": 323,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "리스트 기호: 불필요한 하이픈(-)이나 글머리 기호(*)가 텍스트에 섞여 있지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_324",
+      "number": 324,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "HTML 태그: <br>, <b>, <i> 등의 코드가 텍스트 변환 중 누락되어 노출되지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_325",
+      "number": 325,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "괄호의 짝: 여는 괄호와 닫는 괄호 (), [], <>의 짝이 정확히 맞으며, 내용 없이 비어있는 괄호는 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_326",
+      "number": 326,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "따옴표 오류: 스마트 따옴표(‘’, “”)와 직선 따옴표(', \")가 혼용되지 않고 출판사 기준에 맞게 통일되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_327",
+      "number": 327,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "불필요한 공백: 단어 사이나 문장 끝에 스페이스바가 두 번 이상 들어간 다중 공백이 있는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_328",
+      "number": 328,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "특수문자 렌더링: 깨진 폰트나 네모 박스(□)로 표시되는 지원되지 않는 특수문자가 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_329",
+      "number": 329,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "하이퍼링크 잔재: 텍스트에 [링크 텍스트](URL) 형태의 찌꺼기나 밑줄 쳐진 파란색 글씨가 남아있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_330",
+      "number": 330,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "프롬프트 잔재: \"네, 다음은 요청하신 소설의 다음 챕터입니다\" 같은 AI의 대화형 응답 문장이 남아있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_331",
+      "number": 331,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "4. 줄바꿈, 문단, 페이지 구분 점검 (조판 전후)강제 줄바꿈: 문장 중간에 의미 없이 엔터(Enter)가 쳐져 줄이 바뀌는 현상이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_332",
+      "number": 332,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "들여쓰기 통일: 문단이 시작될 때 스페이스바가 아닌 편집 프로그램의 들여쓰기 기능(일반적으로 10pt)으로 통일되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_333",
+      "number": 333,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "문단 간격: 문단과 문단 사이의 여백이 일관적인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_334",
+      "number": 334,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(어디는 1줄 띄우고, 어디는 안 띄우는 오류 점검)고아 단락 (Orphan): 페이지 맨 밑에 새로운 문단의 첫 줄만 덩그러니 남지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_335",
+      "number": 335,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "과부 단락 (Widow): 페이지 맨 위에 이전 문단의 마지막 줄만 짧게 넘어오지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_336",
+      "number": 336,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "장 제목 위치: 새로운 장(Chapter)이 시작될 때 페이지 바꿈(Page Break)이 정확히 적용되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_337",
+      "number": 337,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "소제목 분리: 소제목만 페이지 끝에 남고 본문은 다음 페이지로 넘어가는 현상이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_338",
+      "number": 338,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시각적 여백: 텍스트가 너무 빽빽하여 독자에게 답답함을 주지 않도록 적절한 행간이 설정되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_339",
+      "number": 339,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "목차와 본문 일치: 목차에 표기된 페이지 번호와 실제 본문의 제목, 페이지 번호가 정확히 일치하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_340",
+      "number": 340,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "주석 번호: 각주나 미주의 번호 매기기가 본문과 일치하며, 번호 순서가 건너뛰어지지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_341",
+      "number": 341,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "3부: 공통 교정·교열 (문법, 맞춤법, 가독성)5. 정확한 어휘와 문장 부호한글 맞춤법: 국립국어원 표준국어대사전 기준으로 맞춤법이 완벽하게 교정되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_342",
+      "number": 342,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "띄어쓰기 오류: 의존명사(수, 것, 바, 지 등)와 조사(은, 는, 이, 가, 에, 에게 등)의 띄어쓰기가 규칙에 맞는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_343",
+      "number": 343,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "외래어 표기법: '리더쉽' -> '리더십', '컨셉' -> '콘셉트' 등 공식 외래어 표기법을 준수했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_344",
+      "number": 344,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "한자어 오용: '결제/결재', '개발/계발', '반증/방증' 등 의미가 헷갈리는 한자어를 문맥에 맞게 썼는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_345",
+      "number": 345,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "동음이의어: '가리키다'와 '가르치다', '늘리다'와 '늘이다'를 정확히 구분하여 사용했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_346",
+      "number": 346,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "마침표 위치: 인용구 끝에서 마침표가 따옴표 안에 있는지 밖에 있는지 출판사 편집 매뉴얼에 따라 통일했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_347",
+      "number": 347,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(예: \"~~했다.\")쉼표의 남용: 문장 호흡을 끊는 불필요한 쉼표가 너무 많지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_348",
+      "number": 348,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "가운뎃점(·): 단어를 나열할 때 쉼표와 가운뎃점의 사용 기준이 일관적인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_349",
+      "number": 349,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "줄표(—) 사용: 부연 설명을 위한 줄표(Em-dash) 앞뒤 띄어쓰기 규정이 일관되게 적용되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_350",
+      "number": 350,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "말줄임표: 말줄임표는 원칙대로 6개(……) 또는 허용안 3개(…)로 통일되어 있으며, 마침표를 병기했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_351",
+      "number": 351,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "6. 주술 호응과 간결한 문장주어-서술어 불일치: 문장이 길어지면서 주어와 서술어가 맞지 않는 비문이 없는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_352",
+      "number": 352,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "복문과 중문 분리: 한 문장에 두 개 이상의 주어와 동사가 얽혀 이해하기 어렵다면, 두 문장으로 나누었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_353",
+      "number": 353,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "잉여 표현(겹말): '역전 앞', '미리 예습하다', '남은 여생' 등 중복된 의미의 단어를 연속해서 쓰지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_354",
+      "number": 354,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "지시 대명사 최소화: '이것', '그것', '이러한'이 너무 많아 정확히 무엇을 지칭하는지 모호한 문장을 수정했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_355",
+      "number": 355,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "부정의 부정: '하지 않을 수 없다' 같은 이중 부정문은 가독성을 위해 '해야 한다'는 긍정문으로 수정했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_356",
+      "number": 356,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "조사 남용: '~의', '~에 대한', '~로의' 등 불필요한 조사를 덜어내어 문장을 날렵하게 만들었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_357",
+      "number": 357,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "관형형 어미 절제: '~적', '~하는', '~할' 등의 관형형 어미가 연속해서 나와 수식 관계가 복잡해지지 않았는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_358",
+      "number": 358,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "병렬 구조의 일관성: 'A하기, B하고, C이다'처럼 나열되는 요소들의 품사나 형태가 'A하기, B하기, C하기'로 통일되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_359",
+      "number": 359,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "과도한 수식어: 명사 하나에 여러 개의 형용사가 붙어 본질을 흐리고 있지 않은가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_360",
+      "number": 360,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시제 일치: 하나의 에피소드나 단락 안에서 과거, 현재, 미래 시제가 일관되게 유지되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_361",
+      "number": 361,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "4부: 전문 학술 분야 (수학 및 물리학 이론서)7. 수식, 기호, 단위의 엄밀성수식 표기법: 본문 내 인라인 수식과 독립된 단락의 디스플레이 수식의 정렬 및 여백이 일관적인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_362",
+      "number": 362,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "폰트 구분: 변수(이탤릭체), 상수 및 함수(정체), 벡터(볼드체 또는 화살표) 표기법이 책 전체에서 일관되게 적용되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_363",
+      "number": 363,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "변수 정의 누락: 수식에 등장하는 변수($x, y, \\alpha, \\beta$ 등)가 수식 등장 전후에 반드시 명확히 정의되어 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_364",
+      "number": 364,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "SI 단위계 준수: 국제단위계(SI)를 원칙으로 하며, 숫자와 단위 사이의 띄어쓰기 규정을 지켰는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_365",
+      "number": 365,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(예: 10 kg, 단 10%나 360도는 붙여 씀)수식 번호 체계: 수식 우측에 괄호로 매겨진 번호(예: (1.1), (1.2))가 순차적이며, 본문에서의 참조와 정확히 일치하는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_366",
+      "number": 366,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "기호의 충돌: 같은 책 안에서 하나의 알파벳(예: $T$)이 온도, 주기, 장력 등으로 혼용되어 독자에게 혼란을 주지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_367",
+      "number": 367,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "첨자(Subscript/Superscript) 오류: 아래첨자와 위첨자의 크기와 위치가 정확하며, 물리적 의미(예: 텐서의 인덱스)가 맞는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_368",
+      "number": 368,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "연산자 띄어쓰기: $+$, $-$, $=$, $\\times$ 등 수학 연산자 앞뒤의 띄어쓰기가 일관되게 조판되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_369",
+      "number": 369,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "소수점 및 자릿수: 천 단위 구분 쉼표(,)와 소수점(.) 사용이 일관되며, 유효숫자 표기법을 준수했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_370",
+      "number": 370,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "괄호의 계층: 수식이 길어질 때 소괄호(), 중괄호{}, 대괄호[]의 포함 관계와 크기(자동 크기 조절 등)가 올바른가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_371",
+      "number": 371,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "8. 논리 전개와 도표/참고문헌 교차 검증증명 생략의 타당성: '자명하다', '쉽게 알 수 있다'며 생략한 증명 단계가 타겟 독자의 수준에 맞게 적절히 서술되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_372",
+      "number": 372,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(AI는 종종 중요 단계를 건너뜀)물리적 직관 제공: 수식의 나열로만 끝나지 않고, 그 수식이 의미하는 물리적/수학적 현상에 대한 언어적 설명이 덧붙여졌는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_373",
+      "number": 373,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "정의, 정리, 따름정리: 수학적 명제의 계층 구조(Definition, Theorem, Lemma, Corollary)가 시각적으로 분명히 구분되어 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_374",
+      "number": 374,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "오개념(Misconception) 체크: AI가 기존 문헌을 잘못 조합하여 만들어낸 물리학적/수학적 오류나 거짓 명제는 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_375",
+      "number": 375,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "그래프 축 라벨: 모든 그래프의 X축과 Y축에 정확한 물리량과 단위가 표기되어 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_376",
+      "number": 376,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "도표 연동: 본문에서 '그림 2.1을 참조하면'이라고 할 때, 해당 그림이 정확한 위치에 올바른 번호로 존재하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_377",
+      "number": 377,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "캡션의 명확성: 도표나 사진 아래의 캡션만 읽어도 핵심 내용을 이해할 수 있을 만큼 설명이 충분한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_378",
+      "number": 378,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "참고문헌 인용 일치: 본문에 [1], [2]로 인용된 번호가 권말의 참고문헌 목록과 정확히 1:1로 매칭되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_379",
+      "number": 379,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "저널 양식 통일: 참고문헌의 저자명, 논문 제목, 저널명, 권수, 연도 표기 양식(APA, MLA 등)이 완벽히 통일되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_380",
+      "number": 380,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "최신 동향 반영: 고전 물리학 이론이라도 최신 실험 결과나 관측 데이터와 모순되는 낡은 서술이 남아있지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_381",
+      "number": 381,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "5부: 문학 및 감성 분야 (소설, 에세이)9. 서사, 플롯, 캐릭터의 일관성 (소설)캐릭터의 말투(Voice): 모든 등장인물이 AI처럼 정중하고 설명적인 말투를 쓰지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_382",
+      "number": 382,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "추가 점검: 각자의 계급, 나이, 성격에 맞는 사투리나 억양이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_383",
+      "number": 383,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시점(POV)의 위반: 1인칭 주인공 시점인데 주인공이 볼 수 없는 다른 캐릭터의 내면이나 등 뒤의 사건을 서술하는 오류가 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_384",
+      "number": 384,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "Show, Don't Tell: '그는 슬펐다'라고 요약하지 않고, 어깨가 들썩이거나 창밖을 멍하니 보는 등 행동과 감각으로 묘사했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_385",
+      "number": 385,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "설명충 대화 지양: 인물들이 서로 이미 알고 있는 배경지식을 독자에게 설명하기 위해 억지로 대화로 주고받지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_386",
+      "number": 386,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "감정의 과잉: 슬픔이나 분노의 감정을 표현할 때 너무 과도한 수식어와 느낌표를 남발하여 오히려 공감을 방해하지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_387",
+      "number": 387,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "행동의 연속성: 인물이 방금 커피잔을 내려놓았는데, 다음 문단에서 또 커피잔을 들고 있는 식의 동선/소품 오류는 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_388",
+      "number": 388,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시간의 흐름: 아침에서 저녁으로, 혹은 계절이 바뀔 때 독자가 헷갈리지 않게 자연스러운 시간적 단서를 주었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_389",
+      "number": 389,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "지명과 고유명사: 가상의 도시, 인물 이름, 마법 주문 등의 스펠링이나 표기가 소설 처음부터 끝까지 변함없이 동일한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_390",
+      "number": 390,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "갈등의 해소: AI의 특징인 '급조된 해피엔딩'으로 갈등이 너무 쉽게 풀리지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_391",
+      "number": 391,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(카타르시스를 위한 긴장감 유지)대화 지문 자연스러움: '~라고 그가 말했다', '~라고 그녀가 대답했다' 식의 단순 번역투 지문을 생략하거나 행동 묘사로 대체했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_392",
+      "number": 392,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "10. 문체와 여운, 작가의 개성 (에세이)경험의 고유성: 누구나 할 수 있는 뻔한 일상 이야기가 아니라, 저자만의 독특한 시선이나 내밀한 고백이 담겨 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_393",
+      "number": 393,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "교훈의 강요: 에세이 끝부분에 '우리 모두 ~합시다', '이것이 인생의 진리입니다'라며 촌스러운 도덕적 교훈을 강요하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_394",
+      "number": 394,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "감각적 묘사: 시각뿐만 아니라 청각, 후각, 촉각을 자극하는 입체적인 묘사가 포함되어 글이 생생하게 느껴지는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_395",
+      "number": 395,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "여백의 미: 모든 것을 설명하려 들지 않고, 독자가 스스로 상상하고 공감할 수 있는 문맥적 여백을 남겨두었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_396",
+      "number": 396,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "자기 연민의 적정선: 저자의 상처나 우울을 이야기할 때 과도한 자기 연민에 빠져 독자를 지치게 하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_397",
+      "number": 397,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "유머와 위트: AI 텍스트의 밋밋함을 깨는 뼈 있는 농담, 반어법, 언어유희가 글의 활력을 불어넣고 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_398",
+      "number": 398,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "첫 문장의 흡인력: 챕터의 첫 문장이 뻔한 날씨나 인사말로 시작되지 않고, 곧바로 독자의 호기심을 낚아채고 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_399",
+      "number": 399,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "마지막 문장의 여운: 챕터가 끝날 때, 책을 덮고 잠시 생각에 잠기게 만드는 강렬하거나 부드러운 여운을 남기는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_400",
+      "number": 400,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "문체의 일관성: 시니컬한 톤으로 시작했다가 갑자기 감성적인 톤으로 변하는 등 한 권의 책 안에서 저자의 페르소나가 흔들리지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_401",
+      "number": 401,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "제목과 본문의 호응: 에세이 각 꼭지의 제목이 본문 내용 중 가장 매력적인 키워드나 문장을 잘 포착하여 지어졌는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_402",
+      "number": 402,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "6부: 실용 및 대중 분야 (자기계발서, 경제경영)11. 메시지 선명성과 독자 동기부여핵심 메시지 도출: 각 챕터가 끝날 때마다 독자가 정확히 무엇을 행동으로 옮겨야 할지 '원 포인트'로 요약될 수 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_403",
+      "number": 403,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "권위적인 어조 지양: 독자를 가르치려 들거나 꾸짖는 듯한 고압적인 꼰대 톤(AI 훈계 톤)이 들어있지 않은가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_404",
+      "number": 404,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "사례의 신뢰성: 제시된 성공 사례나 기업 케이스 스터디가 최신 트렌드에 부합하며 사실관계가 철저히 검증되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_405",
+      "number": 405,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "뜬구름 잡는 소리: '열정을 가져라', '마인드셋을 바꿔라' 같은 추상적인 조언 대신, '아침 7시에 노트를 펴라' 같은 구체적 행동 지침이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_406",
+      "number": 406,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "데이터와 통계 활용: 주장을 뒷받침하기 위해 사용된 통계가 명확한 출처(연도, 기관명)를 표기하고 있는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_407",
+      "number": 407,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "단정적 표현 주의: '무조건', '절대적으로', '100%' 등의 과장된 표현으로 신뢰성을 떨어뜨리지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_408",
+      "number": 408,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "독자의 페인포인트(Pain Point): 독자가 현재 겪고 있는 문제와 결핍을 초반부에 정확히 짚어내어 공감대를 형성했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_409",
+      "number": 409,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "해결책의 실현 가능성: 제시된 솔루션이 평범한 사람도 실천할 수 있는 현실적인 방법인가, 아니면 특출난 소수만 가능한 방법인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_410",
+      "number": 410,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "불릿 포인트(Bullet Point) 활용: 긴 설명이 필요한 행동 수칙은 가독성을 위해 1, 2, 3 번호나 기호로 깔끔하게 정리되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_411",
+      "number": 411,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "Q&A 및 워크시트: 독자가 직접 자신의 상황을 대입해 볼 수 있는 체크리스트나 질문 칸이 적절히 배치되어 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_412",
+      "number": 412,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "12. 구조화 및 논리 전개두괄식 구성: 바쁜 독자를 위해 챕터의 핵심 주장이나 흥미로운 결과를 문단 맨 앞에 배치(Hook)했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_413",
+      "number": 413,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "문제-원인-해결 구조: 글의 전개가 현상 나열에 그치지 않고, 왜 그런 문제가 생겼는지, 어떻게 해결할지의 3단 구조를 갖췄는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_414",
+      "number": 414,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "전문 용어의 연착륙: 업계 전문 용어(Jargon)를 사용할 때 일반 독자도 즉시 이해할 수 있는 쉬운 비유나 각주를 곁들였는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_415",
+      "number": 415,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "부제목의 내비게이션 역할: 소제목만 훑어봐도 이 장에서 무슨 이야기를 할지 전체 뼈대가 한눈에 파악되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_416",
+      "number": 416,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "챕터 간의 연결 고리: 1장의 결론이 자연스럽게 2장의 서론으로 이어지며 책 전체가 하나의 거대한 논리로 엮여 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_417",
+      "number": 417,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "요약 박스 배치: 긴 글 중간중간에 핵심을 짚어주는 인용구 박스나 '3줄 요약' 칸이 디자인적으로 잘 배치되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_418",
+      "number": 418,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "반론의 수용과 재반박: 자신의 주장에 대한 예상되는 반론을 먼저 언급하고 이를 논리적으로 방어하여 설득력을 높였는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_419",
+      "number": 419,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "감정적 터치: 논리만 가득한 딱딱한 글이 되지 않도록, 저자의 실패담이나 인간적인 약점을 드러내어 유대감을 형성했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_420",
+      "number": 420,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "행동 촉구(CTA): 글의 말미에 독자가 책을 덮자마자 시작할 수 있는 아주 작고 쉬운 첫걸음(Baby step)을 제안했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_421",
+      "number": 421,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "트렌드 키워드 적합성: 시대에 뒤떨어진 단어 대신, 현재 타겟 독자층이 검색하고 열광하는 키워드가 제목이나 본문에 자연스럽게 녹아 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_422",
+      "number": 422,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "7부: 최고급 편집자 관점 (완성도, 상업성, 리스크 관리)13. 상업성과 타겟 독자 정렬타겟 독자 페르소나: 원고 전체의 난이도와 어휘가 목표하는 핵심 독자층(예: 20대 사회초년생 vs 50대 은퇴 준비자)에게 정확히 맞춰져 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_423",
+      "number": 423,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "제목의 후킹(Hooking): 가제(Working Title)가 독자의 지갑을 열 만큼 도발적이거나 호기심을 극대화하는 매력적인 문장인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_424",
+      "number": 424,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "표지 카피 도출: 표지나 띠지에 쓸 수 있는 한 줄짜리 강렬한 카피(Catchphrase)가 원고 내에 포함되어 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_425",
+      "number": 425,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "목차의 셀링 파워: 온라인 서점에서 독자가 목차만 읽고도 이 책을 사야겠다는 결심이 서도록 각 목차의 제목이 후킹하게 다듬어졌는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_426",
+      "number": 426,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "트렌드 부합도: 현재 사회적 이슈, 베스트셀러 트렌드와 결을 같이 하면서도 차별화되는 포인트가 명확한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_427",
+      "number": 427,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "저자 브랜딩: AI의 글을 넘어, 원고 안에 '이 저자만이 할 수 있는 이야기'라는 권위와 전문성이 충분히 어필되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_428",
+      "number": 428,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "분량의 적절성: 책의 판형과 예상 가격에 맞춰 원고의 총 글자 수(200자 원고지 기준 800~1000매 내외)가 상업적으로 적절한가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_429",
+      "number": 429,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "서문(프롤로그)의 매력: 서문에서 책의 집필 동기, 독자가 얻어갈 이득을 명확히 제시하여 끝까지 읽을 동력을 부여했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_430",
+      "number": 430,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "결문(에필로그)의 완결성: 단순히 내용을 요약하는 것에 그치지 않고, 독자에게 보내는 마지막 응원이나 비전을 담아 책의 만족도를 높였는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_431",
+      "number": 431,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시리즈물 가능성: 단권으로 끝나는 것이 아니라, 후속작이나 시리즈로 확장할 수 있는 떡밥이나 주제적 넓이가 존재하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_432",
+      "number": 432,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "14. 법적 리스크, 윤리 검토 및 완성도표절 위험(Plagiarism): AI가 특정 작가나 문헌의 표현을 그대로 베껴 쓴 문장이 없는지 표절 검사기를 통과했는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_433",
+      "number": 433,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "저작권 침해: 인용한 노래 가사, 영화 대사, 책의 일부가 저작권법에서 허용하는 '공정이용' 범위 내에 있거나 출처를 명시했는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_434",
+      "number": 434,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "초상권 및 퍼블리시티권: 생존해 있는 유명인의 이름이나 일화를 허락 없이 상업적으로 이용하거나 명예를 훼손하는 내용이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_435",
+      "number": 435,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "차별 및 혐오 표현: 성별, 인종, 지역, 종교, 장애 등에 대한 편견을 조장하거나 정치적으로 불필요한 오해를 살 표현이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_436",
+      "number": 436,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "팩트 체크(Fact Check): 역사적 연도, 과학적 사실, 인물의 이름, 지리적 위치가 100% 정확한지 2차 확인을 거쳤는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_437",
+      "number": 437,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "민감한 정보 노출: 저자나 타인의 실제 개인정보(전화번호, 이메일, 상세 주소 등)가 원고에 실수로 포함되지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_438",
+      "number": 438,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "외래어 인명/지명 일관성: '도스토옙스키'와 '도스토예프스키'처럼 하나의 고유명사가 책 안에서 여러 방식으로 표기되지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_439",
+      "number": 439,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시각 자료 저작권: 삽입된 이미지, 일러스트, 그래프가 상업적 이용이 무료인 이미지이거나 정당한 라이선스를 구매한 것인가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_440",
+      "number": 440,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "추천사 및 보도자료: 책 출간 시 언론사 배포용 보도자료나 유명인에게 추천사를 부탁할 때 쓸 핵심 요약서가 원고를 바탕으로 작성 가능한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_441",
+      "number": 441,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "크로스 체크(교차 검토): 담당 편집자 외에 해당 분야에 지식이 없는 제3자가 읽어도 이해가 가는지 블라인드 테스트를 거쳤는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_442",
+      "number": 442,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "8부: 최종 독자 관점 (가독성, 몰입, 인지적 경험)15. 독서 흐름(Flow)과 인지적 부담 최소화스캐닝 가독성: 텍스트를 정독하지 않고 눈으로 훑어내려가도(Skim-reading) 핵심 키워드나 볼드 처리를 통해 흐름이 파악되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_443",
+      "number": 443,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "벽돌 문단 타파: 한 문단이 반 페이지 이상 이어져 독자에게 시각적 압박감을 주지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_444",
+      "number": 444,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(적절히 3~5문장 단위로 단락 나누기)전문 용어 피로도: 한 페이지 안에 생소한 전문 용어나 한자어가 너무 집중적으로 등장하여 독자의 뇌를 지치게 하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_445",
+      "number": 445,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "능동적 읽기 유도: 수동적으로 정보만 주입받는 느낌이 들지 않도록, 적절한 타이밍에 독자에게 질문을 던지는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_446",
+      "number": 446,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시각적 휴식: 챕터와 챕터 사이, 빈 페이지나 간지(도비라)를 통해 독자가 숨을 고를 수 있는 물리적/시각적 여유가 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_447",
+      "number": 447,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "폰트 크기와 자간: 모바일 화면이나 종이책으로 볼 때 글자가 너무 작거나 자간이 좁아 눈이 쉽게 피로해지지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_448",
+      "number": 448,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "주석의 위치 불편함: 꼭 알아야 할 필수 정보가 미주(책의 맨 뒤)에 배치되어 독자가 책을 앞뒤로 뒤적거려야 하는 불편함이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_449",
+      "number": 449,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(필요시 각주로 변경)하이라이트 지점: 독자가 밑줄 치고 싶거나 SNS에 사진을 찍어 공유하고 싶을 만한 '아포리즘(명문장)'이 챕터마다 하나씩은 존재하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_450",
+      "number": 450,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "속도감 있는 전개: 지루하고 반복적인 배경 설명으로 독자가 이탈하기 쉬운 구간(초반 30페이지 내)을 속도감 있게 쳐냈는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_451",
+      "number": 451,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "지적 허영심 충족: 독자가 이 책을 다 읽었을 때, 스스로 유식해졌거나 똑똑해졌다고 느낄 수 있는 확실한 지식적 무기가 장착되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_452",
+      "number": 452,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "9부: 세부 장르별 디테일 편집 및 출판 무결성16. 실무 편집 크리티컬 체크 (오탈자 및 형식)서지 정보 확인: 판권지에 들어갈 저자명, 역자명, 발행일, ISBN, 출판사 정보가 원고의 타이틀과 완벽하게 일치하는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_453",
+      "number": 453,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "본문 내 페이지 참조 오류: 편집 중 페이지가 밀려 본문 중 \"25페이지를 참조하세요\"라고 쓴 부분이 엉뚱한 곳을 가리키지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_454",
+      "number": 454,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "장/절/항/목의 기호 체계: 1. -> 1) -> (1) -> ① 등의 계층적 넘버링 체계가 책 전체에 어긋남 없이 통일되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_455",
+      "number": 455,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "로마자 표기: 1세, 2세(Henry VIII) 혹은 세기(21st Century)를 표기할 때 로마자 대소문자 규정이 올바른가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_456",
+      "number": 456,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "찾아보기(색인)의 정확성: 권말에 들어가는 색인의 키워드가 본문의 주요 개념을 잘 포괄하며, 페이지 번호가 정확한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_457",
+      "number": 457,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "숫자 표기 일관성: 한글 숫자(하나, 둘, 셋)와 아라비아 숫자(1, 2, 3), 한자 숫자(一, 二) 중 어느 것을 쓸지 기준을 세워 지켰는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_458",
+      "number": 458,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "날짜 및 시간 표기: 2026. 6. 8. (마침표 포함)과 같은 한국 표준 날짜 표기법이나 시간(오전 9시 30분) 표기법을 준수했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_459",
+      "number": 459,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "대화 부호 사용: 소리 내어 하는 말은 큰따옴표(\" \"), 마음속의 생각이나 인용은 작은따옴표(' ')로 정확히 구분했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_460",
+      "number": 460,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "기호 간격: %, ℃ 등의 기호가 숫자와 붙여 쓰는지 띄어 쓰는지 편집부의 룰에 맞춰 전체 찾기-바꾸기로 검증했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_461",
+      "number": 461,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "약어의 최초 정의: WHO, AI 등 널리 쓰이는 약어라도 책에 처음 등장할 때는 '세계보건기구(WHO)'처럼 풀어서 설명했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_462",
+      "number": 462,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "17. 수학/물리학 심화 점검그리스 문자 표기: 뮤($\\mu$), 누($\\nu$) 등 비슷하게 생긴 그리스 문자가 조판 과정에서 혼동되어 잘못 타이핑되지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_463",
+      "number": 463,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "벡터 표기법: 화살표($\\vec{v}$) 또는 볼드체($\\mathbf{v}$) 중 하나로 통일되었으며, 스칼라 값($v$)과 시각적으로 명확히 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_464",
+      "number": 464,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "미분 기호: 미분을 나타내는 $d$가 변수인지 연산자인지 구분하기 위해 이탤릭체($d$)와 정체($\\mathrm{d}$)를 명확히 구분하여 조판했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_465",
+      "number": 465,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "행렬과 텐서 표기: 행렬의 크기나 텐서의 차원이 본문 설명과 수식에서 일치하며 괄호 모양(대괄호 vs 둥근괄호)이 통일되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_466",
+      "number": 466,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "상수의 최신값: 플랑크 상수, 중력 상수 등의 값이 최신 CODATA 권고값을 기준으로 작성되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_467",
+      "number": 467,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "차원 분석(Dimensional Analysis): 수식의 좌변과 우변의 물리적 차원(단위)이 동일한지 검증하여 수식 자체의 오류를 막았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_468",
+      "number": 468,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "극한과 적분 구간: $\\lim$ 기호 밑의 조건이나 적분 기호 $\\int$의 위아래 끝이 텍스트와 겹치거나 잘려 보이지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_469",
+      "number": 469,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "함수명 정체 표기: $\\sin, \\cos, \\ln, \\exp$ 등의 함수명은 변수와 헷갈리지 않게 반드시 정체(Roman type)로 조판되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_470",
+      "number": 470,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "물리 현상의 오해 유발: '원심력'과 '구심력', '질량'과 '무게'처럼 일상어와 물리학 용어가 섞여 혼란을 주는 문장을 교정했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_471",
+      "number": 471,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "예제와 연습문제: 각 장의 예제 풀이 과정에 생략이 너무 많지 않으며, 연습문제의 정답과 해설이 실제와 일치하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_472",
+      "number": 472,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "18. 문학 서사의 미시적 점검 (소설)복선과 회수: 초반에 던져놓은 미스터리나 소품(복선)이 결말부에서 논리적 모순 없이 모두 회수(떡밥 회수)되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_473",
+      "number": 473,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "인물의 동기: 악역이나 주인공이 특정한 행동을 할 때, '왜 그런 행동을 하는가'에 대한 심리적 동기가 독자에게 납득되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_474",
+      "number": 474,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "장소의 시각화: 사건이 벌어지는 공간(방, 거리, 행성 등)이 독자의 머릿속에 도면을 그리듯 입체적으로 조감될 수 있게 묘사되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_475",
+      "number": 475,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "엑스트라의 입체성: 비중이 적은 조연이라도 이름 없이 소모되는 것이 아니라, 극의 리얼리티를 살리는 자기만의 특성을 지니는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_476",
+      "number": 476,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "말버릇의 과잉: 특정 인물의 개성을 살리기 위해 부여한 독특한 어미나 말버릇이 너무 자주 등장해 극의 흐름을 촌스럽게 하지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_477",
+      "number": 477,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "절정(Climax)의 속도감: 갈등이 최고조에 달하는 하이라이트 부분에서 짧고 강렬한 문장을 사용하여 긴장감 넘치는 템포를 만들었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_478",
+      "number": 478,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "내적 독백의 자연스러움: 인물이 마음속으로 생각하는 대목이 설명문을 읽어내려가듯 인위적이지 않고 의식의 흐름처럼 자연스러운가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_479",
+      "number": 479,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "감정선 단절 피하기: 바로 앞 장면에서 극도로 분노했던 인물이 장면 전환 후 다음 날 아무 일도 없었다는 듯 평온하게 행동하는 등의 오류가 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_480",
+      "number": 480,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시대적 고증: 역사 소설이나 근과거를 다룰 때, 그 시대에 존재하지 않았던 물건(예: 80년대 배경에 스마트폰 용어 등)이 등장하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_481",
+      "number": 481,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "서브플롯의 조화: 메인 스토리 라인 외의 곁가지 이야기(서브플롯)가 메인 테마를 해치지 않고 주제를 강화하는 데 일조하고 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_482",
+      "number": 482,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "19. 에세이의 공감대와 깊이솔직함의 수위: 너무 방어적으로 쓰여서 독자와 벽을 치는 느낌은 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_483",
+      "number": 483,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "추가 점검: 혹은 지나치게 사적인 치부까지 드러내어 독자를 불편하게 하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_484",
+      "number": 484,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "깨달음의 점진적 전개: 에피소드의 끝에서 갑작스럽게 깨달음을 얻는 것이 아니라, 과정을 통해 독자도 함께 생각의 변화를 겪도록 유도하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_485",
+      "number": 485,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "다양한 관점의 포용: 자신의 경험을 '절대적 진리'로 포장하지 않고, 타인의 다른 삶의 방식도 존중하는 유연한 태도가 글에 묻어나는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_486",
+      "number": 486,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "계절감과 시의성: 봄에 출간될 에세이인데 한겨울의 감성에 젖어있는 등 출간 시기(계절)와 글의 분위기가 엇박자를 내지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_487",
+      "number": 487,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "음성 기호 절제: 'ㅎㅎ', 'ㅋㅋ', '~용' 등 통신어나 이모티콘 같은 가벼운 표기를 정식 출판 에세이에 걸맞게 정제했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_488",
+      "number": 488,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "단어의 변주: '행복', '슬픔' 같은 일차원적인 단어 대신 '햇살이 내려앉은 기분', '먹먹한 가슴'처럼 감정을 다채로운 언어로 변주했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_489",
+      "number": 489,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "지식의 과시 지양: 에세이 본연의 감성을 해칠 정도로 불필요한 학술적 지식이나 어려운 철학 용어를 과시하듯 늘어놓지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_490",
+      "number": 490,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "독자와의 거리감: 독자를 향해 '당신은~' 이라고 지칭할 때 그 거리가 너무 멀지도, 지나치게 허물없어 무례하게 느껴지지도 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_491",
+      "number": 491,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "마무리 문단의 비중: 글을 닫는 마지막 문단이 앞선 내용을 모두 합친 것만큼의 중량감과 호소력을 가지고 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_492",
+      "number": 492,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "제목의 운율: 에세이의 장 제목이나 책 제목을 소리 내어 읽었을 때 발음이 꼬이지 않고 시처럼 운율이 살아 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_493",
+      "number": 493,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "20. 자기계발서의 권위와 설득력타겟층의 용어 사용: IT 실무자, 주부, 세일즈맨 등 주 타겟 독자가 실제 현장에서 쓰는 은어나 업계 용어를 정확하고 자연스럽게 구사했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_494",
+      "number": 494,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "행동의 장벽 낮추기: 제안하는 습관이나 행동이 너무 거창하지 않고, 당장 5분 안에 시작할 수 있을 만큼 구체적으로 잘게 쪼개져 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_495",
+      "number": 495,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "반복 효과의 최적화: 중요한 메시지가 책 전반에 걸쳐 반복되되, 매번 다른 사례와 다른 비유를 사용하여 지루하지 않게 강조되는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_496",
+      "number": 496,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시각적 모델링: 추상적인 개념(예: 성공의 3요소)을 다룰 때, 독자가 직관적으로 이해할 수 있도록 벤다이어그램이나 피라미드 형태의 도해로 설명했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_497",
+      "number": 497,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "명확한 인과관계: 'A를 하면 반드시 B가 된다'고 주장할 때, 생존자 편향(Survivor Bias)의 오류에 빠지지 않고 다양한 변수를 통제한 타당한 논리인가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_498",
+      "number": 498,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "독자의 반발심(Resistance) 예측: '네가 노력을 안 해서 그래'라는 식의 채찍질이 독자의 방어기제를 자극하지 않도록, 공감과 격려를 먼저 배치했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_499",
+      "number": 499,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시간순/단계별 구성: 입문에서 심화로, 혹은 준비에서 실행으로 목차의 순서가 독자의 성장 단계에 맞춰 논리적으로 계단식 구성을 이루는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_500",
+      "number": 500,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "체크리스트의 실용성: 부록이나 본문에 실린 진단 테스트가 문항이 겹치지 않고 결과를 통해 실질적인 피드백을 제공하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_501",
+      "number": 501,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "대조법의 활용: '가난한 자의 마인드 vs 부자의 마인드'처럼 대비되는 상황을 명확히 대조하여 메시지의 임팩트를 극대화했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_502",
+      "number": 502,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "권위자의 후광 효과: 주장의 신뢰도를 높이기 위해, 해당 분야에서 인정받는 대가나 권위 있는 기관의 연구 결과를 적재적소에 인용했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_503",
+      "number": 503,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "10부: 최종 완성도를 위한 100가지 마이크로 점검 리스트21. 맞춤법 및 띄어쓰기 맹점 (10항목)'율'과 '률'의 구분: 모음이나 'ㄴ' 받침 뒤에는 '율'(백분율), 그 외 받침 뒤에는 '률'(합격률)로 바르게 적었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_504",
+      "number": 504,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "'로서'와 '로써'의 구분: 자격(학생으로서)과 수단/도구(눈물로써)를 정확히 구분하여 썼는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_505",
+      "number": 505,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "'알맞은'과 '알맞는': 형용사이므로 '알맞은'이 올바르다. '알맞는'으로 잘못 표기된 곳은 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_506",
+      "number": 506,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "'다르다'와 '틀리다': 차이(다르다)와 오답(틀리다)의 의미를 문맥에 맞게 정확히 구별해 썼는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_507",
+      "number": 507,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "'바램'과 '바람': 무언가를 원한다는 의미일 때 '바람'으로 올바르게 표기했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_508",
+      "number": 508,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(색이 바램은 제외)'지양'과 '지향': 피해야 할 것(지양)과 나아가야 할 방향(지향)이 반대로 쓰인 곳은 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_509",
+      "number": 509,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "데/대 구분: 직접 경험한 것(~하데)과 남의 말을 전달하는 것(~한대)의 표기가 정확한가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_510",
+      "number": 510,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "띄어쓰기 - 의존명사 '데': '가는 데(장소, 경우)'는 띄고, '가는데(연결어미)'는 붙여 썼는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_511",
+      "number": 511,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "띄어쓰기 - '수밖에': '할 수밖에 없다'에서 '수'는 띄고 '밖에'는 조사이므로 앞말에 붙여 썼는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_512",
+      "number": 512,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "띄어쓰기 - 본용언과 보조용언: '먹어 보았다'처럼 띄어 씀을 원칙으로 하되, 출판사 규정에 따라 붙여쓰기 허용 기준을 일관되게 적용했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_513",
+      "number": 513,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "22. AI 어조 탈피 및 문체 정교화 (10항목)AI의 과잉 친절함: \"이해를 돕기 위해 예를 들어 드리겠습니다\" 같은 메타 발언(Meta-discourse)을 삭제하고 바로 예시로 들어가는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_514",
+      "number": 514,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "리스트 형태의 남용: 단락으로 풀어써야 할 감정선이나 서사를 \"첫째, 둘째, 셋째\" 식의 보고서 형태로 쓰지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_515",
+      "number": 515,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "무의미한 서론 제거: '바쁜 현대 사회에서 ~는 중요합니다' 같은 판에 박힌 서론을 날리고 본론부터 곧바로 전개하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_516",
+      "number": 516,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "번역투 조동사 남용: '~할 수 있다(can)'를 남발하지 않고 '~한다'로 단호하고 간결하게 수정했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_517",
+      "number": 517,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "감탄사 남발 방지: '아!', '오!' 등의 감탄사나 물결표(~)를 없애고 문장의 의미만으로 감정을 전달하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_518",
+      "number": 518,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "사물 주어의 의인화: '이 책은 여러분에게 위로를 건넵니다'보다 '이 책에서 여러분은 위로를 얻을 것입니다' 등 자연스러운 한국어 어순을 따랐는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_519",
+      "number": 519,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "한 문장 한 메시지: 길이가 3줄이 넘어가는 만연체 문장 안에 너무 많은 정보가 담겨 있다면, 두 문장으로 쪼개어 가독성을 높였는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_520",
+      "number": 520,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "접속사 다이어트: '그리고', '그래서', '그러나' 등의 접속사를 과감히 지워도 문장 앞뒤의 흐름이 연결되는지 확인했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_521",
+      "number": 521,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "긍정형 종결: '성공하지 못할 이유가 없다'라는 이중 부정 대신 '반드시 성공한다'처럼 직관적인 긍정문으로 수정했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_522",
+      "number": 522,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "극단적 어휘 순화: AI 특유의 척박한 번역 어휘('파멸적인', '전례 없는')를 문맥에 맞게 자연스러운 한국어('치명적인', '새로운')로 다듬었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_523",
+      "number": 523,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "23. 수학/과학 원고 미시 편집 (10항목)수식 폰트 일관성: MS Word 기본 수식 폰트(Cambria Math)나 LaTeX 폰트(Computer Modern) 중 책 전체에 한 가지 폰트만 적용되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_524",
+      "number": 524,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "줄바꿈 수식: 길이가 너무 길어 두 줄로 나뉘는 수식의 경우, 줄이 바뀌는 지점(등호나 덧셈 기호 앞 등)이 수학적 원칙에 맞게 끊어졌는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_525",
+      "number": 525,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "영(0)과 알파벳 오(O)의 구분: 조판상 숫자 0과 대문자 O, 소문자 o가 혼동되지 않도록 폰트 형태가 명확히 구분되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_526",
+      "number": 526,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "각도 및 온도 단위: 30°C(온도)나 45°(각도) 표기 시, 숫자와 기호 사이의 띄어쓰기 규정을 맞추고 폰트가 깨지지 않았는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_527",
+      "number": 527,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "과학적 표기법: $1.2 \\times 10^3$ 형태로 표기할 때 알파벳 엑스(x)가 아닌 정확한 곱셈 기호($\\times$)를 사용했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_528",
+      "number": 528,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "소수점 앞 0의 생략 여부: 0.5를 .5로 쓰지 않고 반드시 소수점 앞에 0을 명기하여 국제 표기 기준을 따랐는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_529",
+      "number": 529,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "벡터 내적과 외적: 내적 점($\\cdot$)과 외적 가위표($\\times$) 기호의 크기와 위치가 수식 가운데 정렬로 올바르게 위치하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_530",
+      "number": 530,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "증명(Proof)의 끝: 수학 증명이 끝나는 지점에 명확한 기호(Q.E.D. 또는 $\\blacksquare, \\square$)를 일관되게 삽입했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_531",
+      "number": 531,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "화학식 첨자: H₂O처럼 화학 원소 기호에 붙는 숫자가 아래첨자로 정확히 작게 렌더링 되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_532",
+      "number": 532,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "단위의 복수형 주의: SI 단위계는 복수형에 's'를 붙이지 않는 원칙(예: 10 kgs가 아니라 10 kg)을 준수했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_533",
+      "number": 533,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "24. 소설 원고 미시 편집 (10항목)인물 호칭의 일관성: 주인공을 부를 때 '김지수', '지수', '김 대리' 등 호칭이 혼용될 때 독자가 헷갈리지 않을 명확한 이유나 규칙이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_534",
+      "number": 534,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "동음이의어 이름 피하기: 등장인물들의 이름이 초성이나 발음이 비슷하여(예: 민수, 민준, 지수, 지연) 독자가 인물을 혼동하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_535",
+      "number": 535,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "시간 스킵(Time Skip) 기호: 장면이나 시간이 크게 건너뛸 때 본문 사이에 빈 줄과 함께 별표 세 개(* * *) 등의 구분 기호가 잘 삽입되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_536",
+      "number": 536,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "의성어/의태어 표기: '쾅쾅', '주룩주룩' 등 소리나 모양을 나타내는 단어에 작은따옴표를 칠 것인지 뺄 것인지 출판사 방침을 정해 통일했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_537",
+      "number": 537,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "사투리 맞춤법: 방언이나 사투리를 사용할 때, 발음 나는 대로 적되 책 내에서 동일한 사투리 단어의 표기가 흔들리지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_538",
+      "number": 538,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "외국어 대사 처리: 외국인 캐릭터가 말하는 대사를 한국어로 표기할 때, 이탤릭체나 꺾쇠괄호(< >)를 사용하여 외국어임을 명시했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_539",
+      "number": 539,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "편지나 메시지 삽입: 소설 중간에 스마트폰 문자 메시지, 이메일, 편지가 등장할 때 들여쓰기나 폰트 변경으로 본문과 시각적으로 분리했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_540",
+      "number": 540,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "회상 씬(Flashback) 시제: 과거 회상으로 넘어갈 때 시제가 꼬이지 않도록 명확한 과거형을 쓰거나, 현재 시제를 유지하되 장면 구분을 확실히 했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_541",
+      "number": 541,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "신체 부위 묘사 중복: '눈살을 찌푸렸다', '입술을 깨물었다' 등 특정 신체 반응이 갈등 상황마다 기계적으로 반복되지 않는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_542",
+      "number": 542,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "열린 결말의 명확성: 결말이 열려 있더라도 독자가 상상할 수 있는 충분한 힌트와 서사적 근거가 마지막 장에 배치되어 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_543",
+      "number": 543,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "25. 에세이/자기계발서 미시 편집 (10항목)'나'와 '저'의 혼용: 책 전체에서 1인칭 주어를 '나'(반말체)로 쓸지, '저'(존댓말체)로 쓸지 통일하였는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_544",
+      "number": 544,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "존대어 등급: 존댓말을 쓸 때 '~합니다'와 '~해요'가 문단 내에서 어색하게 섞이지 않고 하나의 톤으로 일관되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_545",
+      "number": 545,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "인용구 출처 표기: 본문에 타인의 명언이나 책 구절을 인용할 때 대시(—) 뒤에 작가명과 책 제목을 일관된 서식으로 밝혔는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_546",
+      "number": 546,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "강조 표시 통일: 핵심 문장에 밑줄, 굵은 글씨, 색상 폰트 중 너무 여러 가지 강조 효과를 남발하여 책이 지저분해 보이지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_547",
+      "number": 547,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "단정적 시점 피하기: '당신은 오늘 아침 우울했을 것입니다'처럼 독자의 상태를 저자가 마음대로 넘겨짚어 거부감을 주지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_548",
+      "number": 548,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "과도한 영어 혼용: '리더로서 인사이트를 가지고 마일스톤을 달성하기 위해 어그레시브하게...'처럼 꼴불견인 외국어/외래어 남용을 순화했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_549",
+      "number": 549,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "독자 타겟팅 명시: 책 제목이나 서문에 '30대 직장인을 위한', '초보 창업자를 위한' 등 이 책이 누구를 위한 것인지 명확히 드러나 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_550",
+      "number": 550,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "경험담의 분량: 저자 개인의 경험담(Story)과 그로부터 도출된 교훈/방법론(Message)의 분량 비율이 황금비율(예: 4:6 또는 5:5)을 이루는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_551",
+      "number": 551,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "자가당착 오류: 2장에서는 '완벽을 추구하라'고 해놓고 5장에서는 '대충 시작하라'고 말하는 등, 책 내부의 논리가 서로 충돌하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_552",
+      "number": 552,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "체크리스트 디자인: 자기계발서의 액션 플랜이나 체크박스(□)가 인쇄되었을 때 독자가 펜으로 직접 체크하고 글을 쓰기 충분한 여백이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_553",
+      "number": 553,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "26. 레이아웃 및 조판 무결성 (10항목)금칙 처리(Line breaking rules): 문장의 첫 글자에 마침표(.), 쉼표(,), 닫는 괄호())가 오지 않도록 인디자인 등에서 금칙 처리가 완벽히 되었는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_554",
+      "number": 554,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "첫 줄 들여쓰기 금칙: 문단 맨 처음에 여는 따옴표나 괄호가 올 때 시각적으로 들여쓰기가 더 깊어 보이는 현상을 교정(시각적 정렬)했는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_555",
+      "number": 555,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "장평과 자간: 모든 텍스트의 자간(Tracking)과 장평(Scale)이 설정값에서 벗어나 찌그러지거나 벌어져 보이는 문단이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_556",
+      "number": 556,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "베이스라인 그리드: 왼쪽 페이지와 오른쪽 페이지의 텍스트 줄(Baseline)이 수평으로 오차 없이 정확히 일치하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_557",
+      "number": 557,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "여백(Margin) 침범: 본문이나 도표가 인쇄 시 잘려나가는 재단선(Bleed line)이나 안전 여백(Safe margin) 밖으로 튀어나가지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_558",
+      "number": 558,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "목차 페이지 자동 생성 오류: AI나 워드프로세서의 자동 목차 기능 사용 후 페이지 번호가 오른쪽 정렬에서 삐뚤어지지 않았는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_559",
+      "number": 559,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "머리글(Header) 일치: 홀수 쪽과 짝수 쪽 상단에 들어가는 책 제목과 챕터 제목(러닝 헤드)이 해당 페이지의 실제 내용과 일치하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_560",
+      "number": 560,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "페이지 번호(Folio) 누락: 도비라(장 시작 페이지)나 전체 이미지 페이지에서 페이지 번호가 숨김 처리되거나 규칙에 맞게 노출되고 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_561",
+      "number": 561,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "표(Table) 잘림 현상: 내용이 많은 표가 페이지를 넘어갈 때, 다음 페이지 맨 위에 '표 머리글(분류 제목)'이 반복되어 가독성을 유지하는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_562",
+      "number": 562,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "각주 밀림: 본문의 각주 번호와 페이지 하단의 각주 설명란이 다른 페이지로 나뉘어 밀리는 조판 오류는 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_563",
+      "number": 563,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "27. 이미지, 색상, 디자인 요소 (10항목)이미지 해상도: 인쇄용 원고의 경우 포함된 모든 사진과 도표가 최소 300dpi 이상의 고해상도로 삽입되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_564",
+      "number": 564,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "색상 모드: 웹에서 수집한 RGB 이미지가 인쇄용 CMYK 모드로 올바르게 변환되어 색상 왜곡이 발생하지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_565",
+      "number": 565,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "흑백 인쇄 대비: 컬러 그래프를 흑백 종이책으로 인쇄할 때 명도 차이나 빗금 패턴으로 색상 구분이 완벽히 이루어지는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_566",
+      "number": 566,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "표 선 굵기 통일: 본문에 삽입된 여러 개의 표 테두리 선 굵기와 스타일이 책 전체 디자인 매뉴얼에 맞게 통일되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_567",
+      "number": 567,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "본문 텍스트 위 이미지 겹침: 텍스트 감싸기(Text Wrap) 설정 오류로 이미지와 글씨가 겹쳐서 읽을 수 없는 부분은 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_568",
+      "number": 568,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "로고 및 워터마크: 다운로드한 AI 이미지나 인터넷 사진에 출처를 알 수 없는 희미한 워터마크가 남아있지 않은가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_569",
+      "number": 569,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "배경색과 글자색 대비: 색상 박스 위에 흰색 글씨(누끼)를 올렸을 때 인쇄망점(Halftone) 때문에 글씨가 묻혀 보이지 않는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_570",
+      "number": 570,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "사진 캡션 서식: 본문과 캡션 글씨가 시각적으로 구분되도록 캡션의 폰트 종류, 크기, 색상이 본문보다 작거나 다르게 적용되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_571",
+      "number": 571,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "블리드(도련) 설정: 표지나 내지 전체를 덮는 이미지의 경우, 책이 재단될 때 흰 테두리가 남지 않도록 사방 3mm의 여유(도련)를 주었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_572",
+      "number": 572,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "바코드 및 ISBN 위치: 뒤표지에 들어가는 ISBN 바코드가 리더기에 잘 읽히도록 충분한 여백과 대비를 가지고 배치되었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_573",
+      "number": 573,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "28. 독자의 심리적 몰입 점검 (10항목)타이틀의 첫인상: 책의 제목을 처음 보았을 때 3초 안에 이 책이 어떤 가치를 주는지 직관적으로 알 수 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_574",
+      "number": 574,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "표지 날개 카피: 앞뒤 표지 날개에 들어간 저자 소개와 책의 핵심 카피가 독자로 하여금 서문을 펼쳐보고 싶게 만드는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_575",
+      "number": 575,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "프롤로그의 약속: 서문에서 \"이 책을 다 읽고 나면 ~할 수 있습니다\"라고 약속한 바가 에필로그와 완벽히 호응하며 지켜졌는가?",
+      "suggested_method": "rules",
+      "mandatory": true
+    },
+    {
+      "id": "chk_576",
+      "number": 576,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "첫 10페이지의 매력: 책의 승패를 가르는 첫 10페이지 안에 독자의 시선을 사로잡는 강력한 일화, 질문, 또는 반전이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_577",
+      "number": 577,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "호흡의 완급 조절: 너무 무겁고 진지한 내용이 10페이지 이상 지속될 때, 가벼운 예시나 위트로 독자의 긴장을 풀어주는 구간이 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_578",
+      "number": 578,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "소속감 부여: 독자가 글을 읽으며 '이건 내 이야기야'라고 무릎을 칠 만한 디테일한 공감 포인트가 곳곳에 배치되어 있는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_579",
+      "number": 579,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "궁금증 유발(Cliffhanger): 챕터가 끝날 때 다음 챕터의 내용을 자연스럽게 궁금하게 만드는 한 줄의 연결 고리가 존재하는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_580",
+      "number": 580,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "카타르시스(해소): 책의 중반부까지 독자가 안고 온 문제의식이나 감정적 응어리가 후반부의 시원한 통찰이나 해법을 통해 해소되는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_581",
+      "number": 581,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "덮은 후의 만족감: 책을 다 읽고 덮었을 때 시간과 돈이 아깝다는 생각 대신, 이 책을 타인에게 추천하고 싶다는 강렬한 효능감이 드는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_582",
+      "number": 582,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "소장 가치: 단순히 한 번 읽고 버리는 정보성 텍스트가 아니라, 책장에 꽂아두고 힘들 때마다 다시 꺼내어 보고 싶은 '물성'과 '가치'를 지녔는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_583",
+      "number": 583,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "29. 교열 전문 편집자의 최종 승인 점검 (10항목)파일 버전 관리: '최종', '진짜_최종' 등 혼재된 원고 파일 중 실제로 인쇄소에 넘길 완벽한 버전(Final Cut)이 정확히 특정되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_584",
+      "number": 584,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "누락된 장/절 확인: 초고 기획안(목차안)과 대조했을 때, 실수로 편집 과정에서 통째로 날아가거나 병합되어 누락된 챕터는 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_585",
+      "number": 585,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "제목-본문 매칭: 장 제목은 거창한데 실제 본문 내용은 부실하거나 전혀 다른 이야기를 하고 있는 '용두사미' 챕터를 찾아냈는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_586",
+      "number": 586,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "색인(Index) 맹점: 본문 편집 중 페이지가 밀리면서, 뒤쪽의 찾아보기 번호가 모두 1~2페이지씩 어긋나는 대형 참사를 방지했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_587",
+      "number": 587,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "저자 약력 검증: 저자 소개란의 출간 연도, 수상 내역, 소속 기관 등 팩트가 가장 최신 데이터로 올바르게 업데이트되었는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_588",
+      "number": 588,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "헌사 및 판권지: 책 맨 앞의 헌사(Dedication) 페이지나 맨 뒤 판권지의 서지 정보 등에 오탈자가 없는지 확인했는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_589",
+      "number": 589,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "(가장 많이 놓치는 부분)일러두기(Preface): 책 앞부분에 '이 책의 수식 기호는 ~를 따랐다' 혹은 '본문의 사례는 가명 처리되었다'는 등의 편집 일러두기를 삽입했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_590",
+      "number": 590,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "외주자 크레딧: 번역, 표지 디자인, 본문 일러스트, 교정교열 등 책 출간에 참여한 외부 인력의 이름이 판권지에 정확히 명시되었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_591",
+      "number": 591,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "샘플 인쇄(가제본) 확인: 화면(RGB)으로 볼 때와 실제 종이(CMYK)로 인쇄했을 때의 색감, 여백, 글씨 굵기 차이를 가제본을 통해 최종 확인했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_592",
+      "number": 592,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "ISBN 및 CIP 발급: 국립중앙도서관 CIP(출판예정도서목록) 및 ISBN 발급이 승인되었으며 판권지와 바코드에 정확한 번호가 기입되었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_593",
+      "number": 593,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "30. AI 저작물 관련 특수 윤리 및 법률 확인 (10항목)AI 생성 고지 의무: 출판사의 정책이나 플랫폼의 규정에 따라, 원고의 전체 또는 일부가 AI 도구에 의해 생성되었음을 적절히 고지했는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_594",
+      "number": 594,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "데이터 프라이버시: AI를 프롬프트로 훈련시키는 과정에서 입력된 타인의 민감한 정보나 기밀 데이터가 결과물에 섞여 나오지 않았는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_595",
+      "number": 595,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "AI 생성 이미지 저작권: 표지나 삽화에 사용된 AI 생성 이미지가 미드저니, 달리 등 해당 플랫폼의 유료 상업적 이용 약관에 부합하는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_596",
+      "number": 596,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "저작 인격권 훼손 방지: AI가 기존 문학 작품의 스타일을 흉내 내는 과정에서 원작자의 명예를 훼손하는 형태의 패러디나 왜곡이 없는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    },
+    {
+      "id": "chk_597",
+      "number": 597,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "독창성 증명 자료: 추후 저작권 분쟁에 대비하여, 프롬프트 기록, 에디터의 수정 및 윤문 과정 등 '인간의 창작적 개입'을 입증할 작업 로그를 백업해 두었는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_598",
+      "number": 598,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "AI 환각에 의한 명예훼손: 실존 인물이나 기업에 대한 AI의 부정확한 텍스트 생성으로 인해 법적인 명예훼손(Libel) 소송이 걸릴 위험을 원천 차단했는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_599",
+      "number": 599,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "유사성 검사 수치: 카피킬러, 턴잇인 등의 표절 검사 프로그램 결과표 상 표절률이 출판 기준(통상 10% 미만)을 완벽히 통과하는가?",
+      "suggested_method": "policy",
+      "mandatory": true
+    },
+    {
+      "id": "chk_600",
+      "number": 600,
+      "part": "2부. 추가 확장 체크리스트 300",
+      "category": "(2부 확장)",
+      "text": "번역서의 경우 이중 번역 점검: 원서를 AI로 초벌 번역한 경우, 원작의 미묘한 뉘앙스나 은유가 오역되거나 기계적으로 직역된 부분을 사람이 원문과 일대일 대조(대역)하며 교정했는가?",
+      "suggested_method": "human_review",
+      "mandatory": true
+    }
+  ]
+}

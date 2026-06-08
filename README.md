@@ -33,6 +33,13 @@
 - 장/절 구조 정리와 목차(TOC) 생성
 - 변경 이력(diff)과 근거를 남겨 **사람이 수락/거절**
 
+### ⚠ 필수: 600항목 윤문 체크리스트 (Hard Gate)
+
+모든 윤문 실행은 [`resources/checklist/`](resources/checklist/)의 **출판용 AI 원고 윤문·교정·교열 체크리스트 600항목**을
+**빠짐없이 전수 적용**한다. 600항목 점검(`checklist_run.json`)이 완료(`pending==0 && fail==0`)되기 전에는
+**변환·검수·출판 단계로 진행할 수 없다**(`ComplianceGate.checklist_incomplete`로 강제).
+원본 Markdown이 단일 진실원이며, `apps/ebook_publisher/scripts/build_checklist.py`로 기계용 JSON을 재생성한다.
+
 ## 빠른 시작 — 기존 출판 MVP 실행
 
 ```powershell

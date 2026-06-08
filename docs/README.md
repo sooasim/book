@@ -24,3 +24,8 @@
 ```
 
 기존 동작 MVP는 [`../apps/ebook_publisher/`](../apps/ebook_publisher/) 참조.
+
+## ⚠ 필수 규칙 — 600항목 윤문 체크리스트
+
+[`../resources/checklist/`](../resources/checklist/)의 600항목 체크리스트는 **모든 윤문에 반드시 전수 적용**된다.
+미완료 시 변환·검수·출판이 차단된다. 상세: `02_윤문기엔진_상세설계서.md` §1.1.

@@ -93,7 +93,35 @@ CSV는 입력 편의용, 내부 처리는 아래 JSON 객체로 정규화한다.
 | contract_status | enum | none/requested/reviewing/signed |
 
 ### 3.5 윤문 산출 (`refined/*.json`)
-`02 윤문기 설계서` 2장 참조 — `report.json`, `meta_candidates.json`, `readability.json`.
+`02 윤문기 설계서` 2장 참조 — `report.json`, `meta_candidates.json`, `readability.json`, **`checklist_run.json`(필수)**.
+
+### 3.6 체크리스트 (`resources/checklist/checklist_600.json`) — [필수]
+출판용 AI 원고 윤문·교정·교열 **600항목**. 원본 Markdown을 단일 진실원으로 `build_checklist.py`가 생성.
+
+| 필드 | 타입 | 설명 |
+|---|---|---|
+| id | string | `chk_001` 형식 |
+| number | int | 1~600 |
+| part | string | `1부 기본` / `2부 확장` |
+| category | string | 원고구조/문장윤문/AI생성문/논리/전문서/서사/실용서/사실검증·윤리/교정·조판/최종검수 등 |
+| text | string | 점검 질문 원문 |
+| suggested_method | enum | `rules`(114)/`llm_review`(82)/`human_review`(352)/`policy`(52) |
+| mandatory | bool | 항상 `true` |
+
+### 3.7 체크리스트 실행 결과 (`refined/checklist_run.json`) — [필수]
+| 필드 | 타입 | 설명 |
+|---|---|---|
+| book_id | string | FK |
+| total | int | 600 |
+| counts | object | pass/fail/na/waived/pending 집계 |
+| complete | bool | `pending==0 && fail==0` |
+| results[].id | string | 체크리스트 항목 id |
+| results[].status | enum | `pass`/`fail`/`na`/`waived`/`pending` |
+| results[].evidence | text | 자동 근거/검토 메모 |
+| results[].reason | text | `na`/`waived` 시 필수 사유 |
+| results[].decided_by / decided_at | string | `waived` 승인 추적 |
+
+> **불변식**: `complete=false`이면 `/api/build`·`/api/review`·`/api/generate-packs`는 `checklist_incomplete`로 거부된다.
 
 ## 4. 식별자·상태 열거형
 
@@ -122,6 +150,9 @@ CSV는 입력 편의용, 내부 처리는 아래 JSON 객체로 정규화한다.
 | GET | `/api/refine/{book_id}/report` | 제안 리포트 | — |
 | POST | `/api/refine/{book_id}/apply` | 제안 반영 | `{accept:[ids], reject:[ids]}` |
 | GET | `/api/refine/{book_id}/meta` | 메타 후보 | — |
+| GET | `/api/refine/{book_id}/checklist` | 600항목 점검 결과 | — |
+| POST | `/api/refine/{book_id}/checklist` | 항목 상태 갱신 | `{updates:[{id,status,reason,evidence}]}` |
+| GET | `/api/refine/{book_id}/gate` | 체크리스트 완료 여부 | — |
 | POST | `/api/build/{book_id}` | EPUB/PDF 변환 | `{formats:["epub","pdf"]}` |
 | POST | `/api/review/{book_id}` | 검수 실행 | — |
 | GET | `/api/review/{book_id}` | 검수 결과 | — |
@@ -135,6 +166,7 @@ CSV는 입력 편의용, 내부 처리는 아래 JSON 객체로 정규화한다.
 ### 5.4 에러 코드
 | code | 의미 | 사용자 메시지 |
 |---|---|---|
+| `checklist_incomplete` | 600항목 체크리스트 미완료 | 윤문 체크리스트(600)를 모두 완료해야 진행됩니다 |
 | `missing_manuscript` | 원고 없음 | 원고 파일 경로가 없습니다 |
 | `missing_cover` | 표지 없음 | 표지 파일 경로가 없습니다 |
 | `missing_required_metadata` | 필수 누락 | 제목/저자/소개문/가격 확인 |
