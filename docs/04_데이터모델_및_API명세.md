@@ -123,6 +123,55 @@ CSV는 입력 편의용, 내부 처리는 아래 JSON 객체로 정규화한다.
 
 > **불변식**: `complete=false`이면 `/api/build`·`/api/review`·`/api/generate-packs`는 `checklist_incomplete`로 거부된다.
 
+### 3.8 정직 봉인 마커 (`refined/honest_box.json`) — v2.0
+아키텍처 v2.0(`06`)의 Honest Boxing. AI 신뢰도 마커를 구조화 저장한다.
+
+| 필드 | 타입 | 설명 |
+|---|---|---|
+| id | string | `hb_000123` |
+| marker | enum | `star`(★ 무조건) / `crescent`(◑ honest box) |
+| loc | object | `{para, char_start, char_end}` |
+| before / after | text | 원문 / 윤문 |
+| reason | text | ◑ 사유(임의 해석·팩트체크 필요 등) |
+| agency | enum | 판정 에이전트(A/B/C/E/F/G/J) |
+| linked_lemma | list | 관련 Lemma 좌표 id |
+| signoff | object | `{by, at, decision: accept|reject}` (인간 결재) |
+
+> 인간 편집자 워크플로우: `marker=crescent` 항목만 순회하며 `signoff` → 전체 재독 불필요.
+> 본문에 박힌 `★`/`◑` 기호는 출판 직전 제거/주석화한다.
+
+### 3.9 메타 좌표 그래프 (Lemma) — v2.0
+대형 원고의 크로스 레퍼런스 동기화를 위한 의존성 그래프. 소형 원고는 생략 가능.
+
+`lemmas[]` (노드):
+| 필드 | 타입 | 설명 |
+|---|---|---|
+| lemma_id | string | `L1`~`L300` |
+| kind | enum | event/character/claim/setting/term |
+| summary | text | 좌표 요약(프롬프트 주입용) |
+| anchor | object | `{chapter, para}` 원문 위치 |
+| version | int | 변경 횟수(연쇄 갱신 추적) |
+
+`edges[]` (의존):
+| 필드 | 타입 | 설명 |
+|---|---|---|
+| from / to | string | lemma_id |
+| relation | enum | `depends_on` / `affects` |
+
+연쇄 갱신: `from` 좌표 변경 시 `affects`로 연결된 모든 좌표를 `cross_ref_sync` 큐에 넣어 재검토 유도.
+저장: 소형은 JSON, 대형은 Neo4j(권장, `06 §7`).
+
+### 3.10 사이클 실행 기록 (`refined/cycles.json`) — v2.0
+| 필드 | 타입 | 설명 |
+|---|---|---|
+| cycle | string | `R1`,`R2`,... |
+| phase | enum | structure / refine / executive |
+| agencies | list | 참여 에이전트 |
+| hard_fail | int | Hard-Fail 검출 수(`lint_text`) |
+| retries | int | 강제 재작업 횟수 |
+| crescent_open | int | 미결 ◑ 수 |
+| passed | bool | 집행관 판정 |
+
 ## 4. 식별자·상태 열거형
 
 - `ai_disclosure`: `none`(AI 미사용) · `needs_review`(미검토) · `ai_assisted`(보정 사용 고지).
@@ -157,6 +206,11 @@ CSV는 입력 편의용, 내부 처리는 아래 JSON 객체로 정규화한다.
 | POST | `/api/review/{book_id}` | 검수 실행 | — |
 | GET | `/api/review/{book_id}` | 검수 결과 | — |
 | POST | `/api/orchestrate/{book_id}` | 원클릭 단계 실행 | `{from:"refine", to:"packs"}` |
+| POST | `/api/lint` | Hard-Fail 린트(텍스트/청크) | `{text}` → `{ok, failures, warnings}` |
+| POST | `/api/refine/{book_id}/cycle` | 다중 사이클 1회 실행(v2.0) | `{cycle:"R2", agencies:[...]}` |
+| GET | `/api/refine/{book_id}/honestbox` | ◑/★ 마커 목록(v2.0) | — |
+| POST | `/api/refine/{book_id}/honestbox/signoff` | ◑ 결재(v2.0) | `{id, decision}` |
+| GET | `/api/refine/{book_id}/lemmas` | 메타 좌표 그래프(v2.0) | — |
 
 ### 5.3 응답 공통 형식
 ```json

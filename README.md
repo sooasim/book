@@ -40,6 +40,18 @@
 **변환·검수·출판 단계로 진행할 수 없다**(`ComplianceGate.checklist_incomplete`로 강제).
 원본 Markdown이 단일 진실원이며, `apps/ebook_publisher/scripts/build_checklist.py`로 기계용 JSON을 재생성한다.
 
+### 🚀 아키텍처 v2.0 — 제로존 방법론 통합 (자율형 출판 엔진)
+
+대형·고정합 원고(수천 페이지)를 위해 윤문기를 **다중 에이전트·다중 사이클 자율 엔진**으로 확장한다.
+상세: [`docs/06_아키텍처v2_제로존방법론통합백서.md`](docs/06_아키텍처v2_제로존방법론통합백서.md).
+
+- **7-Agency 교차검증**: 논리/팩트(A·B·C)·정직성(E)·응축(F)·윤문(G)·집행관(J).
+- **정직 봉인(Honest Boxing)**: `★`(확신)/`◑`(주의) 마커 — 인간은 `◑`만 결재(Sign-off).
+- **메타 좌표(Lemma) 동기화**: 의존성 그래프로 1페이지 변경을 전권 전수 동기화.
+- **Hard-Fail 게이트**: 금지어·괄호/마크다운 깨짐·빈 청크를 통과 못 하면 강제 재작업.
+  → 실제 동작 린터 [`apps/ebook_publisher/scripts/lint_text.py`](apps/ebook_publisher/scripts/lint_text.py)
+  (`python3 apps/ebook_publisher/scripts/lint_text.py --selftest`), 금지어 사전 [`resources/hardfail/`](resources/hardfail/).
+
 ## 빠른 시작 — 기존 출판 MVP 실행
 
 ```powershell
