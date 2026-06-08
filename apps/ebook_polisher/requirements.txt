@@ -1,0 +1,6 @@
+# 런타임 의존성(코어는 표준 라이브러리만 사용, 아래는 확장 단계용)
+# 코어(E1)는 외부 의존성 없이 동작합니다.
+python-docx>=1.1.0   ; extra == "docx"
+ebooklib>=0.18       ; extra == "epub"
+PyMuPDF>=1.24.0      ; extra == "pdf"
+beautifulsoup4>=4.12 ; extra == "epub"

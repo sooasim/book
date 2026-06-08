@@ -46,3 +46,8 @@ manuscripts/
 # ===== OS =====
 .DS_Store
 Thumbs.db
+
+# ===== ebook_polisher 엔진 산출물 =====
+apps/ebook_polisher/out/
+**/polish.db
+*.db
