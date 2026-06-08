@@ -1,0 +1,4 @@
+fastapi==0.115.9
+uvicorn==0.30.6
+pydantic==2.9.2
+# 엔진(apps/ebook_polisher)은 표준 라이브러리만 사용하므로 추가 의존성 없음.
