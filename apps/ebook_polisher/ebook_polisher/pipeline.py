@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 from ebook_polisher.chunker import plan_chunks
 from ebook_polisher.coverage_gate import coverage_gate
 from ebook_polisher.models import Book, new_id, sha256_text
+from ebook_polisher.qa_report import build_qa_report
 from ebook_polisher.verifier import verify_chunk_plan
 
 
@@ -50,6 +51,10 @@ class EbookPolisherPipeline:
         if not plan_report["ok"]:
             raise CoverageError(f"Invalid chunk plan: {plan_report}")
 
+        # 재개: 이미 윤문 완료된 청크는 건너뛴다(파일 DB 재오픈 시)
+        if hasattr(self.repo, "restore_progress"):
+            self.repo.restore_progress(chunks)
+
         processed = 0
         for chunk in chunks:
             if self.repo.is_done(chunk.chunk_id):
@@ -76,6 +81,7 @@ class EbookPolisherPipeline:
             raise CoverageError(f"Coverage gate failed: {gate}")
 
         export = self.repo.export_all_formats()
+        export["qa"] = build_qa_report(self.repo)
         export["pipeline"] = {
             "pages": n,
             "blocks": len(all_ids),

@@ -82,13 +82,13 @@ class TestIntegration(unittest.TestCase):
         r1 = pipe1.run(src)
         self.assertTrue(r1["pipeline"]["processed_chunks"] >= 1)
         # 2차 실행(같은 DB) — 이미 done 인 청크는 건너뛰어야 함
+        # 같은 파일 DB 재오픈 → 이미 완료된 청크는 건너뛰어야 한다(processed_chunks==0)
         repo2 = SQLiteRepository(db_path=tmpdb, out_dir=out)
-        # done_chunks 는 인메모리이므로, 재개 시뮬레이션: done 표시를 복원
-        for cid in r1["pipeline"]["chunk_plan"].get("missing", []):
-            pass
-        # 동일 입력 재실행은 동일 결과(결정성) — coverage 동일
         pipe2 = EbookPolisherPipeline(TextParser(), RulesPolisher(), repo2)
         r2 = pipe2.run(src)
+        self.assertEqual(r2["pipeline"]["processed_chunks"], 0,
+                         "재개 시 이미 처리한 청크를 다시 처리하면 안 된다")
+        self.assertTrue(r2["coverage"]["ok"])
         self.assertEqual(r1["coverage"]["source"], r2["coverage"]["source"])
 
     def test_determinism(self):

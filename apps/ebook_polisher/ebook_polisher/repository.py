@@ -57,9 +57,29 @@ class SQLiteRepository:
         self.conn.commit()
 
     # ---------------------------------------------------------------- 적재
+    def _existing_polished(self) -> dict[str, str]:
+        """재개: 이미 저장된 윤문 텍스트를 보존하기 위해 읽어둔다."""
+        rows = self.conn.execute(
+            "SELECT block_id, polished_text FROM blocks WHERE polished_text IS NOT NULL AND polished_text != ''"
+        ).fetchall()
+        return {r["block_id"]: r["polished_text"] for r in rows}
+
+    def restore_progress(self, chunks: list[Chunk]) -> int:
+        """primary 블록이 모두 윤문된 청크를 done 으로 표시(진짜 재개)."""
+        restored = 0
+        for chunk in chunks:
+            ids = chunk.primary_block_ids
+            if ids and all(
+                (self.blocks.get(b) and self.blocks[b].polished_text != "") for b in ids
+            ):
+                self.done_chunks.add(chunk.chunk_id)
+                restored += 1
+        return restored
+
     def ingest(self, book: Book, pages: list[Page]) -> None:
         self.book = book
         self.page_count = len(pages)
+        preserved = self._existing_polished()
         self.conn.execute(
             "INSERT OR REPLACE INTO books(book_id,title,author,genre,source_format,source_hash,created_at)"
             " VALUES(?,?,?,?,?,?,?)",
@@ -74,6 +94,9 @@ class SQLiteRepository:
                  page.raw_text, page.normalized_text, page.source_hash, "", page.status),
             )
             for block in page.blocks:
+                if block.block_id in preserved and not block.polished_text:
+                    block.polished_text = preserved[block.block_id]
+                    block.status = "polished"
                 self.blocks[block.block_id] = block
                 self.block_order.append(block.block_id)
                 self.block_page[block.block_id] = page.page_number
