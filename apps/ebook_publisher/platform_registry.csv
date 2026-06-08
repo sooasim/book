@@ -1,0 +1,15 @@
+platform_id,region,platform_name,entry_type,primary_url,automation_level,preferred_route,notes
+amazon_kdp,global,Amazon KDP,self_publish,https://kdp.amazon.com/,assisted_browser,Manual account setup; browser-assisted title setup; final submit by user,KDP eBook does not require ISBN; watch KDP Select exclusivity.
+draft2digital,global,Draft2Digital,aggregator,https://www.draft2digital.com/,manual_or_assisted,Use as wide-distribution hub where direct API is unavailable,Useful for Apple/Kobo/Barnes & Noble/library distribution; check store selections per title.
+google_play_books,global,Google Play Books Partner Center,self_publish,https://play.google.com/books/publish/,assisted_browser,Partner Center account then book catalog upload,Needs tax/payment/profile setup; EPUB/PDF and cover metadata.
+apple_books,global,Apple Books for Authors,self_publish_or_partner,https://authors.apple.com/publish,manual_or_partner,Use EPUB direct via iTunes Connect or partner,Direct publishing works best with EPUB; partners can handle other formats.
+kobo_writing_life,global,Kobo Writing Life,self_publish,https://www.kobo.com/writinglife,assisted_browser,Direct self-publishing portal,Supports non-exclusive publishing and optional OverDrive/Kobo Plus routes.
+ingramspark,global,IngramSpark,aggregator_pod,https://www.ingramspark.com/,manual_or_assisted,Use mainly for print/POD plus ebook distribution if needed,Good for global print distribution; avoid duplicate Amazon conflicts.
+publishdrive,global,PublishDrive,aggregator,https://publishdrive.com/,manual_or_assisted,Use for broad store distribution and bulk catalog management,Can be useful for many-store distribution; pricing/subscription must be checked.
+kyobo,kr,교보문고 CP/eBook,retailer_partner,https://www.kyobobook.co.kr/,manual_contract,Prepare publisher documents and metadata; submit through CP/partner route,Usually requires publisher/vendor setup and review.
+yes24,kr,YES24 도서/eBook 신규거래,retailer_partner,https://m.yes24.com/Company/Scm/eBookBusiness,manual_contract,Use official new book/eBook transaction form,SCM accounts and business details are required.
+aladin,kr,알라딘 전자책 신규 거래,retailer_partner,https://www.aladin.co.kr/,manual_contract,Prepare digital content new transaction form and email/package,Known route includes ebook team contact and content supply terms.
+ridi,kr,리디,retailer_partner,https://ridibooks.com/,manual_contract,Prepare content partnership inquiry package,Requires partner/publisher review; automate document preparation only.
+naver_smartstore,kr,네이버 스마트스토어,direct_store,https://sell.smartstore.naver.com/,assisted_browser,Sell PDF/download products only if policy-compliant,Check digital content delivery and customer support obligations.
+gumroad,global,Gumroad,direct_store,https://gumroad.com/,assisted_browser,Direct PDF/EPUB sales page automation,Good for direct sales; handle VAT/payment/tax settings.
+payhip,global,Payhip,direct_store,https://payhip.com/,assisted_browser,Direct PDF/EPUB sales page automation,Good for own storefront and coupons.

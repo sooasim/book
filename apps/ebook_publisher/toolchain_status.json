@@ -1,0 +1,102 @@
+﻿{
+    "checked_at":  "2026-06-07T16:25:48.7051946+09:00",
+    "commands":  [
+                     {
+                         "name":  "python",
+                         "installed":  true,
+                         "path":  "C:\\Users\\ATA\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+                     },
+                     {
+                         "name":  "pandoc",
+                         "installed":  false,
+                         "path":  null
+                     },
+                     {
+                         "name":  "calibre",
+                         "installed":  false,
+                         "path":  null
+                     },
+                     {
+                         "name":  "ebook-convert",
+                         "installed":  false,
+                         "path":  null
+                     },
+                     {
+                         "name":  "java",
+                         "installed":  false,
+                         "path":  null
+                     },
+                     {
+                         "name":  "node",
+                         "installed":  true,
+                         "path":  "C:\\nvm4w\\nodejs\\node.exe"
+                     },
+                     {
+                         "name":  "npm",
+                         "installed":  true,
+                         "path":  "C:\\nvm4w\\nodejs\\npm.ps1"
+                     },
+                     {
+                         "name":  "git",
+                         "installed":  true,
+                         "path":  "C:\\Program Files\\Git\\cmd\\git.exe"
+                     },
+                     {
+                         "name":  "winget",
+                         "installed":  true,
+                         "path":  "C:\\Users\\ATA\\AppData\\Local\\Microsoft\\WindowsApps\\winget.exe"
+                     }
+                 ],
+    "python_modules":  [
+                           {
+                               "name":  "playwright",
+                               "installed":  true
+                           },
+                           {
+                               "name":  "ebooklib",
+                               "installed":  true
+                           },
+                           {
+                               "name":  "bs4",
+                               "installed":  true
+                           },
+                           {
+                               "name":  "lxml",
+                               "installed":  true
+                           },
+                           {
+                               "name":  "fitz",
+                               "installed":  true
+                           },
+                           {
+                               "name":  "reportlab",
+                               "installed":  true
+                           },
+                           {
+                               "name":  "PIL",
+                               "installed":  true
+                           },
+                           {
+                               "name":  "weasyprint",
+                               "installed":  false
+                           }
+                       ],
+    "recommended_winget_packages":  [
+                                        {
+                                            "name":  "Pandoc",
+                                            "id":  "JohnMacFarlane.Pandoc"
+                                        },
+                                        {
+                                            "name":  "calibre",
+                                            "id":  "calibre.calibre"
+                                        },
+                                        {
+                                            "name":  "Temurin Java JRE",
+                                            "id":  "EclipseAdoptium.Temurin.21.JRE"
+                                        },
+                                        {
+                                            "name":  "Sigil",
+                                            "id":  "Sigil-Ebook.Sigil"
+                                        }
+                                    ]
+}

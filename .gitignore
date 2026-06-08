@@ -1,0 +1,48 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ===== Node =====
+node_modules/
+dist/
+build/
+*.log
+
+# ===== 브라우저 자동화 프로필(민감정보: 쿠키/로그인/세션) =====
+# 절대 커밋 금지
+.chromium_profile/
+**/.chromium_profile/
+*.pma
+Cookies
+Cookies-journal
+Login Data
+Login Data-journal
+
+# ===== 비밀/자격증명 =====
+.env
+.env.*
+*secret*
+*credential*
+publisher_accounts.csv
+publisher_profile.csv
+
+# ===== 원고/표지 원본(대용량·저작물) =====
+_00_extracted/
+covers/
+manuscripts/
+*.docx
+*.epub
+*.mobi
+*.kpf
+*.pdf
+
+# ===== OS =====
+.DS_Store
+Thumbs.db

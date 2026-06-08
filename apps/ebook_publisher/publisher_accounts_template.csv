@@ -1,0 +1,3 @@
+platform_id,account_status,login_hint,tax_ready,payment_ready,contract_status,next_action,updated_at
+amazon_kdp,not_created,,false,false,none,Create or verify KDP account manually,2026-06-07T00:00:00+09:00
+yes24,not_created,,false,false,none,Prepare publisher/business documents,2026-06-07T00:00:00+09:00

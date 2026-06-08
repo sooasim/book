@@ -1,0 +1,2 @@
+queue_id,book_id,platform_id,priority,automation_mode,human_gate,status,next_action
+Q-0001,zerozone_001,amazon_kdp,1,assisted_browser,final_submit,pending,Open browser after account login

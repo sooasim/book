@@ -1,0 +1,67 @@
+{
+  "platform": {
+    "platform_id": "gumroad",
+    "region": "global",
+    "platform_name": "Gumroad",
+    "entry_type": "direct_store",
+    "primary_url": "https://gumroad.com/",
+    "automation_level": "assisted_browser",
+    "preferred_route": "Direct PDF/EPUB sales page automation",
+    "notes": "Good for direct sales; handle VAT/payment/tax settings."
+  },
+  "book": {
+    "book_id": "zerozone_001",
+    "title": "제로존 0=0 없음은 없다",
+    "subtitle": "수학과 존재론을 잇는 대중 교양 전자책",
+    "author": "ATA",
+    "pen_name": "",
+    "language": "ko",
+    "description": "책 소개문을 여기에 길게 입력합니다.",
+    "short_description": "짧은 소개문입니다.",
+    "keywords": "제로존;수학;철학;리만가설",
+    "categories": "Science/Mathematics;Philosophy",
+    "age_rating": "general",
+    "ai_disclosure": "needs_review",
+    "isbn_ebook": "",
+    "isbn_print": "",
+    "series_name": "",
+    "series_number": "",
+    "publication_date": "2026-06-07",
+    "price_krw": "12000",
+    "price_usd": "9.99",
+    "rights_territories": "world",
+    "manuscript_path": "_00_extracted/제로존_0=0_없음은없다_완전판_v3.docx",
+    "cover_path": "covers/zerozone_001_front.jpg",
+    "sample_path": "",
+    "format": "docx",
+    "drm_preference": "platform_default",
+    "kdp_select": "no",
+    "notes": "실제 파일 경로와 ISBN은 출판 전 확인 필요"
+  },
+  "validation": {
+    "missing_required_fields": [],
+    "manuscript": {
+      "value": "C:\\Users\\ATA\\Documents\\총정리\\_00_extracted\\제로존_0=0_없음은없다_완전판_v3.docx",
+      "exists": true,
+      "reason": "ok"
+    },
+    "cover": {
+      "value": "C:\\Users\\ATA\\Documents\\총정리\\covers\\zerozone_001_front.jpg",
+      "exists": false,
+      "reason": "missing"
+    },
+    "sample": null
+  },
+  "checklist": [
+    "계정/출판자 프로필 준비",
+    "세금/정산 정보 확인",
+    "제목, 부제, 저자명, 출판일 확인",
+    "책 소개문과 짧은 소개문 확인",
+    "키워드와 카테고리 확인",
+    "원고 파일 업로드 전 미리보기 확인",
+    "표지 파일과 메타데이터 일치 확인",
+    "가격과 권리지역 확인",
+    "AI 사용 고지 및 콘텐츠 정책 확인",
+    "최종 제출 전 사람이 마지막으로 검토"
+  ]
+}

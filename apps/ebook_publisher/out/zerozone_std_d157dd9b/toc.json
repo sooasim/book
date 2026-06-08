@@ -1,0 +1,87 @@
+{
+  "book_id": "zerozone_std_d157dd9b",
+  "title": "ZeroZone Standard Mathematics Theorem Collection Vol.1",
+  "build_date": "2026-06-07",
+  "toc": [
+    {
+      "chapter": 0,
+      "title": "머리말 — 제로존 표준수학정리집에 대하여",
+      "section": null
+    },
+    {
+      "chapter": 1,
+      "title": "제로존 공리 체계",
+      "section": null
+    },
+    {
+      "chapter": 1,
+      "title": "공리 패밀리: closure_axiom",
+      "section": 1
+    },
+    {
+      "chapter": 1,
+      "title": "공리 패밀리: conservation_axiom",
+      "section": 2
+    },
+    {
+      "chapter": 1,
+      "title": "공리 패밀리: existence_axiom",
+      "section": 3
+    },
+    {
+      "chapter": 1,
+      "title": "공리 패밀리: general_axiom",
+      "section": 4
+    },
+    {
+      "chapter": 1,
+      "title": "공리 패밀리: projection_axiom",
+      "section": 5
+    },
+    {
+      "chapter": 1,
+      "title": "공리 패밀리: reduction_axiom",
+      "section": 6
+    },
+    {
+      "chapter": 2,
+      "title": "검증된 수학 정리 은행",
+      "section": null
+    },
+    {
+      "chapter": 2,
+      "title": "검증 완료 정리 총 5건",
+      "section": 1
+    },
+    {
+      "chapter": 3,
+      "title": "정리 및 보조정리 목록",
+      "section": null
+    },
+    {
+      "chapter": 3,
+      "title": "정의",
+      "section": 1
+    },
+    {
+      "chapter": 3,
+      "title": "보조정리",
+      "section": 2
+    },
+    {
+      "chapter": 3,
+      "title": "표준공리",
+      "section": 3
+    },
+    {
+      "chapter": 3,
+      "title": "정리",
+      "section": 4
+    },
+    {
+      "chapter": 4,
+      "title": "부록 — 증명 방법론 및 ZeroZone 원리",
+      "section": null
+    }
+  ]
+}

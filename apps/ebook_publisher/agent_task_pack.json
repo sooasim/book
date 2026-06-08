@@ -1,0 +1,61 @@
+{
+  "project": "OneClick Ebook Publisher",
+  "workspace": "C:/Users/ATA/Documents/총정리",
+  "automation_root": "C:/Users/ATA/Documents/총정리/전자책출판_독립프로그램",
+  "primary_goal": "Build a safe semi-automated ebook publishing workflow that prepares files, validates EPUBs, generates platform submission packs, and assists browser form filling without bypassing authentication or final human approval.",
+  "safety_rules": [
+    "Do not store passwords.",
+    "Do not store resident IDs, tax IDs, bank account numbers, or other sensitive payment data in plaintext.",
+    "Do not bypass CAPTCHA or identity verification.",
+    "Do not auto-click terms agreement, exclusivity settings, or final publish/submit buttons.",
+    "Stop at human approval gates."
+  ],
+  "existing_files": {
+    "platform_registry": "전자책출판_독립프로그램/platform_registry.csv",
+    "book_metadata": "전자책출판_독립프로그램/book_metadata.csv",
+    "publisher_profile": "전자책출판_독립프로그램/publisher_profile_template.csv",
+    "submission_pack_generator": "전자책출판_독립프로그램/scripts/generate_submission_pack.py",
+    "semi_macro_browser": "전자책출판_독립프로그램/scripts/semi_macro_browser.py",
+    "dashboard_prototype": "전자책출판_독립프로그램/ui/one_click_publisher_dashboard.html"
+  },
+  "first_commands": [
+    "cd C:/Users/ATA/Documents/총정리",
+    "powershell -ExecutionPolicy Bypass -File ./전자책출판_독립프로그램/scripts/check_ebook_toolchain.ps1",
+    "python ./전자책출판_독립프로그램/scripts/generate_submission_pack.py --books ./전자책출판_독립프로그램/book_metadata.csv --platforms ./전자책출판_독립프로그램/platform_registry.csv --out ./전자책출판_독립프로그램/out",
+    "python ./전자책출판_독립프로그램/scripts/semi_macro_browser.py --platform amazon_kdp --book-id zerozone_001 --books ./전자책출판_독립프로그램/book_metadata.csv --platforms ./전자책출판_독립프로그램/platform_registry.csv --mode inspect"
+  ],
+  "install_command_after_user_approval": "powershell -ExecutionPolicy Bypass -File ./전자책출판_독립프로그램/scripts/install_ebook_toolchain.ps1 -Install",
+  "needed_tools": [
+    {
+      "name": "Pandoc",
+      "winget_id": "JohnMacFarlane.Pandoc",
+      "purpose": "DOCX/Markdown/HTML/EPUB conversion"
+    },
+    {
+      "name": "calibre",
+      "winget_id": "calibre.calibre",
+      "purpose": "ebook-convert and ebook library tooling"
+    },
+    {
+      "name": "Temurin Java JRE",
+      "winget_id": "EclipseAdoptium.Temurin.21.JRE",
+      "purpose": "Run EPUBCheck"
+    },
+    {
+      "name": "Sigil",
+      "winget_id": "Sigil-Ebook.Sigil",
+      "purpose": "Manual EPUB editing and metadata repair"
+    }
+  ],
+  "official_references": [
+    "https://pandoc.org/installing.html",
+    "https://calibre-ebook.com/download_windows",
+    "https://manual.calibre-ebook.com/en/generated/en/cli-index.html",
+    "https://w3c.github.io/epubcheck/releases/",
+    "https://github.com/w3c/epubcheck/releases",
+    "https://www.w3.org/publishing/epub3/",
+    "https://sigil-ebook.com/sigil/download/",
+    "https://kdp.amazon.com/en_US/help/topic/G202131170",
+    "https://kdp.amazon.com/en_US/help/topic/GUGQ4WDZ92F733GC"
+  ]
+}
