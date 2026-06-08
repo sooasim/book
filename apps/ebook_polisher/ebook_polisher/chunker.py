@@ -6,6 +6,8 @@
 """
 from __future__ import annotations
 
+import re
+
 from ebook_polisher.models import Block, Chunk
 
 
@@ -50,8 +52,17 @@ def boundary_score(block: Block) -> float:
 
 
 def _page_num(page_id: str) -> int:
-    """page_id 가 'pNNNNNN' 형태라고 가정하고 정수 페이지 번호를 추출."""
-    return int(page_id[1:])
+    """page_id 에서 정수 페이지 번호를 안전하게 추출.
+
+    기본 파서는 'pNNNNNN' 을 쓰지만, 다른 Parser 구현이 와도 깨지지 않도록
+    숫자만 방어적으로 뽑는다(없으면 0)."""
+    digits = re.sub(r"\D", "", page_id or "")
+    return int(digits) if digits else 0
+
+
+# 경계 분할 임계값: 강한 경계(제목)에서 소프트 한계를 넘으면 미리 끊는다.
+_STRONG_BOUNDARY = 0.30
+_SOFT_FRACTION = 0.6
 
 
 def plan_chunks(
@@ -67,9 +78,14 @@ def plan_chunks(
     current: list[Block] = []
     current_tokens = 0
     seq = 1
+    soft_limit = int(max_tokens * _SOFT_FRACTION)
     for block in blocks:
         cost = estimate_tokens(block.text)
-        if current and current_tokens + cost > max_tokens:
+        # 강한 경계(제목 등)에서 소프트 한계를 넘으면 깔끔하게 미리 분할(docs/07 §6).
+        boundary_split = (
+            boundary_score(block) >= _STRONG_BOUNDARY and current_tokens >= soft_limit
+        )
+        if current and (current_tokens + cost > max_tokens or boundary_split):
             overlap = tail_overlap(current, overlap_tokens)
             # 직전 청크의 primary 에서 오버랩 블록을 제외하여 중복 primary 방지.
             overlap_ids = {b.block_id for b in overlap}

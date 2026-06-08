@@ -25,7 +25,7 @@ from ebook_polisher.models import (
     new_id,
     sha256_text,
 )
-from ebook_polisher.verifier import verify_polished_blocks
+from ebook_polisher.verifier import preserve_check, verify_polished_blocks
 
 SCHEMA_PATH = Path(__file__).resolve().parent / "schema.sql"
 
@@ -47,8 +47,10 @@ class SQLiteRepository:
         self.blocks: dict[str, Block] = {}
         self.block_order: list[str] = []           # order_index 순 block_id
         self.block_page: dict[str, int] = {}        # block_id -> page_number
+        self.page_numbers: list[int] = []           # 모든 페이지 번호(블록 없는 페이지 포함)
         self.done_chunks: set[str] = set()
         self.audit_log: list[AuditEvent] = []
+        self.preservation_violations: list[dict] = []  # 금지 변경(숫자 등) 위반
         self.page_count: int = 0
 
     def _init_schema(self) -> None:
@@ -79,6 +81,7 @@ class SQLiteRepository:
     def ingest(self, book: Book, pages: list[Page]) -> None:
         self.book = book
         self.page_count = len(pages)
+        self.page_numbers = [p.page_number for p in pages]
         preserved = self._existing_polished()
         self.conn.execute(
             "INSERT OR REPLACE INTO books(book_id,title,author,genre,source_format,source_hash,created_at)"
@@ -146,6 +149,10 @@ class SQLiteRepository:
             block = self.blocks.get(pblock.block_id)
             if block is None:
                 continue
+            # 금지 변경 검사(숫자/URL/ISBN 등 보존) — 위반 시 기록(QA blocking 게이트)
+            pres = preserve_check(block.text, pblock.polished_text)
+            if not pres["ok"]:
+                self.preservation_violations.append({"block_id": pblock.block_id, "detail": pres})
             block.polished_text = pblock.polished_text
             block.status = "polished"
             self.conn.execute(
@@ -198,8 +205,8 @@ class SQLiteRepository:
         return "\n".join(lines).strip() + "\n"
 
     def polished_page_count(self) -> int:
-        """모든 블록이 윤문된 페이지 수."""
-        by_page: dict[int, list[bool]] = {}
+        """모든 블록이 윤문된 페이지 수. 블록이 없는 페이지는 자동 충족(all([])==True)."""
+        by_page: dict[int, list[bool]] = {pn: [] for pn in self.page_numbers}
         for bid in self.block_order:
             pg = self.block_page[bid]
             by_page.setdefault(pg, []).append(self.blocks[bid].polished_text != "")

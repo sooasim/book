@@ -32,7 +32,11 @@ def build_qa_report(repo) -> dict:
         "01_page_count": {"ok": coverage["ok"], "kind": "blocking"},
         "02_block_count": {"ok": coverage["ok"], "kind": "blocking"},
         "03_all_block_ids_present": {"ok": not coverage["missing"], "kind": "blocking"},
-        "04_numbers_preserved": {"ok": True, "kind": "report", "note": "블록 단위 preserve_check는 polish 단계, E2 강화"},
+        "04_numbers_preserved": {
+            "ok": not getattr(repo, "preservation_violations", []),
+            "kind": "blocking",
+            "violations": [v["block_id"] for v in getattr(repo, "preservation_violations", [])][:20],
+        },
         "05_proper_nouns": {"ok": True, "kind": "report", "note": "용어집 연동 E2"},
         "06_citations": {"ok": True, "kind": "report"},
         "07_formula_table_intact": {"ok": True, "kind": "report"},

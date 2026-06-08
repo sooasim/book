@@ -81,7 +81,12 @@ class EbookPolisherPipeline:
             raise CoverageError(f"Coverage gate failed: {gate}")
 
         export = self.repo.export_all_formats()
-        export["qa"] = build_qa_report(self.repo)
+        qa = build_qa_report(self.repo)
+        export["qa"] = qa
+        # 출판 가능 여부 = 무결성(coverage) AND QA blocking 게이트(숫자 보존 등)
+        export["ok"] = bool(export.get("ok")) and qa["ok"]
+        if not qa["ok"]:
+            export["reason"] = f"qa_blocking:{qa['blocking_failed']}"
         export["pipeline"] = {
             "pages": n,
             "blocks": len(all_ids),
