@@ -67,11 +67,25 @@ def write_epub(
     author: str = "",
     language: str = "ko",
     identifier: str | None = None,
+    cover_svg: str | None = None,
 ) -> str:
-    """블록 목록으로 유효한 EPUB3 파일을 작성하고 경로를 반환한다."""
+    """블록 목록으로 유효한 EPUB3 파일을 작성하고 경로를 반환한다.
+
+    cover_svg 가 주어지면 표지(cover.xhtml)를 첫 spine 항목으로 삽입한다.
+    """
     identifier = identifier or f"urn:uuid:{uuid.uuid4()}"
     modified = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     chapters = _chapterize(blocks)
+
+    # 표지 XHTML(인라인 SVG). <?xml?> 프롤로그는 제거하고 <svg> 부터 포함.
+    cover_xhtml = None
+    if cover_svg:
+        svg_body = cover_svg[cover_svg.find("<svg"):] if "<svg" in cover_svg else cover_svg
+        cover_xhtml = (
+            XHTML_HEAD.format(lang=language, title="표지")
+            + '<section epub:type="cover" xmlns:epub="http://www.idpf.org/2007/ops">\n'
+            + svg_body + "\n</section>\n" + XHTML_TAIL
+        )
 
     out = Path(path)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -99,6 +113,9 @@ def write_epub(
     # content.opf
     manifest = ['    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>']
     spine = []
+    if cover_xhtml:
+        manifest.append('    <item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>')
+        spine.append('    <itemref idref="cover"/>')
     for c in chapter_files:
         manifest.append(
             f'    <item id="{c["id"]}" href="{c["href"]}" media-type="application/xhtml+xml"/>'
@@ -133,6 +150,8 @@ def write_epub(
         zf.writestr("META-INF/container.xml", container, compress_type=zipfile.ZIP_DEFLATED)
         zf.writestr("OEBPS/content.opf", opf, compress_type=zipfile.ZIP_DEFLATED)
         zf.writestr("OEBPS/nav.xhtml", nav, compress_type=zipfile.ZIP_DEFLATED)
+        if cover_xhtml:
+            zf.writestr("OEBPS/cover.xhtml", cover_xhtml, compress_type=zipfile.ZIP_DEFLATED)
         for c in chapter_files:
             zf.writestr(f"OEBPS/{c['href']}", c["content"], compress_type=zipfile.ZIP_DEFLATED)
     return str(out)

@@ -133,11 +133,20 @@ _SSE_EVENT_NAMES = {EV_STAGE_STARTED, EV_STAGE_DONE, EV_JOB_DONE, EV_ERROR}
 _SMALL_PAYLOAD_KEYS = 8
 
 
+STATE_PAUSED = "paused"
+
+
+def request_pause(store: JobStore, job_id: str) -> dict:
+    """HITL: 다음 단계 경계에서 멈추도록 일시정지를 요청한다."""
+    return store.set(job_id, pause_requested=True)
+
+
 def execute_stages(
     store: JobStore,
     job_id: str,
     stages: Iterable[Stage],
     context: Optional[dict] = None,
+    start_index: int = 0,
 ) -> dict:
     """잡의 단계 목록을 순차 실행하는 동기 오케스트레이터.
 
@@ -158,9 +167,30 @@ def execute_stages(
     if context is None:
         context = {}
 
-    store.set(job_id, state=STATE_RUNNING)
+    # 잡이 외부에서 제거(reset/delete)되면 set 이 KeyError 를 던질 수 있다.
+    # 데몬 스레드에서 조용히 종료하도록 전체를 방어한다.
+    try:
+        return _run_stages(store, job_id, stage_list, context, total, start_index)
+    except KeyError:
+        return store.get(job_id)
+
+
+def _run_stages(store, job_id, stage_list, context, total, start_index):
+    store.set(job_id, state=STATE_RUNNING, pause_requested=False)
 
     for i, (name, fn) in enumerate(stage_list):
+        if i < start_index:
+            continue  # 재개: 이미 완료된 단계는 건너뛴다
+        if store.get(job_id) is None:
+            return None  # 잡이 사라졌으면 중단
+        # HITL: 단계 경계에서 일시정지 요청 확인
+        job = store.get(job_id)
+        if job and job.get("pause_requested"):
+            store.set(job_id, state=STATE_PAUSED,
+                      checkpoint={"completed_stage": stage_list[i - 1][0] if i else None,
+                                  "index": i - 1}, pause_requested=False)
+            store.append_event(job_id, name, "info", "paused", payload={"next_index": i})
+            return store.get(job_id)
         store.set(job_id, current_stage=name)
         store.append_event(job_id, name, "info", EV_STAGE_STARTED)
         try:
@@ -200,6 +230,7 @@ def run_in_thread(
     job_id: str,
     stages: Iterable[Stage],
     context: Optional[dict] = None,
+    start_index: int = 0,
 ) -> threading.Thread:
     """execute_stages 를 데몬 스레드에서 실행하고 그 스레드를 반환한다.
 
@@ -208,7 +239,7 @@ def run_in_thread(
     stage_list = list(stages)
     thread = threading.Thread(
         target=execute_stages,
-        args=(store, job_id, stage_list, context),
+        args=(store, job_id, stage_list, context, start_index),
         daemon=True,
     )
     thread.start()

@@ -13,10 +13,15 @@ from __future__ import annotations
 import json
 import time
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
+
+
+def _uid(x_user: str | None) -> str:
+    """간단한 사용자 스코프(멀티테넌시 시드). 헤더 X-User 없으면 public."""
+    return (x_user or "public").strip() or "public"
 
 import jobs as jobs_mod
 import service
@@ -72,23 +77,24 @@ def health():
 
 
 @app.post("/api/projects")
-def create_project(p: ProjectIn):
+def create_project(p: ProjectIn, x_user: str | None = Header(default=None)):
     try:
         return service.create_project(
             p.title, p.topic, p.genre, p.author, audience=p.audience, tone=p.tone,
-            language=p.language, length_target=p.length_target, n_chapters=p.n_chapters)
+            language=p.language, length_target=p.length_target, n_chapters=p.n_chapters,
+            user_id=_uid(x_user))
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
 
 
 @app.get("/api/projects")
-def list_projects():
-    return {"projects": service.list_projects()}
+def list_projects(x_user: str | None = Header(default=None)):
+    return {"projects": service.list_projects(user_id=_uid(x_user))}
 
 
 @app.get("/api/projects/{project_id}")
-def get_project(project_id: str):
-    project = service.get_project(project_id)
+def get_project(project_id: str, x_user: str | None = Header(default=None)):
+    project = service.get_project(project_id, user_id=_uid(x_user))
     if project is None:
         raise HTTPException(status_code=404, detail="project not found")
     return project
@@ -202,6 +208,50 @@ def regenerate_chapter(r: RegenerateIn):
         raise HTTPException(status_code=404, detail=str(exc))
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
+
+
+class ChapterEditIn(BaseModel):
+    project_id: str
+    idx: int
+    content_md: str
+    mode: str = "rules"
+
+
+@app.patch("/api/chapters")
+def edit_chapter(e: ChapterEditIn):
+    """챕터 인라인 편집(자동저장) → 재조립·재윤문·재출력."""
+    try:
+        return service.edit_chapter(e.project_id, e.idx, e.content_md, mode=e.mode)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+
+
+@app.post("/api/jobs/{job_id}/pause")
+def pause_job(job_id: str):
+    try:
+        return service.pause_job(job_id)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+
+
+@app.post("/api/jobs/{job_id}/resume")
+def resume_job(job_id: str):
+    try:
+        return service.resume_job(job_id)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+
+
+@app.get("/api/usage")
+def get_usage(x_user: str | None = Header(default=None)):
+    return service.get_usage(_uid(x_user))
+
+
+@app.get("/api/usage/dashboard")
+def usage_dashboard():
+    return service.usage_dashboard()
 
 
 @app.post("/api/projects/{project_id}/sources")

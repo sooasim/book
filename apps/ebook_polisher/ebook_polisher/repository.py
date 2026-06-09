@@ -234,13 +234,17 @@ class SQLiteRepository:
             # EPUB3 + HTML (표준 라이브러리만)
             try:
                 from ebook_polisher.epub_export import write_epub, write_html
+                from ebook_polisher.cover import cover_svg, write_cover_svg
                 title = (self.book.title if self.book else "") or "무제"
                 author = self.book.author if self.book else ""
                 ob = self.ordered_blocks()
+                svg = cover_svg(title, author=author)
+                files["cover"] = write_cover_svg(str(self.out_dir / "cover.svg"),
+                                                 title=title, author=author)
                 files["epub"] = write_epub(ob, str(self.out_dir / "book.epub"),
-                                           title=title, author=author)
+                                           title=title, author=author, cover_svg=svg)
                 files["html"] = write_html(ob, str(self.out_dir / "preview.html"), title=title)
-                formats += ["epub", "html"]
+                formats += ["epub", "html", "cover"]
             except Exception as exc:  # pragma: no cover - 방어적
                 files["epub_error"] = str(exc)
         return {"ok": True, "formats": formats, "files": files,

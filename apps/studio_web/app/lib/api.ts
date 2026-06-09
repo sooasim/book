@@ -114,6 +114,20 @@ export const api = {
       }
     ),
 
+  editChapter: (projectId: string, idx: number, content_md: string) =>
+    jsonFetch<{ ok: boolean; idx: number }>("/api/chapters", {
+      method: "PATCH",
+      body: JSON.stringify({ project_id: projectId, idx, content_md }),
+    }),
+
+  pauseJob: (jobId: string) =>
+    jsonFetch<{ state: string }>(`/api/jobs/${jobId}/pause`, { method: "POST" }),
+
+  resumeJob: (jobId: string) =>
+    jsonFetch<{ status: string }>(`/api/jobs/${jobId}/resume`, { method: "POST" }),
+
+  getUsage: () => jsonFetch<{ tokens: number; books: number; quota: number }>("/api/usage"),
+
   addSource: (projectId: string, source_id: string, text: string) =>
     jsonFetch<{ sources: number }>(`/api/projects/${projectId}/sources`, {
       method: "POST",

@@ -24,18 +24,44 @@ from ebook_polisher.compose import build_outline, write_book  # noqa: E402
 from ebook_polisher.llm_provider import get_provider  # noqa: E402
 from ebook_polisher.rag import build_store_from_sources, rag_context  # noqa: E402
 
-import jobs as jobs_mod  # noqa: E402  (studio_api/jobs.py)
+import os  # noqa: E402
 
-# 인메모리 프로젝트 저장소(다음 단계에서 DB 로 승격)
+import jobs as jobs_mod  # noqa: E402  (studio_api/jobs.py)
+import persistence as persistence_mod  # noqa: E402
+import usage as usage_mod  # noqa: E402
+
+# 프로젝트 인메모리 캐시 + SQLite 영속화(재시작 복구; PostgreSQL 승격 경로 동일 스키마)
 _PROJECTS: dict[str, dict] = {}
 _WORKSPACE = Path(tempfile.gettempdir()) / "oces_workspace"
 JOBS = jobs_mod.JobStore()
+_DB_PATH = os.environ.get("OCES_DB", ":memory:")
+STORE = persistence_mod.Store(_DB_PATH)
+_JOB_SPECS: dict[str, dict] = {}   # job_id -> {project_id, provider, mode}
+
+
+def _load_from_store() -> None:
+    """영속 저장소에서 프로젝트 캐시를 복원(재시작 복구). 잡은 런타임 상태라 제외."""
+    for pid, proj in STORE.load_projects().items():
+        _PROJECTS[pid] = proj
+
+
+def _persist_project(project: dict) -> None:
+    project["updated_at"] = _now_iso()
+    STORE.save_project(project)
+
+
+def _now_iso() -> str:
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
 def reset_store() -> None:
     """테스트용 저장소 초기화."""
     _PROJECTS.clear()
     JOBS.reset()
+    _JOB_SPECS.clear()
+    STORE.delete_all()
+    usage_mod.tracker.reset()
 
 
 def _project_out_dir(project_id: str) -> Path:
@@ -60,12 +86,14 @@ def health() -> dict:
 
 def create_project(title: str, topic: str = "", genre: str = "", author: str = "",
                    audience: str = "", tone: str = "", language: str = "ko",
-                   length_target: int = 6000, n_chapters: int = 6) -> dict:
+                   length_target: int = 6000, n_chapters: int = 6,
+                   user_id: str = "public") -> dict:
     if not title or not title.strip():
         raise ValueError("title is required")
     project_id = f"proj_{uuid.uuid4().hex[:12]}"
     project = {
         "project_id": project_id,
+        "user_id": user_id or "public",
         "title": title.strip(),
         "topic": topic.strip(),
         "genre": genre.strip(),
@@ -83,15 +111,24 @@ def create_project(title: str, topic: str = "", genre: str = "", author: str = "
         "result": None,
     }
     _PROJECTS[project_id] = project
+    _persist_project(project)
     return project
 
 
-def get_project(project_id: str) -> dict | None:
-    return _PROJECTS.get(project_id)
+def get_project(project_id: str, user_id: str | None = None) -> dict | None:
+    p = _PROJECTS.get(project_id)
+    if p is None:
+        return None
+    if user_id is not None and p.get("user_id", "public") != user_id:
+        return None  # 멀티테넌시: 소유자 스코프
+    return p
 
 
-def list_projects() -> list[dict]:
-    return list(_PROJECTS.values())
+def list_projects(user_id: str | None = None) -> list[dict]:
+    items = list(_PROJECTS.values())
+    if user_id is not None:
+        items = [p for p in items if p.get("user_id", "public") == user_id]
+    return items
 
 
 def polish_text(text: str, title: str = "manuscript", mode: str = "rules",
@@ -182,6 +219,12 @@ def _store_compose_result(project: dict, result: dict) -> None:
     project["files"] = result.get("files", {})
     project["result"] = result
     project["status"] = "ready" if result["ok"] else "blocked"
+    # 사용량/비용 집계(토큰 추정 = 원고 + 윤문본)
+    tokens = usage_mod.estimate_tokens(result.get("manuscript_markdown", "")) + \
+        usage_mod.estimate_tokens(result.get("polished_markdown", ""))
+    usage_mod.tracker.record(project.get("user_id", "public"), tokens=tokens, books=1)
+    project["cost_tokens"] = tokens
+    _persist_project(project)
 
 
 def compose_project(project_id: str, provider: str = "stub", mode: str = "rules") -> dict:
@@ -201,13 +244,9 @@ def compose_project(project_id: str, provider: str = "stub", mode: str = "rules"
     return result
 
 
-def start_compose_job(project_id: str, provider: str = "stub", mode: str = "rules") -> dict:
-    """비동기 잡으로 compose 단계를 실행하고 job_id 를 반환(SSE/폴링용 이벤트 기록)."""
-    project = _PROJECTS.get(project_id)
-    if project is None:
-        raise KeyError(f"unknown project_id: {project_id}")
-    job = JOBS.create(project_id, type="compose")
-    job_id = job["id"]
+def _compose_stages(project: dict, provider: str, mode: str):
+    """compose 잡의 단계 목록(outline→write→edit→export)을 만든다."""
+    project_id = project["project_id"]
     out_dir = str(_project_out_dir(project_id))
 
     def stage_outline(ctx):
@@ -242,15 +281,80 @@ def start_compose_job(project_id: str, provider: str = "stub", mode: str = "rule
         ctx["result"] = result
         return {"files": list(polish["files"].keys())}
 
-    stages = [("outline", stage_outline), ("write", lambda ctx: None),
-              ("edit", stage_polish), ("export", stage_export)]
+    return [("outline", stage_outline), ("write", lambda ctx: None),
+            ("edit", stage_polish), ("export", stage_export)]
+
+
+def start_compose_job(project_id: str, provider: str = "stub", mode: str = "rules") -> dict:
+    """비동기 잡으로 compose 단계를 실행하고 job_id 를 반환(SSE/폴링용 이벤트 기록)."""
+    project = _PROJECTS.get(project_id)
+    if project is None:
+        raise KeyError(f"unknown project_id: {project_id}")
+    job = JOBS.create(project_id, type="compose")
+    job_id = job["id"]
+    _JOB_SPECS[job_id] = {"project_id": project_id, "provider": provider, "mode": mode}
+    stages = _compose_stages(project, provider, mode)
     project["status"] = "composing"
     jobs_mod.run_in_thread(JOBS, job_id, stages, context={})
     return {"job_id": job_id, "project_id": project_id, "status": "queued"}
 
 
+def pause_job(job_id: str) -> dict:
+    """HITL: 다음 단계 경계에서 멈추도록 일시정지 요청."""
+    if JOBS.get(job_id) is None:
+        raise KeyError(f"unknown job_id: {job_id}")
+    return jobs_mod.request_pause(JOBS, job_id)
+
+
+def resume_job(job_id: str) -> dict:
+    """일시정지된 잡을 재개(결정적이라 처음부터 재실행, 동일 산출)."""
+    spec = _JOB_SPECS.get(job_id)
+    job = JOBS.get(job_id)
+    if spec is None or job is None:
+        raise KeyError(f"unknown job_id: {job_id}")
+    project = _PROJECTS.get(spec["project_id"])
+    stages = _compose_stages(project, spec["provider"], spec["mode"])
+    project["status"] = "composing"
+    jobs_mod.run_in_thread(JOBS, job_id, stages, context={}, start_index=0)
+    return {"job_id": job_id, "status": "resumed"}
+
+
 def get_job(job_id: str) -> dict | None:
     return JOBS.get(job_id)
+
+
+def edit_chapter(project_id: str, idx: int, content_md: str, mode: str = "rules") -> dict:
+    """챕터 본문을 사람이 직접 편집(자동저장) → 재조립·재윤문·재출력."""
+    project = _PROJECTS.get(project_id)
+    if project is None:
+        raise KeyError(f"unknown project_id: {project_id}")
+    chapters = project.get("chapters") or []
+    target = next((c for c in chapters if c["idx"] == idx), None)
+    if target is None:
+        raise ValueError(f"chapter idx {idx} not found")
+    target["content_md"] = content_md
+    from types import SimpleNamespace
+    chap_objs = [SimpleNamespace(title=c["title"], content_md=c["content_md"]) for c in chapters]
+    manuscript = _assemble_markdown(project["title"], chap_objs)
+    out_dir = str(_project_out_dir(project_id))
+    polish = polish_text(manuscript, title=project["title"], mode=mode, out_dir=out_dir)
+    project["files"] = polish["files"]
+    project["chapters"] = chapters
+    project["result"] = {**(project.get("result") or {}),
+                         "polished_markdown": polish["polished_markdown"],
+                         "coverage": polish["coverage"], "qa": polish["qa"],
+                         "files": polish["files"], "chapters": chapters}
+    _persist_project(project)
+    return {"project_id": project_id, "idx": idx, "ok": polish["ok"],
+            "coverage": polish["coverage"]}
+
+
+def get_usage(user_id: str = "public") -> dict:
+    return usage_mod.tracker.get(user_id)
+
+
+def usage_dashboard() -> dict:
+    return {"summary": usage_mod.tracker.summary(), "by_user": usage_mod.tracker.all()}
 
 
 def regenerate_chapter(project_id: str, idx: int, provider: str = "stub",
@@ -288,6 +392,7 @@ def regenerate_chapter(project_id: str, idx: int, provider: str = "stub",
     project["result"] = {**(project.get("result") or {}), "polished_markdown": polish["polished_markdown"],
                          "coverage": polish["coverage"], "qa": polish["qa"], "files": polish["files"],
                          "chapters": chapters}
+    _persist_project(project)
     return {"project_id": project_id, "idx": idx, "ok": polish["ok"],
             "content_md": target["content_md"], "coverage": polish["coverage"]}
 
@@ -298,6 +403,7 @@ def add_source(project_id: str, source_id: str, text: str, uri: str = "") -> dic
     if project is None:
         raise KeyError(f"unknown project_id: {project_id}")
     project.setdefault("sources", []).append({"id": source_id, "text": text, "uri": uri})
+    _persist_project(project)
     return {"project_id": project_id, "sources": len(project["sources"])}
 
 
@@ -326,6 +432,10 @@ def compose_start(project_id: str, manuscript: str = "", mode: str = "rules") ->
         project["files"] = result.get("files", {})
         project["result"] = result
         project["status"] = "ready" if result["ok"] else "blocked"
+        usage_mod.tracker.record(project.get("user_id", "public"),
+                                 tokens=usage_mod.estimate_tokens(result.get("polished_markdown", "")),
+                                 books=1)
+        _persist_project(project)
     elif project.get("topic"):
         # 원고가 없고 주제가 있으면 OCES 생성→윤문 풀 파이프라인
         project["status"] = "composing"
@@ -342,3 +452,7 @@ def compose_start(project_id: str, manuscript: str = "", mode: str = "rules") ->
         "qa_ok": (result.get("qa") or {}).get("ok"),
         "result": result,
     }
+
+
+# 모듈 로드 시 영속 저장소에서 프로젝트 복원(재시작 복구)
+_load_from_store()
