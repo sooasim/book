@@ -19,12 +19,20 @@ from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 
 
-def _uid(x_user: str | None) -> str:
-    """간단한 사용자 스코프(멀티테넌시 시드). 헤더 X-User 없으면 public."""
-    return (x_user or "public").strip() or "public"
-
+import auth as auth_mod
 import jobs as jobs_mod
 import service
+
+
+def _uid(x_user: str | None, authorization: str | None = None) -> str:
+    """사용자 스코프 결정. Authorization: Bearer JWT 우선, 없으면 X-User, 없으면 public."""
+    token = auth_mod.parse_bearer(authorization)
+    if token:
+        try:
+            return auth_mod.user_from_token(token)
+        except ValueError:
+            pass
+    return (x_user or "public").strip() or "public"
 
 app = FastAPI(title="OneClick eBook Studio API", version="1.0")
 
@@ -76,25 +84,42 @@ def health():
     return service.health()
 
 
+class TokenIn(BaseModel):
+    user_id: str
+    exp_seconds: int = 86400
+
+
+@app.post("/api/auth/token")
+def issue_token(t: TokenIn):
+    """개발용 JWT(HS256) 발급. 운영은 실제 IdP 연동으로 대체."""
+    if not t.user_id.strip():
+        raise HTTPException(status_code=400, detail="user_id required")
+    return {"access_token": auth_mod.make_token(t.user_id.strip(), exp_seconds=t.exp_seconds),
+            "token_type": "bearer"}
+
+
 @app.post("/api/projects")
-def create_project(p: ProjectIn, x_user: str | None = Header(default=None)):
+def create_project(p: ProjectIn, x_user: str | None = Header(default=None),
+                   authorization: str | None = Header(default=None)):
     try:
         return service.create_project(
             p.title, p.topic, p.genre, p.author, audience=p.audience, tone=p.tone,
             language=p.language, length_target=p.length_target, n_chapters=p.n_chapters,
-            user_id=_uid(x_user))
+            user_id=_uid(x_user, authorization))
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
 
 
 @app.get("/api/projects")
-def list_projects(x_user: str | None = Header(default=None)):
-    return {"projects": service.list_projects(user_id=_uid(x_user))}
+def list_projects(x_user: str | None = Header(default=None),
+                  authorization: str | None = Header(default=None)):
+    return {"projects": service.list_projects(user_id=_uid(x_user, authorization))}
 
 
 @app.get("/api/projects/{project_id}")
-def get_project(project_id: str, x_user: str | None = Header(default=None)):
-    project = service.get_project(project_id, user_id=_uid(x_user))
+def get_project(project_id: str, x_user: str | None = Header(default=None),
+                authorization: str | None = Header(default=None)):
+    project = service.get_project(project_id, user_id=_uid(x_user, authorization))
     if project is None:
         raise HTTPException(status_code=404, detail="project not found")
     return project
@@ -245,8 +270,9 @@ def resume_job(job_id: str):
 
 
 @app.get("/api/usage")
-def get_usage(x_user: str | None = Header(default=None)):
-    return service.get_usage(_uid(x_user))
+def get_usage(x_user: str | None = Header(default=None),
+              authorization: str | None = Header(default=None)):
+    return service.get_usage(_uid(x_user, authorization))
 
 
 @app.get("/api/usage/dashboard")

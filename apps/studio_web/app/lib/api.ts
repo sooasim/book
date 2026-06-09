@@ -73,9 +73,24 @@ export type ComposeResult = {
   files?: Record<string, string>;
 };
 
+// 멀티테넌시: 현재 사용자(없으면 public). 로그인 시 토큰을 받으면 Bearer 도 함께 전송.
+let CURRENT_USER = "public";
+let ACCESS_TOKEN: string | null = null;
+export function setUser(user: string) {
+  CURRENT_USER = user || "public";
+}
+export function setToken(token: string | null) {
+  ACCESS_TOKEN = token;
+}
+
 async function jsonFetch<T>(path: string, init?: RequestInit): Promise<T> {
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+    "X-User": CURRENT_USER,
+  };
+  if (ACCESS_TOKEN) headers["Authorization"] = `Bearer ${ACCESS_TOKEN}`;
   const res = await fetch(`${API_BASE}${path}`, {
-    headers: { "Content-Type": "application/json" },
+    headers: { ...headers, ...(init?.headers as Record<string, string> | undefined) },
     ...init,
   });
   if (!res.ok) {
@@ -127,6 +142,12 @@ export const api = {
     jsonFetch<{ status: string }>(`/api/jobs/${jobId}/resume`, { method: "POST" }),
 
   getUsage: () => jsonFetch<{ tokens: number; books: number; quota: number }>("/api/usage"),
+
+  authToken: (user_id: string) =>
+    jsonFetch<{ access_token: string }>("/api/auth/token", {
+      method: "POST",
+      body: JSON.stringify({ user_id }),
+    }),
 
   addSource: (projectId: string, source_id: string, text: string) =>
     jsonFetch<{ sources: number }>(`/api/projects/${projectId}/sources`, {

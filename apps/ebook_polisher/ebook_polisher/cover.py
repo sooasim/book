@@ -10,6 +10,8 @@
 from __future__ import annotations
 
 import hashlib
+import struct
+import zlib
 from pathlib import Path
 
 # 표지 레이아웃 상수.
@@ -241,6 +243,81 @@ def write_cover_svg(
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(svg, encoding="utf-8")
+    return str(p)
+
+
+def _png_chunk(chunk_type: bytes, data: bytes) -> bytes:
+    """PNG 청크 한 개를 직렬화: length(4) + type(4) + data + CRC32(type+data)."""
+    crc = zlib.crc32(chunk_type + data) & 0xFFFFFFFF
+    return struct.pack(">I", len(data)) + chunk_type + data + struct.pack(">I", crc)
+
+
+def _png_rgb(title: str) -> tuple[int, int, int]:
+    """sha256(title) 에서 적당히 채도 있는 기준 RGB 를 유도한다(결정적)."""
+    h = _hash_bytes(title)
+    r = 48 + (h[0] % 160)
+    g = 48 + (h[1] % 160)
+    b = 48 + (h[2] % 160)
+    return r, g, b
+
+
+def cover_png(title: str, author: str = "", width: int = 600, height: int = 960) -> bytes:
+    """결정적인 래스터(RGB 8bit) PNG 표지 바이트를 표준 라이브러리만으로 생성한다.
+
+    텍스트는 그리지 않고, sha256(title) 에서 유도한 색으로
+    위(어둡게)→아래(밝게) 세로 그라데이션과 하단 약 15% 의
+    더 어두운 푸터 밴드를 그려 표지 느낌을 낸다.
+    동일 인자는 항상 동일한 바이트열을 만든다.
+    """
+    title = title if title is not None else ""
+    width = max(1, int(width))
+    height = max(1, int(height))
+
+    br, bg, bb = _png_rgb(title)
+    # 위쪽은 어둡게(0.45), 아래쪽은 밝게(1.15, 255 로 클램프).
+    top_f, bot_f = 0.45, 1.15
+    footer_start = int(height * 0.85)
+    footer_f = 0.30
+
+    def clamp(v: int) -> int:
+        return 0 if v < 0 else 255 if v > 255 else v
+
+    raw = bytearray()
+    denom = height - 1 if height > 1 else 1
+    for y in range(height):
+        raw.append(0)  # 각 스캔라인의 필터 바이트(None=0).
+        t = y / denom
+        if y >= footer_start:
+            f = footer_f
+        else:
+            f = top_f + (bot_f - top_f) * t
+        r = clamp(int(br * f))
+        g = clamp(int(bg * f))
+        b = clamp(int(bb * f))
+        raw.extend((r, g, b) * width)
+
+    ihdr = struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0)
+    idat = zlib.compress(bytes(raw), 9)
+
+    out = bytearray(b"\x89PNG\r\n\x1a\n")
+    out += _png_chunk(b"IHDR", ihdr)
+    out += _png_chunk(b"IDAT", idat)
+    out += _png_chunk(b"IEND", b"")
+    return bytes(out)
+
+
+def write_cover_png(
+    path: str,
+    title: str,
+    author: str = "",
+    width: int = 600,
+    height: int = 960,
+) -> str:
+    """표지 PNG 를 파일로 쓰고 경로를 반환한다(상위 디렉터리 자동 생성)."""
+    data = cover_png(title, author=author, width=width, height=height)
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_bytes(data)
     return str(p)
 
 

@@ -1,10 +1,43 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { api, type Job, type Project, type ProjectOptions } from "./lib/api";
+import { api, setToken, setUser, type Job, type Project, type ProjectOptions } from "./lib/api";
 import { ProjectForm } from "./components/ProjectForm";
 import { ProgressTimeline } from "./components/ProgressTimeline";
 import { ResultPanel } from "./components/ResultPanel";
+
+function LoginBar() {
+  const [user, setUserState] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+  async function login() {
+    const id = user.trim() || "public";
+    setUser(id);
+    try {
+      const { access_token } = await api.authToken(id);
+      setToken(access_token);
+      setLoggedIn(true);
+    } catch {
+      setToken(null);
+      setLoggedIn(true); // 토큰 없이도 X-User 스코프로 동작
+    }
+  }
+  return (
+    <div className="flex shrink-0 items-center gap-2 text-sm">
+      <input
+        className="w-28 rounded-md border border-zinc-300 px-2 py-1 dark:border-zinc-700 dark:bg-zinc-900"
+        placeholder="사용자 ID"
+        value={user}
+        onChange={(e) => setUserState(e.target.value)}
+      />
+      <button
+        onClick={login}
+        className="rounded-md bg-zinc-900 px-3 py-1 text-white dark:bg-white dark:text-black"
+      >
+        {loggedIn ? "✓" : "로그인"}
+      </button>
+    </div>
+  );
+}
 
 export default function Home() {
   const [project, setProject] = useState<Project | null>(null);
@@ -75,14 +108,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 dark:bg-black dark:text-zinc-100">
       <main className="mx-auto flex max-w-3xl flex-col gap-6 px-6 py-12">
-        <header>
-          <h1 className="text-3xl font-semibold tracking-tight">
-            OneClick eBook Studio
-          </h1>
-          <p className="mt-1 text-zinc-600 dark:text-zinc-400">
-            제목과 주제만 입력하면 목차 → 집필 → 윤문 → EPUB까지 한 번에. 원장 기반
-            무손실 엔진(ebook_polisher v3) + OCES 생성 파이프라인.
-          </p>
+        <header className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-semibold tracking-tight">
+              OneClick eBook Studio
+            </h1>
+            <p className="mt-1 text-zinc-600 dark:text-zinc-400">
+              제목과 주제만 입력하면 목차 → 집필 → 윤문 → EPUB/PDF까지 한 번에. 원장 기반
+              무손실 엔진(ebook_polisher v3) + OCES 생성 파이프라인.
+            </p>
+          </div>
+          <LoginBar />
         </header>
 
         <ProjectForm onSubmit={handleCreate} disabled={busy} />

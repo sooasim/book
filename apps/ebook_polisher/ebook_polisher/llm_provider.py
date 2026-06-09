@@ -67,6 +67,11 @@ class StubProvider:
         h = hashlib.sha256(text.encode("utf-8")).digest()
         return [b / 255.0 for b in h[:8]]
 
+    def image(self, prompt: str, *, seed: str = "") -> bytes:
+        """결정적 삽화 스텁: 프롬프트 해시 기반 PNG(표지 PNG 생성기 재사용)."""
+        from ebook_polisher.cover import cover_png
+        return cover_png(seed or prompt, width=512, height=512)
+
 
 class AnthropicProvider:
     """Claude 연결 스켈레톤. ANTHROPIC_API_KEY 와 anthropic SDK 가 있을 때만 동작.
@@ -76,18 +81,25 @@ class AnthropicProvider:
 
     name = "anthropic"
 
-    def __init__(self, api_key: str | None = None):
+    def __init__(self, api_key: str | None = None, client=None):
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY", "")
+        self._client = client  # 주입 가능(테스트/대체 SDK). None 이면 지연 생성.
 
-    def complete(self, system: str, user: str, *, stage: str = "default",
-                 max_tokens: int = 2000) -> str:
+    def _get_client(self):
+        if self._client is not None:
+            return self._client
         if not self.api_key:
             raise RuntimeError("ANTHROPIC_API_KEY 가 없습니다. StubProvider 를 사용하세요.")
         try:
             import anthropic
         except Exception as exc:  # pragma: no cover
             raise RuntimeError("anthropic SDK 미설치: pip install anthropic") from exc
-        client = anthropic.Anthropic(api_key=self.api_key)
+        self._client = anthropic.Anthropic(api_key=self.api_key)
+        return self._client
+
+    def complete(self, system: str, user: str, *, stage: str = "default",
+                 max_tokens: int = 2000) -> str:
+        client = self._get_client()
         model = MODEL_ROUTING.get(stage, MODEL_ROUTING["default"])
         resp = client.messages.create(
             model=model,
@@ -95,10 +107,17 @@ class AnthropicProvider:
             system=system,
             messages=[{"role": "user", "content": user}],
         )
-        return "".join(block.text for block in resp.content if getattr(block, "type", "") == "text")
+        return "".join(
+            getattr(block, "text", "") for block in resp.content
+            if getattr(block, "type", "") == "text"
+        )
 
     def embed(self, text: str) -> list[float]:  # pragma: no cover
         raise NotImplementedError("임베딩은 별도 임베딩 모델/프로바이더로 연결하세요.")
+
+    def image(self, prompt: str, *, seed: str = "") -> bytes:  # pragma: no cover
+        """삽화 생성 스켈레톤. 실제 이미지 모델 연결 지점(현재 미구현)."""
+        raise NotImplementedError("이미지 생성은 이미지 모델 프로바이더 연결이 필요합니다.")
 
 
 def get_provider(name: str = "stub") -> Provider:

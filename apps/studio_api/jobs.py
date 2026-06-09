@@ -45,6 +45,24 @@ class JobStore:
     def __init__(self) -> None:
         self._lock = threading.Lock()
         self._jobs: dict[str, dict] = {}
+        self._persister = None  # Optional[callable(job_dict)] — 영속화 훅
+
+    def set_persister(self, fn) -> None:
+        """잡 변경 시 호출될 영속화 콜백 등록(예: SQLite 저장)."""
+        self._persister = fn
+
+    def load(self, jobs: dict) -> None:
+        """외부 저장소에서 잡들을 복원(재시작 복구)."""
+        with self._lock:
+            for jid, job in jobs.items():
+                self._jobs[jid] = job
+
+    def _persist(self, job: Optional[dict]) -> None:
+        if self._persister and job is not None:
+            try:
+                self._persister(dict(job))
+            except Exception:  # noqa: BLE001 — 영속화 실패가 잡 실행을 막지 않음
+                pass
 
     def reset(self) -> None:
         """테스트용: 모든 잡 제거."""
@@ -71,6 +89,7 @@ class JobStore:
         }
         with self._lock:
             self._jobs[job_id] = job
+        self._persist(job)
         return job
 
     def get(self, job_id: str) -> Optional[dict]:
@@ -103,6 +122,7 @@ class JobStore:
                 raise KeyError(job_id)
             job["events"].append(event)
             job["updated_at"] = event["ts"]
+        self._persist(job)
         return event
 
     def set(self, job_id: str, **fields: Any) -> dict:
@@ -117,6 +137,7 @@ class JobStore:
             for key, value in fields.items():
                 job[key] = value
             job["updated_at"] = _now_iso()
+        self._persist(job)
         return job
 
 

@@ -39,7 +39,16 @@ class TestAvailableFormats(unittest.TestCase):
     def test_docx_pdf_match_import_availability(self):
         fmts = export.available_formats()
         self.assertEqual(fmts["docx"], _docx_available)
-        self.assertEqual(fmts["pdf"], _pdf_available)
+        # PDF 는 stdlib minipdf 폴백으로 항상 가능. 품질만 라이브러리에 따라 달라진다.
+        self.assertTrue(fmts["pdf"])
+        self.assertEqual(fmts["pdf_quality"], "rich" if _pdf_available else "basic")
+
+    def test_export_pdf_fallback_always_works(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = str(Path(d) / "b.pdf")
+            export.export_pdf([("title", "# 1장"), ("paragraph", "본문 2026.")], path, title="t")
+            with open(path, "rb") as f:
+                self.assertEqual(f.read(5), b"%PDF-")
 
 
 class TestWriteMarkdown(unittest.TestCase):

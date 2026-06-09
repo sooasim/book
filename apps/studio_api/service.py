@@ -40,9 +40,12 @@ _JOB_SPECS: dict[str, dict] = {}   # job_id -> {project_id, provider, mode}
 
 
 def _load_from_store() -> None:
-    """영속 저장소에서 프로젝트 캐시를 복원(재시작 복구). 잡은 런타임 상태라 제외."""
+    """영속 저장소에서 프로젝트/잡 캐시를 복원(재시작 복구)."""
     for pid, proj in STORE.load_projects().items():
         _PROJECTS[pid] = proj
+    JOBS.load(STORE.load_jobs())
+    # 잡 변경을 SQLite 에 영속화(이벤트 포함)
+    JOBS.set_persister(STORE.save_job)
 
 
 def _persist_project(project: dict) -> None:

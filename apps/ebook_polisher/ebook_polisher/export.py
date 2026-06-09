@@ -16,22 +16,31 @@ def write_markdown(markdown: str, path: str) -> str:
 
 
 def available_formats() -> dict:
-    # md 와 epub 은 표준 라이브러리만으로 항상 가능하다.
-    formats = {"md": True, "docx": False, "epub": True, "pdf": False}
+    # md 와 epub 은 표준 라이브러리만으로 항상 가능. pdf 도 stdlib minipdf 폴백으로 항상 가능.
+    formats = {"md": True, "docx": False, "epub": True, "pdf": True, "pdf_quality": "basic"}
     try:
         import docx  # noqa: F401
         formats["docx"] = True
     except Exception:
         pass
-    # pdf 는 reportlab 또는 weasyprint 중 하나라도 있으면 가능.
+    # reportlab/weasyprint 가 있으면 PDF 품질이 'rich'(CJK/스타일).
     for mod in ("reportlab", "weasyprint"):
         try:
             __import__(mod)
-            formats["pdf"] = True
+            formats["pdf_quality"] = "rich"
             break
         except Exception:
             pass
     return formats
+
+
+def export_pdf(blocks: list[tuple[str, str]], path: str, title: str = "") -> str:
+    """PDF 출력. reportlab 이 있으면 고품질, 없으면 stdlib minipdf 로 폴백(항상 동작)."""
+    try:
+        return blocks_to_pdf(blocks, path, title=title)
+    except RuntimeError:
+        from ebook_polisher.minipdf import write_pdf
+        return write_pdf(blocks, path, title=title)
 
 
 def to_docx(blocks_markdown: str, path: str) -> str:
