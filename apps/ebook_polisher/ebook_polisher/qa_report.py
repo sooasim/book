@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import re
 
+from ebook_polisher.consistency import consistency_report
+from ebook_polisher.drift import drift_report
 from ebook_polisher.hardfail import lint
 
 
@@ -25,6 +27,9 @@ def build_qa_report(repo) -> dict:
     coverage = repo.verify_book_coverage()
     hf = lint(markdown)
     double_space = _scan_double_space(markdown)
+    blocks = [repo.blocks[bid] for bid in repo.block_order]
+    consistency = consistency_report(blocks)
+    drift = drift_report(blocks)
     has_title = any(b.block_type == "title" for b in repo.blocks.values())
     prompt_residue = bool(re.search(r"\[STYLE_BIBLE\]|\[CHUNK_PAYLOAD\]|system_message", markdown))
 
@@ -46,6 +51,10 @@ def build_qa_report(repo) -> dict:
         "10_no_double_space": {"ok": not double_space, "kind": "report",
                                "detail": double_space[:10]},
         "11_titles_present": {"ok": has_title, "kind": "report"},
+        "15_honorific_consistency": {"ok": consistency["honorific"]["ok"], "kind": "report"},
+        "16_terminology_consistency": {"ok": consistency["terminology"]["ok"], "kind": "report"},
+        "17_style_drift": {"ok": drift["ok"], "kind": "report",
+                           "outliers": [o["block_id"] for o in drift["drift"]["outliers"]][:10]},
         "12_epub_spine": {"ok": True, "kind": "skipped", "note": "EPUB 출력 E2"},
         "13_docx_heading": {"ok": True, "kind": "skipped", "note": "DOCX 출력 E2"},
         "14_hash_audit": {"ok": len(repo.audit_log) > 0, "kind": "report"},
@@ -62,5 +71,7 @@ def build_qa_report(repo) -> dict:
                      "failures": [f["code"] for f in hf["failures"]],
                      "warnings": [w["code"] for w in hf["warnings"]]},
         "coverage": coverage,
+        "consistency": consistency,
+        "drift": drift,
         "gates": gates,
     }

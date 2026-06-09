@@ -212,16 +212,36 @@ class SQLiteRepository:
             by_page.setdefault(pg, []).append(self.blocks[bid].polished_text != "")
         return sum(1 for flags in by_page.values() if all(flags))
 
+    def ordered_blocks(self) -> list[tuple[str, str]]:
+        """order_index 순 (block_type, 윤문본|원문) 목록 — 내보내기용."""
+        return [
+            (self.blocks[bid].block_type, self.blocks[bid].polished_text or self.blocks[bid].text)
+            for bid in self.block_order
+        ]
+
     def export_all_formats(self) -> dict:
         coverage = self.verify_book_coverage()
         if not coverage["ok"]:
             return {"ok": False, "reason": "coverage_failed", "coverage": coverage}
         md = self.assemble_markdown()
         files: dict[str, str] = {}
+        formats = ["md"]
         if self.out_dir:
             self.out_dir.mkdir(parents=True, exist_ok=True)
             md_path = self.out_dir / "polished.md"
             md_path.write_text(md, encoding="utf-8")
             files["md"] = str(md_path)
-        return {"ok": True, "formats": ["md"], "files": files,
+            # EPUB3 + HTML (표준 라이브러리만)
+            try:
+                from ebook_polisher.epub_export import write_epub, write_html
+                title = (self.book.title if self.book else "") or "무제"
+                author = self.book.author if self.book else ""
+                ob = self.ordered_blocks()
+                files["epub"] = write_epub(ob, str(self.out_dir / "book.epub"),
+                                           title=title, author=author)
+                files["html"] = write_html(ob, str(self.out_dir / "preview.html"), title=title)
+                formats += ["epub", "html"]
+            except Exception as exc:  # pragma: no cover - 방어적
+                files["epub_error"] = str(exc)
+        return {"ok": True, "formats": formats, "files": files,
                 "markdown_len": len(md), "coverage": coverage}
