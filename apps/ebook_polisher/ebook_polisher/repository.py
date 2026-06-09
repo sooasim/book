@@ -239,20 +239,31 @@ class SQLiteRepository:
                 title = (self.book.title if self.book else "") or "무제"
                 author = self.book.author if self.book else ""
                 ob = self.ordered_blocks()
+                # 조판: 표지·판권·목차 프런트매터를 본문 앞에 덧붙인다(coverage 영향 없음).
+                from ebook_polisher.frontmatter import build_frontmatter
+                chapters_meta = [{"title": t} for (bt, t) in ob if bt == "title"]
+                front = build_frontmatter({"title": title, "author": author}, chapters_meta)
+                ob_full = front + ob
                 svg = cover_svg(title, author=author)
                 files["cover"] = write_cover_svg(str(self.out_dir / "cover.svg"),
                                                  title=title, author=author)
                 files["cover_png"] = write_cover_png(str(self.out_dir / "cover.png"),
                                                      title=title, author=author)
-                files["epub"] = write_epub(ob, str(self.out_dir / "book.epub"),
+                files["epub"] = write_epub(ob_full, str(self.out_dir / "book.epub"),
                                            title=title, author=author, cover_svg=svg)
-                files["html"] = write_html(ob, str(self.out_dir / "preview.html"), title=title)
+                files["html"] = write_html(ob_full, str(self.out_dir / "preview.html"), title=title)
                 # PDF: reportlab/weasyprint 있으면 고품질, 없으면 stdlib minipdf 폴백
                 try:
-                    files["pdf"] = _export_pdf(ob, str(self.out_dir / "book.pdf"), title)
+                    files["pdf"] = _export_pdf(ob_full, str(self.out_dir / "book.pdf"), title)
                     formats.append("pdf")
                 except Exception as exc:  # pragma: no cover
                     files["pdf_error"] = str(exc)
+                # 다운로드용 polished.md 에도 프런트매터를 반영(qa/coverage 용 본문과 별개).
+                front_md = "\n\n".join(
+                    (t if bt != "title" else f"## {t.lstrip('#').strip()}") for bt, t in front
+                )
+                if front_md:
+                    md_path.write_text(front_md + "\n\n" + md, encoding="utf-8")
                 formats += ["epub", "html", "cover", "cover_png"]
             except Exception as exc:  # pragma: no cover - 방어적
                 files["epub_error"] = str(exc)

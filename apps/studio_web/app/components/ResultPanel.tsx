@@ -117,6 +117,12 @@ export function ResultPanel({
               />
             )}
             {result.qa && <Badge ok={result.qa.ok} label={`QA ${result.qa.ok ? "통과" : "차단"}`} />}
+            {result.qa?.evaluation && (
+              <Badge
+                ok={result.qa.evaluation.overall >= 0.7}
+                label={`품질 ${result.qa.evaluation.grade} (${result.qa.evaluation.overall})`}
+              />
+            )}
             {result.pipeline && (
               <Badge
                 neutral

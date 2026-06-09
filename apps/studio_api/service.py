@@ -238,10 +238,18 @@ def compose_project(project_id: str, provider: str = "stub", mode: str = "rules"
     if not project.get("topic"):
         raise ValueError("project has no topic to compose from")
     out_dir = str(_project_out_dir(project_id))
+    # Style Bible: 프로젝트 옵션(독자/톤/말투/용어집)을 작가 프롬프트에 주입
+    from ebook_polisher.style import build_style_bible, render_style_bible
+    bible = build_style_bible(
+        audience=project.get("audience", ""), tone=project.get("tone", ""),
+        honorific=project.get("honorific", "plain"),
+        glossary=project.get("glossary") or {}, length_target=project.get("length_target", 0))
+    style_str = render_style_bible(bible)
     result = compose_book(
         project["title"], project["topic"], n_chapters=project["n_chapters"],
         length_target=project["length_target"], language=project["language"],
         provider=provider, mode=mode, out_dir=out_dir, sources=project.get("sources"),
+        style_bible=style_str,
     )
     _store_compose_result(project, result)
     return result

@@ -10,6 +10,7 @@ import re
 
 from ebook_polisher.consistency import consistency_report
 from ebook_polisher.drift import drift_report
+from ebook_polisher.evaluate import quality_report
 from ebook_polisher.hardfail import lint
 
 
@@ -30,6 +31,7 @@ def build_qa_report(repo) -> dict:
     blocks = [repo.blocks[bid] for bid in repo.block_order]
     consistency = consistency_report(blocks)
     drift = drift_report(blocks)
+    evaluation = quality_report(blocks)
     has_title = any(b.block_type == "title" for b in repo.blocks.values())
     prompt_residue = bool(re.search(r"\[STYLE_BIBLE\]|\[CHUNK_PAYLOAD\]|system_message", markdown))
 
@@ -55,6 +57,8 @@ def build_qa_report(repo) -> dict:
         "16_terminology_consistency": {"ok": consistency["terminology"]["ok"], "kind": "report"},
         "17_style_drift": {"ok": drift["ok"], "kind": "report",
                            "outliers": [o["block_id"] for o in drift["drift"]["outliers"]][:10]},
+        "18_quality_score": {"ok": evaluation["overall"] >= 0.5, "kind": "report",
+                             "overall": evaluation["overall"], "grade": evaluation["grade"]},
         "12_epub_spine": {"ok": True, "kind": "skipped", "note": "EPUB 출력 E2"},
         "13_docx_heading": {"ok": True, "kind": "skipped", "note": "DOCX 출력 E2"},
         "14_hash_audit": {"ok": len(repo.audit_log) > 0, "kind": "report"},
@@ -73,5 +77,6 @@ def build_qa_report(repo) -> dict:
         "coverage": coverage,
         "consistency": consistency,
         "drift": drift,
+        "evaluation": evaluation,
         "gates": gates,
     }

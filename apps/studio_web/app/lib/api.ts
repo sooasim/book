@@ -68,6 +68,7 @@ export type ComposeResult = {
     ok: boolean;
     blocking_failed: string[];
     hardfail: { failures: string[]; warnings: string[] };
+    evaluation?: { overall: number; grade: string };
   };
   pipeline?: { pages: number; blocks: number; chunks: number };
   files?: Record<string, string>;
