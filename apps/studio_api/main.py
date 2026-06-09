@@ -46,6 +46,16 @@ class ComposeIn(BaseModel):
     mode: str = "rules"
 
 
+class ComposeBookIn(BaseModel):
+    title: str
+    topic: str
+    n_chapters: int = 6
+    length_target: int = 6000
+    language: str = "ko"
+    provider: str = "stub"
+    mode: str = "rules"
+
+
 @app.get("/health")
 def health():
     return service.health()
@@ -86,3 +96,14 @@ def compose_start(c: ComposeIn):
         return service.compose_start(c.project_id, c.manuscript, c.mode)
     except KeyError as exc:
         raise HTTPException(status_code=404, detail=str(exc))
+
+
+@app.post("/api/compose/book")
+def compose_book(c: ComposeBookIn):
+    """제목+주제 → 목차→집필→윤문→EPUB 풀 파이프라인(OCES)."""
+    try:
+        return service.compose_book(
+            c.title, c.topic, n_chapters=c.n_chapters, length_target=c.length_target,
+            language=c.language, provider=c.provider, mode=c.mode)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))

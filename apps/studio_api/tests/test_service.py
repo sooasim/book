@@ -45,10 +45,35 @@ class TestStudioService(unittest.TestCase):
     def test_compose_start_runs_pipeline(self):
         p = service.create_project("책")
         out = service.compose_start(p["project_id"], manuscript=SAMPLE)
-        self.assertEqual(out["status"], "polished")
+        self.assertEqual(out["status"], "ready")
         self.assertTrue(out["ok"])
         self.assertTrue(out["coverage_ok"])
-        self.assertEqual(service.get_project(p["project_id"])["status"], "polished")
+        self.assertEqual(service.get_project(p["project_id"])["status"], "ready")
+
+    def test_compose_start_autogenerates_from_topic(self):
+        # 원고 없이 주제만 있으면 OCES 생성→윤문 풀 파이프라인 실행
+        p = service.create_project("제로존 입문", topic="제로존 수학")
+        out = service.compose_start(p["project_id"])
+        self.assertEqual(out["status"], "ready")
+        self.assertTrue(out["ok"])
+        result = service.get_project(p["project_id"])["result"]
+        self.assertIn("outline", result)
+        self.assertGreaterEqual(len(result["outline"]), 3)
+
+    def test_compose_book_full_pipeline(self):
+        r = service.compose_book("제로존 입문", "제로존 수학", n_chapters=5)
+        self.assertTrue(r["ok"], r)
+        self.assertEqual(len(r["outline"]), 5)
+        self.assertTrue(r["manuscript_markdown"].startswith("# 제로존 입문"))
+        self.assertTrue(r["coverage"]["ok"])
+        self.assertIn("epub", r["files"])  # EPUB 산출
+        # 결정적: 두 번 호출 시 동일 원고
+        r2 = service.compose_book("제로존 입문", "제로존 수학", n_chapters=5)
+        self.assertEqual(r["manuscript_markdown"], r2["manuscript_markdown"])
+
+    def test_compose_book_requires_title(self):
+        with self.assertRaises(ValueError):
+            service.compose_book("  ", "주제")
 
     def test_compose_start_without_manuscript(self):
         p = service.create_project("책")
