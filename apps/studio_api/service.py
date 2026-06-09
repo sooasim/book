@@ -261,12 +261,23 @@ def _compose_stages(project: dict, provider: str, mode: str):
     out_dir = str(_project_out_dir(project_id))
 
     def stage_outline(ctx):
+        # 재개로 이미 ctx 에 산출이 있으면 재생성하지 않는다(중간 재개).
+        if ctx.get("manuscript") and ctx.get("outline") is not None:
+            return {"chapters": len(ctx["outline"].chapters), "resumed": True}
         outline, manuscript = _generate(
             project["title"], project["topic"], project["n_chapters"],
             project["length_target"], project["language"], provider,
             sources=project.get("sources"))
         ctx["outline"] = outline
         ctx["manuscript"] = manuscript
+        # 중간 재개용 스냅샷 영속화(생성 단계는 가장 비싸므로 보존)
+        project["_snapshot"] = {
+            "manuscript": manuscript,
+            "chapters": [{"idx": c.idx, "title": c.title, "brief": c.brief,
+                          "target_words": c.target_words, "content_md": c.content_md,
+                          "summary": c.summary} for c in outline.chapters],
+        }
+        _persist_project(project)
         return {"chapters": len(outline.chapters)}
 
     def stage_polish(ctx):
@@ -289,6 +300,7 @@ def _compose_stages(project: dict, provider: str, mode: str):
             "files": polish["files"], "pipeline": polish["pipeline"],
         }
         _store_compose_result(project, result)
+        project.pop("_snapshot", None)  # 완료 시 재개 스냅샷 정리
         ctx["result"] = result
         return {"files": list(polish["files"].keys())}
 
@@ -318,7 +330,7 @@ def pause_job(job_id: str) -> dict:
 
 
 def resume_job(job_id: str) -> dict:
-    """일시정지된 잡을 재개(결정적이라 처음부터 재실행, 동일 산출)."""
+    """일시정지된 잡을 재개. outline 스냅샷이 있으면 생성 단계를 건너뛰고 중간부터 재개."""
     spec = _JOB_SPECS.get(job_id)
     job = JOBS.get(job_id)
     if spec is None or job is None:
@@ -326,8 +338,22 @@ def resume_job(job_id: str) -> dict:
     project = _PROJECTS.get(spec["project_id"])
     stages = _compose_stages(project, spec["provider"], spec["mode"])
     project["status"] = "composing"
-    jobs_mod.run_in_thread(JOBS, job_id, stages, context={}, start_index=0)
-    return {"job_id": job_id, "status": "resumed"}
+
+    snap = project.get("_snapshot")
+    if snap:  # 중간 재개: 원고/목차 복원 후 write 단계부터(생성 생략)
+        from ebook_polisher.compose import Outline, OutlineChapter
+        chaps = [OutlineChapter(idx=c["idx"], title=c["title"], brief=c["brief"],
+                                target_words=c["target_words"], content_md=c["content_md"],
+                                summary=c["summary"]) for c in snap["chapters"]]
+        outline = Outline(title=project["title"], topic=project["topic"],
+                          language=project["language"], chapters=chaps)
+        ctx = {"outline": outline, "manuscript": snap["manuscript"]}
+        start_index = 1
+        resumed = "mid"
+    else:  # 스냅샷 없으면 처음부터(결정적 재실행)
+        ctx, start_index, resumed = {}, 0, "full"
+    jobs_mod.run_in_thread(JOBS, job_id, stages, context=ctx, start_index=start_index)
+    return {"job_id": job_id, "status": "resumed", "mode": resumed}
 
 
 def get_job(job_id: str) -> dict | None:

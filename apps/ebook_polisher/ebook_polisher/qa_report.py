@@ -9,6 +9,7 @@ from __future__ import annotations
 import re
 
 from ebook_polisher.consistency import consistency_report
+from ebook_polisher.crossref import crossref_report
 from ebook_polisher.drift import drift_report
 from ebook_polisher.evaluate import quality_report
 from ebook_polisher.hardfail import lint
@@ -32,6 +33,8 @@ def build_qa_report(repo) -> dict:
     consistency = consistency_report(blocks)
     drift = drift_report(blocks)
     evaluation = quality_report(blocks)
+    n_chapters = sum(1 for b in blocks if b.block_type == "title")
+    crossref = crossref_report(blocks, n_chapters)
     has_title = any(b.block_type == "title" for b in repo.blocks.values())
     prompt_residue = bool(re.search(r"\[STYLE_BIBLE\]|\[CHUNK_PAYLOAD\]|system_message", markdown))
 
@@ -59,6 +62,8 @@ def build_qa_report(repo) -> dict:
                            "outliers": [o["block_id"] for o in drift["drift"]["outliers"]][:10]},
         "18_quality_score": {"ok": evaluation["overall"] >= 0.5, "kind": "report",
                              "overall": evaluation["overall"], "grade": evaluation["grade"]},
+        "19_crossref": {"ok": crossref["ok"], "kind": "report",
+                        "violations": [v["raw"] for v in crossref["violations"]][:10]},
         "12_epub_spine": {"ok": True, "kind": "skipped", "note": "EPUB 출력 E2"},
         "13_docx_heading": {"ok": True, "kind": "skipped", "note": "DOCX 출력 E2"},
         "14_hash_audit": {"ok": len(repo.audit_log) > 0, "kind": "report"},
@@ -78,5 +83,6 @@ def build_qa_report(repo) -> dict:
         "consistency": consistency,
         "drift": drift,
         "evaluation": evaluation,
+        "crossref": crossref,
         "gates": gates,
     }
