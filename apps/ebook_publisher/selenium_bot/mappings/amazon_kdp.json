@@ -1,0 +1,42 @@
+{
+  "title": {
+    "by": "id",
+    "selector": "data-title",
+    "field_type": "text"
+  },
+  "subtitle": {
+    "by": "id",
+    "selector": "data-subtitle",
+    "field_type": "text"
+  },
+  "author": {
+    "by": "id",
+    "selector": "data-primary-author-first-name",
+    "field_type": "text"
+  },
+  "description": {
+    "by": "id",
+    "selector": "cke_data-description",
+    "field_type": "textarea"
+  },
+  "keywords": {
+    "by": "css",
+    "selector": "input[name='data-keywords-0']",
+    "field_type": "text"
+  },
+  "manuscript_file": {
+    "by": "css",
+    "selector": "input[type='file'][name*='manuscript']",
+    "field_type": "file"
+  },
+  "cover_file": {
+    "by": "css",
+    "selector": "input[type='file'][name*='cover']",
+    "field_type": "file"
+  },
+  "price": {
+    "by": "css",
+    "selector": "input[name='data-pricing-print-price']",
+    "field_type": "text"
+  }
+}

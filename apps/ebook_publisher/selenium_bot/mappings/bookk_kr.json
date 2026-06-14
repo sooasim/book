@@ -1,0 +1,37 @@
+{
+  "title": {
+    "by": "name",
+    "selector": "book_title",
+    "field_type": "text"
+  },
+  "author": {
+    "by": "name",
+    "selector": "author_name",
+    "field_type": "text"
+  },
+  "description": {
+    "by": "name",
+    "selector": "book_intro",
+    "field_type": "textarea"
+  },
+  "keywords": {
+    "by": "name",
+    "selector": "keyword",
+    "field_type": "text"
+  },
+  "price": {
+    "by": "name",
+    "selector": "sale_price",
+    "field_type": "text"
+  },
+  "manuscript_file": {
+    "by": "css",
+    "selector": "input[type='file'][name*='manuscript'],input[type='file'][name*='pdf']",
+    "field_type": "file"
+  },
+  "cover_file": {
+    "by": "css",
+    "selector": "input[type='file'][name*='cover']",
+    "field_type": "file"
+  }
+}

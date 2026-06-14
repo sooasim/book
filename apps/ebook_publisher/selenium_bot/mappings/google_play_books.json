@@ -1,0 +1,27 @@
+{
+  "title": {
+    "by": "css",
+    "selector": "input[aria-label*='Title'],input[name='title']",
+    "field_type": "text"
+  },
+  "description": {
+    "by": "css",
+    "selector": "textarea[aria-label*='Description']",
+    "field_type": "textarea"
+  },
+  "manuscript_file": {
+    "by": "css",
+    "selector": "input[type='file']",
+    "field_type": "file"
+  },
+  "cover_file": {
+    "by": "css",
+    "selector": "input[type='file'][accept*='image']",
+    "field_type": "file"
+  },
+  "price": {
+    "by": "css",
+    "selector": "input[aria-label*='Price']",
+    "field_type": "text"
+  }
+}

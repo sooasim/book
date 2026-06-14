@@ -195,6 +195,48 @@ def cmd_inspect(args) -> int:
     return 0
 
 
+def cmd_api_list(args) -> int:
+    from .api.factory import api_platform_ids
+    print("공식 API 경로 지원 플랫폼:", ", ".join(api_platform_ids()))
+    return 0
+
+
+def cmd_api_publish(args) -> int:
+    """공식 API 로 게시(약관 친화적, 레벨 4). 기본은 dry-run(페이로드만)."""
+    from . import status_ledger
+    from .api.factory import get_connector
+    conn = get_connector(args.platform)
+    if conn is None:
+        print(f"'{args.platform}' 는 API 경로 미지원. assist(브라우저)를 사용하세요.", file=sys.stderr)
+        return 2
+    book = _load_book(args)
+    saved = profile_store.load_book_profile(getattr(args, "base", None))
+    if saved:
+        book = {**saved, **{k: v for k, v in book.items() if v}}
+    files = _files(args)
+    if args.live:
+        result = conn.publish(book, files)        # 토큰/requests 없으면 가드되어 안전
+        status = "live" if result.get("ok") else "failed"
+    else:
+        result = conn.dry_run(book, files)
+        status = "prepared"
+    status_ledger.record(book.get("book_id", "book"), args.platform, status,
+                         method="api", note=result.get("reason", ""))
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    print("참고:", conn.human_review_note(), file=sys.stderr)
+    return 0 if result.get("ok") else 1
+
+
+def cmd_status(args) -> int:
+    from . import status_ledger
+    print(json.dumps(status_ledger.summary(args.path or status_ledger.DEFAULT_PATH),
+                     ensure_ascii=False, indent=2))
+    for r in status_ledger.load(args.path or status_ledger.DEFAULT_PATH):
+        print(f"  {r['book_id']:16} {r['platform_id']:16} {r['method']:8} "
+              f"{r['status']:10} {r.get('platform_url','')}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="selenium_bot", description="반자동 전자책 게시 봇")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -234,6 +276,15 @@ def build_parser() -> argparse.ArgumentParser:
 
     pi = sub.add_parser("inspect"); pi.add_argument("--platform", required=True)
     pi.add_argument("--url"); pi.add_argument("--base"); pi.set_defaults(func=cmd_inspect)
+
+    pai = sub.add_parser("api-list"); pai.set_defaults(func=cmd_api_list)
+
+    pap = sub.add_parser("api-publish"); add_book_args(pap); pap.add_argument("--base")
+    pap.add_argument("--live", action="store_true",
+                     help="실제 API 호출(토큰 필요). 미지정 시 dry-run")
+    pap.set_defaults(func=cmd_api_publish)
+
+    pst = sub.add_parser("status"); pst.add_argument("--path"); pst.set_defaults(func=cmd_status)
     return p
 
 

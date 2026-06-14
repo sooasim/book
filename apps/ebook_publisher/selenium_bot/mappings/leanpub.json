@@ -1,0 +1,22 @@
+{
+  "title": {
+    "by": "id",
+    "selector": "book_title",
+    "field_type": "text"
+  },
+  "subtitle": {
+    "by": "id",
+    "selector": "book_subtitle",
+    "field_type": "text"
+  },
+  "description": {
+    "by": "id",
+    "selector": "book_about_the_book",
+    "field_type": "textarea"
+  },
+  "price": {
+    "by": "id",
+    "selector": "book_minimum_price",
+    "field_type": "text"
+  }
+}

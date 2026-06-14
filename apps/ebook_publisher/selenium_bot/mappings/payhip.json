@@ -1,0 +1,27 @@
+{
+  "title": {
+    "by": "name",
+    "selector": "name",
+    "field_type": "text"
+  },
+  "description": {
+    "by": "css",
+    "selector": "textarea[name='description'],div.note-editable",
+    "field_type": "textarea"
+  },
+  "price": {
+    "by": "name",
+    "selector": "price",
+    "field_type": "text"
+  },
+  "manuscript_file": {
+    "by": "css",
+    "selector": "input[type='file'][name*='product'],input[type='file']",
+    "field_type": "file"
+  },
+  "cover_file": {
+    "by": "css",
+    "selector": "input[type='file'][name*='cover'],input[type='file'][accept*='image']",
+    "field_type": "file"
+  }
+}

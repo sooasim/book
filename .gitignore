@@ -58,3 +58,8 @@ apps/studio_web/.next/
 apps/studio_web/out/
 # ===== studio_api 산출물 =====
 apps/studio_api/out/
+
+# 게시 결과 원장(런타임 생성)
+publish_results.csv
+**/publish_results.csv
+out_plans/
