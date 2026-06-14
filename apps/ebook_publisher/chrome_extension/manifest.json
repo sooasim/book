@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "OCES 전자책 자동 채우기",
+  "version": "1.0.0",
+  "description": "출간 기본정보를 한 번 저장하면, 방문하는 출판 사이트의 입력칸을 자동 인식해 채워줍니다. 약관·인증·최종 게시는 사람이 직접.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": { "default_popup": "src/popup.html", "default_title": "OCES 자동 채우기" },
+  "options_page": "src/options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/fieldmatch.js", "src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["field_keywords.json"], "matches": ["<all_urls>"] }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "_comment": "필드 자동 인식 단일 소스. inspector.py(FIELD_KEYWORDS)에서 생성. parity 테스트로 동기화 강제.",
+  "fields": {
+    "title": [
+      "title",
+      "book title",
+      "제목",
+      "도서명",
+      "책제목"
+    ],
+    "subtitle": [
+      "subtitle",
+      "부제"
+    ],
+    "author": [
+      "author",
+      "writer",
+      "byline",
+      "저자",
+      "지은이",
+      "작가"
+    ],
+    "description": [
+      "description",
+      "synopsis",
+      "summary",
+      "about",
+      "book description",
+      "소개",
+      "설명",
+      "책소개",
+      "줄거리",
+      "상세"
+    ],
+    "short_description": [
+      "short description",
+      "tagline",
+      "blurb",
+      "한줄",
+      "짧은소개"
+    ],
+    "keywords": [
+      "keyword",
+      "tags",
+      "search terms",
+      "키워드",
+      "태그",
+      "검색어"
+    ],
+    "categories": [
+      "category",
+      "genre",
+      "categories",
+      "카테고리",
+      "장르",
+      "분야"
+    ],
+    "language": [
+      "language",
+      "언어"
+    ],
+    "price": [
+      "price",
+      "list price",
+      "amount",
+      "가격",
+      "정가",
+      "판매가"
+    ],
+    "isbn": [
+      "isbn"
+    ],
+    "manuscript_file": [
+      "manuscript",
+      "ebook file",
+      "epub",
+      "upload book",
+      "content file",
+      "원고",
+      "본문파일",
+      "파일업로드",
+      "도서파일"
+    ],
+    "cover_file": [
+      "cover",
+      "thumbnail",
+      "book cover",
+      "표지",
+      "커버",
+      "썸네일"
+    ]
+  },
+  "file_fields": [
+    "manuscript_file",
+    "cover_file"
+  ],
+  "sensitive": [
+    "password",
+    "passwd",
+    "pwd",
+    "비밀번호",
+    "암호",
+    "captcha",
+    "recaptcha",
+    "otp",
+    "인증번호",
+    "verification code",
+    "보안문자",
+    "card",
+    "credit",
+    "카드",
+    "cvc",
+    "cvv",
+    "account number",
+    "routing",
+    "계좌",
+    "예금주",
+    "ssn",
+    "social security",
+    "주민",
+    "주민등록",
+    "사업자",
+    "사업자등록",
+    "tax id",
+    "tin",
+    "세금",
+    "vat number",
+    "iban",
+    "swift",
+    "bank"
+  ]
+}
