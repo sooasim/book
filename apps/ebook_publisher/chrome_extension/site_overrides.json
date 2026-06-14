@@ -1,0 +1,24 @@
+{
+  "_comment": "사이트별 입력칸 명시 보정. host(부분일치) → { field_key: {by:'css|id|name', selector } }. 휴리스틱보다 우선 적용.",
+  "bookk.co.kr": {
+    "title":        { "by": "name", "selector": "book_title" },
+    "author":       { "by": "name", "selector": "author_name" },
+    "description":  { "by": "name", "selector": "book_intro" },
+    "keywords":     { "by": "name", "selector": "keyword" },
+    "price":        { "by": "name", "selector": "sale_price" }
+  },
+  "kdp.amazon.com": {
+    "title":        { "by": "id", "selector": "data-title" },
+    "subtitle":     { "by": "id", "selector": "data-subtitle" },
+    "description":  { "by": "id", "selector": "cke_data-description" }
+  },
+  "gumroad.com": {
+    "title":        { "by": "css", "selector": "input[aria-label='Name'], input[name='name']" },
+    "price":        { "by": "css", "selector": "input[aria-label='Amount'], input[name='price']" }
+  },
+  "leanpub.com": {
+    "title":        { "by": "id", "selector": "book_title" },
+    "subtitle":     { "by": "id", "selector": "book_subtitle" },
+    "description":  { "by": "id", "selector": "book_about_the_book" }
+  }
+}

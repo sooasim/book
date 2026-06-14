@@ -82,8 +82,32 @@
     return p[key] != null ? p[key] : "";
   }
 
+  // 버튼 텍스트 분류: "final"(출판/게시/제출 — 절대 클릭 금지) / "safe"(저장/다음 등) / "other".
+  // 최종 키워드가 하나라도 있으면 무조건 final(안전 우선).
+  function classifyButton(text, kw) {
+    var s = norm(text);
+    if (!s) return "other";
+    var fin = kw.final_buttons || [];
+    var safe = kw.safe_buttons || [];
+    if (fin.some(function (w) { return s.indexOf(norm(w)) !== -1; })) return "final";
+    if (safe.some(function (w) { return s.indexOf(norm(w)) !== -1; })) return "safe";
+    return "other";
+  }
+
+  // 사이트별 명시 셀렉터 보정. overrides = {host: {field_key: {by, selector}}}.
+  // 현재 host(예: "www.bookk.co.kr")에 맞는 항목을 부분일치로 찾아 반환(없으면 {}).
+  function resolveOverrides(host, overrides) {
+    if (!overrides || !host) return {};
+    host = norm(host);
+    var keys = Object.keys(overrides);
+    // 정확/접미 일치 우선
+    var hit = keys.find(function (h) { return host === norm(h) || host.indexOf(norm(h)) !== -1; });
+    return hit ? overrides[hit] : {};
+  }
+
   var api = { norm: norm, isSensitive: isSensitive, guessFieldKey: guessFieldKey,
-              buildFillPlan: buildFillPlan, profileValue: profileValue };
+              buildFillPlan: buildFillPlan, profileValue: profileValue,
+              classifyButton: classifyButton, resolveOverrides: resolveOverrides };
   if (typeof module !== "undefined" && module.exports) { module.exports = api; }
   else { root.OCESFieldMatch = api; }
 })(typeof window !== "undefined" ? window : this);

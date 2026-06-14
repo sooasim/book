@@ -62,4 +62,29 @@ t("buildFillPlan: 프로필 값으로 채움, 파일은 수동, 같은키 1회",
   assert.ok(plan.filter(p => p.field_key === "title").length === 1);
 });
 
+t("classifyButton: 최종 게시 버튼은 final(클릭 금지)", () => {
+  ["출판하기", "게시", "제출", "발행", "Publish", "Submit for review", "등록 완료"].forEach((x) => {
+    assert.strictEqual(fm.classifyButton(x, KW), "final", x);
+  });
+});
+
+t("classifyButton: 저장/다음은 safe", () => {
+  ["임시저장", "저장", "다음", "계속", "Save draft", "Next"].forEach((x) => {
+    assert.strictEqual(fm.classifyButton(x, KW), "safe", x);
+  });
+});
+
+t("classifyButton: 최종 키워드 우선(안전 우선)", () => {
+  // '최종 저장'처럼 섞여도 final 로 분류되어 자동 클릭 안 됨
+  assert.strictEqual(fm.classifyButton("최종 저장", KW), "final");
+  assert.strictEqual(fm.classifyButton("", KW), "other");
+});
+
+t("resolveOverrides: host 부분일치", () => {
+  const ov = { "bookk.co.kr": { title: { by: "name", selector: "book_title" } } };
+  assert.deepStrictEqual(fm.resolveOverrides("www.bookk.co.kr", ov).title,
+    { by: "name", selector: "book_title" });
+  assert.deepStrictEqual(fm.resolveOverrides("example.com", ov), {});
+});
+
 console.log(`\nfieldmatch.test.js: ${pass} passed`);

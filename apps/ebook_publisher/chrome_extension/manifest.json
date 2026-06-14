@@ -15,6 +15,6 @@
     }
   ],
   "web_accessible_resources": [
-    { "resources": ["field_keywords.json"], "matches": ["<all_urls>"] }
+    { "resources": ["field_keywords.json", "site_overrides.json"], "matches": ["<all_urls>"] }
   ]
 }
