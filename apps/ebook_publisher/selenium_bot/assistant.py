@@ -22,6 +22,10 @@ def _noninteractive_confirm(step: PlanStep) -> bool:
     return False
 
 
+class UnmappedFieldError(RuntimeError):
+    """해당 플랫폼에 입력칸 매핑이 없어 자동 입력 불가(치명적 아님 → 건너뜀)."""
+
+
 def interactive_confirm(step: PlanStep) -> bool:  # pragma: no cover - 대화형 전용
     label = gates.gate_label(step.gate) if step.gate else step.note
     print(f"\n[사람 확인 필요] {label}")
@@ -76,6 +80,12 @@ class SeleniumAssistant:
             try:
                 self._do_auto(plan.platform_id, step)
                 results.append(StepResult(step, "done"))
+            except UnmappedFieldError:
+                # 매핑 없는 칸은 중단하지 않고 건너뛴다(다른 칸은 계속 채움). inspect 로 보정.
+                results.append(StepResult(
+                    step, "skipped",
+                    f"입력칸 매핑 없음: '{step.field_key}' → inspect 로 학습 필요"))
+                continue
             except Exception as exc:  # noqa: BLE001
                 results.append(StepResult(step, "error", str(exc)))
                 break
@@ -89,10 +99,7 @@ class SeleniumAssistant:
             return
         sel = self._resolve_selector(platform_id, step)
         if sel is None:
-            raise RuntimeError(
-                f"입력칸 매핑 없음: '{step.field_key}'. "
-                f"mappings/{platform_id}.json 에 셀렉터를 추가하세요(field_mapping.set_field)."
-            )
+            raise UnmappedFieldError(step.field_key)
         from .driver import by_method
         element = self.driver.find_element(by_method(sel.by), sel.selector)
         if step.action == "fill":

@@ -113,6 +113,23 @@ class TestAssistant(unittest.TestCase):
         # 로그인 정지 → 자동 fill 단계까지 가지 못함(드라이버 get 만 1회)
         self.assertEqual(drv.gets, ["https://kdp.amazon.com/"])
 
+    def test_unmapped_field_skipped_not_fatal(self):
+        # 일부 칸 매핑이 없으면 그 칸만 건너뛰고 나머지는 계속 채워야 한다.
+        import tempfile
+        partial = MappingStore(tempfile.mkdtemp())
+        for key in ("title", "author", "manuscript_file"):  # description/price 등은 일부러 누락
+            partial.set_field("amazon_kdp", key, "css", f"#{key}")
+        plan = build_publish_plan(_book(), _site(), {"epub": "/tmp/x.epub"})
+        drv = FakeDriver()
+        a = SeleniumAssistant(driver=drv, mapping_store=partial, confirm=lambda s: True)
+        results = a.execute(plan)
+        statuses = {(r.step.field_key): r.status for r in results if r.step.action == "fill"}
+        self.assertEqual(statuses.get("title"), "done")
+        self.assertEqual(statuses.get("description"), "skipped")  # 매핑 없음 → 건너뜀
+        # 중단되지 않고 끝까지 진행(마지막은 최종 게이트)
+        self.assertEqual(results[-1].step.gate, "final_submit")
+        self.assertNotIn("error", [r.status for r in results])
+
     def test_unknown_action_blocked(self):
         from selenium_bot.models import PlanStep, PublishPlan
         from selenium_bot import gates
