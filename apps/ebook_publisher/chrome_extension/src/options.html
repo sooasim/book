@@ -28,7 +28,19 @@
         <span id="status" class="muted"></span>
       </div>
     </form>
+
+    <hr />
+    <h2>스튜디오에서 가져오기 / 내보내기</h2>
+    <p class="muted">스튜디오(OCES)에서 만든 책 정보를 그대로 옮길 수 있습니다.
+      스튜디오에서 <code>/api/projects/&lt;id&gt;/extension-profile</code> JSON 을 복사해 붙여넣고 [가져오기].</p>
+    <textarea id="io" rows="5" placeholder='{"title":"...","author":"...","description":"..."}'></textarea>
+    <div class="row">
+      <button id="import" type="button">JSON 가져오기</button>
+      <button id="export" type="button" class="secondary">현재 정보 JSON 내보내기</button>
+      <span id="iostatus" class="muted"></span>
+    </div>
   </main>
+  <script src="profileio.js"></script>
   <script src="options.js"></script>
 </body>
 </html>

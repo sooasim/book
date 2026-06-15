@@ -452,6 +452,49 @@ def get_download_path(project_id: str, fmt: str) -> str | None:
     return (project.get("files") or {}).get(fmt)
 
 
+def _summarize_description(project: dict, limit: int = 300) -> str:
+    """챕터 본문(서론 등)에서 소개문 후보를 추출. 프런트매터/헤딩은 제외."""
+    result = project.get("result") or {}
+    chapters = project.get("chapters") or result.get("chapters") or []
+    paras: list[str] = []
+    for ch in chapters:
+        body = (ch.get("content_md") or "").strip()
+        for line in body.splitlines():
+            s = line.strip().lstrip("#").strip()
+            if not s:
+                continue
+            paras.append(s)
+        if sum(len(p) for p in paras) >= limit:
+            break
+    text = " ".join(paras).strip().replace("#", "")
+    return text[:limit] if text else project.get("topic", "")
+
+
+def export_extension_profile(project_id: str) -> dict | None:
+    """프로젝트 메타데이터를 크롬 확장(oces_profile) 형태로 내보낸다.
+
+    확장 옵션 페이지의 '기본정보'와 동일 키. 민감정보는 포함하지 않는다.
+    스튜디오에서 생성한 책 정보를 확장으로 1클릭 이전(내보내기→가져오기)하는 데 사용.
+    """
+    project = _PROJECTS.get(project_id)
+    if project is None:
+        return None
+    return {
+        "title": project.get("title", ""),
+        "subtitle": project.get("subtitle", ""),
+        "author": project.get("author", ""),
+        "pen_name": project.get("pen_name", ""),
+        "language": project.get("language", "ko"),
+        "short_description": project.get("topic", ""),
+        "description": _summarize_description(project),
+        "keywords": project.get("keywords", []),
+        "categories": project.get("categories", []),
+        "price_krw": str(project.get("price_krw", "") or ""),
+        "price_usd": str(project.get("price_usd", "") or ""),
+        "isbn_ebook": project.get("isbn_ebook", ""),
+    }
+
+
 def compose_start(project_id: str, manuscript: str = "", mode: str = "rules") -> dict:
     """프로젝트 오케스트레이션 시작: 윤문 → (다음 단계) 변환/출판.
 

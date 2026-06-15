@@ -67,6 +67,29 @@
 
   function highlight(el, color) { try { el.style.outline = "2px solid " + color; } catch (e) {} }
 
+  // 파일 입력 옆에 '여기에 첨부' 안내 배지(브라우저 보안상 확장이 파일을 못 넣으므로 사람이 첨부).
+  function fileGuide(fieldKey, profile) {
+    var p = profile || {};
+    if (fieldKey === "manuscript_file")
+      return "📎 여기에 원고(EPUB/PDF) 첨부" + (p.manuscript_filename ? ": " + p.manuscript_filename : "");
+    if (fieldKey === "cover_file")
+      return "🖼 여기에 표지 이미지 첨부" + (p.cover_filename ? ": " + p.cover_filename : "");
+    return "📎 여기에 파일 첨부";
+  }
+
+  function attachFileGuide(el, fieldKey, profile) {
+    try {
+      var prev = el.parentNode && el.parentNode.querySelector(".oces-fileguide");
+      if (prev) prev.remove();
+      var tip = document.createElement("div");
+      tip.className = "oces-fileguide";
+      tip.textContent = fileGuide(fieldKey, profile);
+      tip.style.cssText = "display:inline-block;margin:4px 0;padding:4px 8px;background:#fef3c7;" +
+        "color:#92400e;border:1px solid #fcd34d;border-radius:6px;font-size:12px;";
+      el.insertAdjacentElement("afterend", tip);
+    } catch (e) {}
+  }
+
   function fillOnce(profile) {
     var filled = [], manual = [], skipped = [];
     var host = location.hostname;
@@ -86,7 +109,10 @@
       if (step.kind === "fill") {
         if (setValue(step.ref, step.value)) { filled.push(step.field_key); highlight(step.ref, "#d1fae5"); }
         else skipped.push(step.field_key);
-      } else if (step.kind === "file_manual") { manual.push(step.field_key); highlight(step.ref, "#fef3c7"); }
+      } else if (step.kind === "file_manual") {
+        manual.push(step.field_key); highlight(step.ref, "#fef3c7");
+        attachFileGuide(step.ref, step.field_key, profile);
+      }
     });
     return { filled: filled, manual: manual, skipped: skipped };
   }

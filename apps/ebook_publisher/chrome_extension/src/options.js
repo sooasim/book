@@ -34,4 +34,33 @@ document.getElementById("form").addEventListener("submit", function (e) {
   });
 });
 
+// 스튜디오 JSON 가져오기 → 정규화 후 저장 + 폼 반영
+var importBtn = document.getElementById("import");
+if (importBtn) {
+  importBtn.addEventListener("click", function () {
+    var st = document.getElementById("iostatus");
+    try {
+      var clean = window.OCESProfileIO.parseImport(document.getElementById("io").value);
+      chrome.storage.local.set({ oces_profile: clean }, function () {
+        load();
+        st.textContent = "✅ 가져옴(" + Object.keys(clean).length + "개 필드)";
+        setTimeout(function () { st.textContent = ""; }, 2500);
+      });
+    } catch (e) {
+      st.textContent = "⚠ " + e.message;
+    }
+  });
+}
+
+var exportBtn = document.getElementById("export");
+if (exportBtn) {
+  exportBtn.addEventListener("click", function () {
+    chrome.storage.local.get("oces_profile", function (data) {
+      document.getElementById("io").value =
+        JSON.stringify(data.oces_profile || {}, null, 2);
+      document.getElementById("iostatus").textContent = "현재 정보를 위에 출력했습니다.";
+    });
+  });
+}
+
 load();

@@ -269,6 +269,15 @@ def resume_job(job_id: str):
         raise HTTPException(status_code=404, detail=str(exc))
 
 
+@app.get("/api/projects/{project_id}/extension-profile")
+def extension_profile(project_id: str, x_user: str | None = Header(default=None),
+                      authorization: str | None = Header(default=None)):
+    """스튜디오 책 메타데이터를 크롬 확장(oces_profile) 형태로 내보냄(1클릭 연동용)."""
+    if service.get_project(project_id, user_id=_uid(x_user, authorization)) is None:
+        raise HTTPException(status_code=404, detail="project not found")
+    return service.export_extension_profile(project_id)
+
+
 @app.get("/api/usage")
 def get_usage(x_user: str | None = Header(default=None),
               authorization: str | None = Header(default=None)):
